@@ -1,0 +1,62 @@
+/* Container  */
+.container, 
+.container-sm, 
+.container-md, 
+.container-lg, 
+.container-xl, 
+.container-xxl {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem); /* O'ng tarafdagi bo'shliq */
+  padding-left: var(--bs-gutter-x, 0.75rem); /* Chap tarafdagi bo'shliq */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* container-sm */
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+}
+
+/* container-md */
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px;
+  }
+}
+
+/* container-lg */
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+  }
+}
+
+/* container-xl */
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px;
+  }
+}
+
+/* container-xxl */
+@media (min-width: 1400px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+/* container-fluid — to‘liq ekran kengligiga moslashadi */
+.container-fluid {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
