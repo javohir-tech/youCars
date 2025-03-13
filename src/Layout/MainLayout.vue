@@ -1,13 +1,15 @@
-<template >
-    <Navbar/>
+<template>
+    <Navbar />
     <main>
-        <RouterView/>
+        <RouterView />
     </main>
 </template>
 <script setup>
 import Navbar from '@/components/Navbar.vue';
 import { RouterView } from 'vue-router';
 </script>
-<style >
-    
+<style>
+.navbar-laptop {
+    display: none;
+}
 </style>

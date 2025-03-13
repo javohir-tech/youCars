@@ -60,3 +60,16 @@
     padding: 0;
     margin: 0;
 }
+
+.btn-primary{
+ padding: 15px;
+ border: none;
+ background-color: rgba(38, 132, 229, 1);
+ color: rgba(255, 255, 255, 1);
+ border-radius: 5px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
