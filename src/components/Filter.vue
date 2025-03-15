@@ -2,7 +2,7 @@
     <div class="filter mt-5">
         <h1>Подбор авто</h1>
         <div class="filter-box shadow">
-            <a-flex align="center" :gap="15">
+            <a-flex align="center" class="filter-btns" :gap="15">
                 <div class="tabs-container">
                     <button class="tab-button" :class="{ active: activeTab === 'all' }" @click="activeTab = 'all'">
                         Все
@@ -20,10 +20,12 @@
 
             <a-flex justify="space-between" class="filter-dropdowns mt-3">
                 <FilterItem filter-name="Выберите марку" filter-categories="Geely" filter-categories-default="Geely" />
-                <FilterItem filter-name="ВЫберите модель" filter-categories="Monjaro" filter-categories-default="Monjaro" />
+                <FilterItem filter-name="ВЫберите модель" filter-categories="Monjaro"
+                    filter-categories-default="Monjaro" />
                 <FilterItem filter-name="Страна" filter-categories="Китай" filter-categories-default="Китай" />
                 <FilterItem filter-name="Год" filter-categories=0-2024 filter-categories-default=0-2024 />
-                <FilterItem filter-name="Цена" filter-categories=300000-400000 filter-categories-default=300000-400000 />
+                <FilterItem filter-name="Цена" filter-categories=300000-400000
+                    filter-categories-default=300000-400000 />
             </a-flex>
         </div>
     </div>
@@ -77,5 +79,18 @@ const checked2 = ref(false)
 .filter-box {
     padding: 25px 20px;
     border-radius: 10px;
+}
+
+.filter-dropdowns,
+.filter-btns {
+    gap: 10px;
+}
+
+@media (max-width: 576px) {
+    .filter-dropdowns,
+    .filter-btns {
+        flex-direction: column !important;
+        align-items: start !important;
+    }
 }
 </style>

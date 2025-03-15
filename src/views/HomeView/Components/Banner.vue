@@ -7,7 +7,7 @@
                     <button class="btn-primary">Подробнее</button>
                 </a-col>
                 <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
-                    <img src="../../assets/Images/bannerImage.png" class="img-fluid" alt="">
+                    <img src="../../../assets/Images/bannerImage.png" class="img-fluid" alt="">
                 </a-col>
             </a-row>
     </section>

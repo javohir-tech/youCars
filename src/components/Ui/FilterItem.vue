@@ -88,4 +88,13 @@ defineProps({
 :deep(.ant-btn > span) {
     font-size: 14px;
 }
+
+@media(max-width:576px){
+    .dropdown-container{
+        width: 100%;
+    }
+    :deep(.dropdown-button) {
+        width: 100% !important;
+    }
+}
 </style>

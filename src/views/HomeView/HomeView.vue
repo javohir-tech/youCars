@@ -1,18 +1,19 @@
 <template>
   <div class="container">
-    <Banner/>
+    <Banner />
     <!--  filter -->
-    <Filter/>
+    <Filter />
     <!--Cars Katalok -->
-    <CarsKatalok/>
+    <CarsKatalok />
+    <!-- WhyWe-->
+    <WhyWe />
   </div>
 </template>
 <script setup>
 
 //filter
 import Filter from '@/components/Filter.vue';
-import Banner from '@/components/HomeComponents/Banner.vue';
-import CarsKatalok from '@/components/HomeComponents/CarsKatalok.vue';
-
+//components
+import { Banner, CarsKatalok, WhyWe } from './Components';
 </script>
 <style></style>

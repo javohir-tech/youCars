@@ -4,24 +4,26 @@
             <img :src="image" class="img-fluid" alt="">
         </div>
         <div class="cars-card-info shadow">
-            <p>Hyundai Solaris 2 Рестайлинг, 2022</p>
-            <p>{{ cost }}$</p>
-            <a-flex align="center" justify="space-between">
-                <div>
-                    <p>{{ milage }}km</p>
-                    <p>1.4/100 л.с./Бензин</p>
-                </div>
-                <div>
-                    <p>Робот</p>
-                    <p>передний привод</p>
-                </div>
-            </a-flex>
-            <a-flex align="center" justify="space-between">
-                <p>{{ country }}</p>
-                <div>
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-            </a-flex>
+            <p class="avto-name">{{ model }}</p>
+            <p class="avto-cost">{{ cost }}$</p>
+            <div class="card-description">
+                <a-flex align="center" justify="space-between">
+                    <div>
+                        <p>{{ milage }}km</p>
+                        <p>1.4/100 л.с./Бензин</p>
+                    </div>
+                    <div>
+                        <p>Робот</p>
+                        <p>передний привод</p>
+                    </div>
+                </a-flex>
+                <a-flex align="center" justify="space-between">
+                    <p>{{ country }}</p>
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </a-flex>
+            </div>
         </div>
     </div>
 </template>
@@ -29,10 +31,15 @@
 defineProps({
     image: String,
     title: String,
-    cost: String,
+    cost: {
+        type: Number,
+        default: '0'
+    },
     country: String,
-    milage: Number
+    milage: Number,
+    model: String
 })
+
 </script>
 <style scoped>
 .cars-card-image img {
@@ -44,5 +51,25 @@ defineProps({
 .cars-card-info {
     padding: 15px;
     border-radius: 10px;
+}
+
+.avto-name {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(41, 56, 67, 1);
+}
+
+.avto-cost {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: rgba(41, 56, 67, 1);
+}
+
+.card-description {
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(152, 152, 152, 1);
 }
 </style>
