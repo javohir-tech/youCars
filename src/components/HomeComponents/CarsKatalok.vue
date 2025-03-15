@@ -1,9 +1,9 @@
 <template>
     <div class="cars-katalok">
         <h1>АВТОМОБИЛЬНЫЙ КАТАЛОГ</h1>
-        <a-row :gap="10">
-            <a-col span="6" v-for="(car , index) in cars" :key="index">
-                <AvtoCard :image="car.image[0]" />
+        <a-row :gutter="[10, 10]">
+            <a-col span="6" v-for="(car, index) in cars" :key="index">
+                <AvtoCard :image="car.image[0]" :cost="car.cost" :country="car.country" :milage="car.milage"/>
             </a-col>
         </a-row>
     </div>
@@ -18,7 +18,7 @@ console.log(cars)
 
 const FetchData = async () => {
     try {
-        const { data } = await axios.get(`https://api.youcarrf.ru/cars`)
+        const { data } = await axios.get(`${import.meta.env.VITE_APP_API}cars`)
         cars.value = data
         console.log(data)
     } catch (error) {
