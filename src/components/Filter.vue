@@ -1,6 +1,6 @@
 <template>
     <div class="filter mt-5">
-        <h1>Подбор авто</h1>
+        <h1 class="main-header">Подбор авто</h1>
         <div class="filter-box shadow">
             <a-flex align="center" class="filter-btns" :gap="15">
                 <div class="tabs-container">

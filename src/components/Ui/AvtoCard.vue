@@ -33,7 +33,7 @@ defineProps({
     title: String,
     cost: {
         type: Number,
-        default: '0'
+        default: 0
     },
     country: String,
     milage: Number,

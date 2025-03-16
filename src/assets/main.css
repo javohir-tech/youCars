@@ -319,3 +319,10 @@
 .shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
 }
+
+/*main header */
+.main-header {
+  font-weight: 700;
+  font-size: 30px;
+  color: rgba(1, 1, 1, 1);
+}
