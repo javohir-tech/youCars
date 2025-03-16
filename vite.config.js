@@ -16,9 +16,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_APP_API, // API manzili
+        target: import.meta.env.VITE_APP_API, // process.env o‘rniga import.meta.env
         changeOrigin: true,
-        secure: true, // HTTPS bo‘lsa true, HTTP bo‘lsa false
+        secure: false, // Agar HTTPS sertifikati noto‘g‘ri bo‘lsa, false qilib qo'yish kerak
+        rewrite: (path) => path.replace(/^\/api/, '') // `/api` ni olib tashlaydi
       }
     }
   }

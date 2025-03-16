@@ -11,7 +11,7 @@
                         <div class="card-info shadow">
                             <div class="card-titles">
                                 <h2>{{ ourNew.title }}</h2>
-                                <!-- <p>{{ ourNew.content?.split(' ').slice(0, 35).join(' ') }}...</p> -->
+                                <p>{{ ourNew.content?.split(' ').slice(0, 35).join(' ') }}...</p>
                             </div>
                             <a href="#" class="card-link">
                                 <a-flex align="center" :gap="10">
