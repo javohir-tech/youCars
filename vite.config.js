@@ -2,6 +2,9 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export default defineConfig({
   plugins: [
@@ -16,10 +19,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: import.meta.env.VITE_APP_API, // process.env o‘rniga import.meta.env
+        target: process.env.VITE_APP_API || 'http://localhost:5000', // .env fayldan URL ni oladi
         changeOrigin: true,
-        secure: false, // Agar HTTPS sertifikati noto‘g‘ri bo‘lsa, false qilib qo'yish kerak
-        rewrite: (path) => path.replace(/^\/api/, '') // `/api` ni olib tashlaydi
+        secure: true, // HTTPS bo‘lsa true, HTTP bo‘lsa false
+        rewrite: (path) => path.replace(/^\/api/, '') // `/api` ni o‘chirib tashlaydi
       }
     }
   }

@@ -13,6 +13,7 @@
     <Marks />
     <!--NewsCards-->
     <NewsCards />
+    <!-- <Example/> -->
     <br>
     <br>
     <br>
@@ -26,5 +27,6 @@
 import Filter from '@/components/Filter.vue';
 //components
 import { AboutCompony, Banner, CarsKatalok, Marks, NewsCards, WhyWe } from './Components';
+import Example from './Components/example.vue';
 </script>
 <style></style>
