@@ -3,7 +3,7 @@
         <h1 class="main-header">Новости</h1>
         <div class="news-cards">
             <a-row :gutter="[10, 10]">
-                <a-col :xs="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" v-for="ourNew in ourNews">
+                <a-col :xs="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" v-for="ourNew in ourNews" :key="ourNew.key">
                     <div class="news-card">
                         <div class="card-image">
                             <img :src="ourNew.image" class="img-fluid" alt="news image">
@@ -37,6 +37,7 @@ onMounted(() => {
 const fetchNews = async () => {
     try {
         const response = await axios.get(`${import.meta.env.VITE_APP_API}/news`)
+        console.log(import.meta.env.VITE_APP_API)
         ourNews.value = response.data.slice(0, 3)
         // console.log(news)
     } catch (error) {

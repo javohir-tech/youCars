@@ -1,6 +1,6 @@
 <template>
-    <a-row>
-        <a-col v-for="mark in marks" :xs="{ span: 8 }" :md="{ span: 6 }" :lg="{ span: 4 }" class="mark-box">
+    <a-row v-if="marks.length">
+        <a-col v-for="mark in marks" :key="mark.id" :xs="{ span: 8 }" :md="{ span: 6 }" :lg="{ span: 4 }" class="mark-box">
             <img :src="mark.image" class="img-fluid" alt="">
         </a-col>
     </a-row>
@@ -12,7 +12,7 @@ onMounted(() => {
     fetchMarks()
 })
 
-const marks = ref()
+const marks = ref([])
 const fetchMarks = async () => {
     try {
         const response = await axios.get(`${import.meta.env.VITE_APP_API}/marks`)
