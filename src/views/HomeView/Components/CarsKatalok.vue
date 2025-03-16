@@ -23,7 +23,7 @@ const cars = ref()
 
 const FetchData = async () => {
     try {
-        const { data } = await axios.get(`${import.meta.env.VITE_APP_API}/cars`)
+        const { data } = await axios.get(`https://api.youcarrf.ru/api-docs/cars`)
         cars.value = data.slice(0, 8)
         // console.log(data)
     } catch (error) {
