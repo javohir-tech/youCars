@@ -1,11 +1,18 @@
 <template>
-    <Navbar />
+    <Navbar/>
     <main>
         <RouterView />
     </main>
+    <ResponseBanner/>
+    <Footer/>
+    <br>
+    <br>
+    <br>
 </template>
 <script setup>
-import Navbar from '@/components/Navbar.vue';
+//components
+import { Navbar, ResponseBanner, Footer } from '@/components';
+
 import { RouterView } from 'vue-router';
 </script>
 <style>
