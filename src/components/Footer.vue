@@ -42,11 +42,11 @@
                 <a-col :md="{ span: 24 }" :lg="{ span: 12 }">
                     <div>
                         <h3>Марки</h3>
-                        <ul class="footer-list">
-                            <li v-for="mark  in marks" :key="mark.div">
-                                <a href="#">{{ mark.mark_name }}</a>
-                            </li>
-                        </ul>
+                        <a-row :gutter="[10, 10]">
+                            <a-col class="footer-col__links" v-for="mark in marks" :xs="{ span: 6 }" :md="{ span: 4 }">
+                                {{ mark.mark_name }}
+                            </a-col>
+                        </a-row>
                     </div>
                 </a-col>
             </a-row>
@@ -111,5 +111,13 @@ const fetchMarks = async () => {
             color: rgba(90, 90, 90, 1);
         }
     }
+}
+
+.footer-col__links {
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(90, 90, 90, 1);
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 </style>
