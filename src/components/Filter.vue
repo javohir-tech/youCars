@@ -1,6 +1,6 @@
 <template>
     <div class="filter mt-5">
-        <h1 class="main-header">Подбор авто</h1>
+        <h1 class="main-header">{{ filterName }}</h1>
         <div class="filter-box shadow">
             <a-flex align="center" class="filter-btns" :gap="15">
                 <div class="tabs-container">
@@ -37,7 +37,11 @@ import FilterItem from './Ui/FilterItem.vue';
 const activeTab = ref('all');
 
 const checked = ref(false);
-const checked2 = ref(false)
+const checked2 = ref(false);
+
+defineProps({
+    filterName: String
+})
 </script>
 <style scoped>
 .filter {
@@ -87,6 +91,7 @@ const checked2 = ref(false)
 }
 
 @media (max-width: 576px) {
+
     .filter-dropdowns,
     .filter-btns {
         flex-direction: column !important;

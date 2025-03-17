@@ -4,7 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import ContactView from '@/views/ContactView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import LoginView from '@/views/LoginView.vue'
-import KatalokView from '@/views/KatalokView.vue'
+import KatalokView from '@/views/KatalokView/KatalokView.vue'
 import NewsView from '@/views/NewsView.vue'
 
 const router = createRouter({

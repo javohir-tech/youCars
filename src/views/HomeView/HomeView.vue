@@ -2,7 +2,7 @@
   <div class="container">
     <Banner />
     <!--  filter -->
-    <Filter />
+    <Filter FilterName="АВТОМОБИЛЬНЫЙ КАТАЛОГ"/>
     <!--Cars Katalok -->
     <CarsKatalok />
     <!-- WhyWe-->
