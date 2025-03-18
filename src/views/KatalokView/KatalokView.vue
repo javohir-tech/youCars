@@ -9,7 +9,7 @@
             </a-breadcrumb-item>
         </a-breadcrumb>
         <Filter filterName="Каталог" />
-        <div class="cars-katalok mt-5">
+        <!-- <div class="cars-katalok mt-5">
             <a-row :gutter="[10, 10]" v-if="paginatedCars.length">
                 <a-col :xs="{ span: 24 }" :md="{ span: 8 }" :lg="{ span: 6 }" v-for="(car, index) in paginatedCars" :key="index">
                     <AvtoCard :image="car.image?.[0]" :cost="car.cost" :country="car.country" :milage="car.milage"
@@ -20,7 +20,8 @@
                 show-less-items 
                 @change="onPageChange"
                 />
-        </div>
+        </div> -->
+        <AvtoKatalok v-if="cars.length" :avtomobiles="cars" :newCurrent="current"/>
     </div>
 </template>
 <script setup>
@@ -29,34 +30,35 @@ import { computed, onMounted, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 //components
 import Filter from '../../components/Filter.vue';
-import AvtoCard from '@/components/Ui/AvtoCard.vue';
+// import AvtoCard from '@/components/Ui/AvtoCard.vue';
+import AvtoKatalok from '@/components/AvtoKatalok.vue';
 
 const current = ref(1);
-const pageSize = ref(8)
+// const pageSize = ref(8)
 const cars = ref([])
 const fetchKatalok = async () => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/cars?page=1&limit=6`)
-        console.log(response.data)
+        const response = await axios.get(`${import.meta.env.VITE_APP_API}/cars`)
+        // console.log(response.data)
         cars.value = response.data
     } catch (error) {
         console.log(error)
     }
 }
 
-const paginatedCars = computed(() => {
-    const start = (current.value - 1) * pageSize.value
-    const end = start + pageSize.value;
-    return cars.value.slice(start, end)
-})
+// const paginatedCars = computed(() => {
+//     const start = (current.value - 1) * pageSize.value
+//     const end = start + pageSize.value;
+//     return cars.value.slice(start, end)
+// })
 
-const onPageChange = (page) => {
-    current.value = page
-}
+// const onPageChange = (page) => {
+//     current.value = page
+// }
 
-watch(current, () => {
-    fetchKatalok()
-})
+// watch(current, () => {
+//     fetchKatalok()
+// })
 
 onMounted(() => {
     fetchKatalok()
@@ -65,6 +67,5 @@ onMounted(() => {
 <style scoped>
 .pagination {
     text-align: center;
-
 }
 </style>

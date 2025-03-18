@@ -44,7 +44,7 @@
                         <h3>Марки</h3>
                         <a-row :gutter="[10, 10]">
                             <a-col class="footer-col__links" v-for="mark in marks" :xs="{ span: 6 }" :md="{ span: 4 }">
-                                {{ mark.mark_name }}
+                                {{ mark.name }}
                             </a-col>
                         </a-row>
                     </div>
