@@ -6,6 +6,7 @@ import RegisterView from '@/views/RegisterView.vue'
 import LoginView from '@/views/LoginView.vue'
 import KatalokView from '@/views/KatalokView/KatalokView.vue'
 import NewsView from '@/views/NewsView.vue'
+import Motorcycle from '@/views/MotorcycleView/Motorcycle.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +45,11 @@ const router = createRouter({
       path:'/login',
       name:'login',
       component:LoginView
-
+    },
+    {
+      path:'/motorcycle',
+      name:'motorcycle',
+      component:Motorcycle
     }
   ],
 })

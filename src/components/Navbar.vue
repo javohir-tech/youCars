@@ -38,18 +38,24 @@
             </div>
 
             <div class="categories">
-                <div class="category-item">
-                    <span>Автомобили</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div class="category-item">
-                    <span>Коммерческий транспорт</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div class="category-item">
-                    <span>Мотоциклы</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
+                <RouterLink @click="isMenuOpen = !isMenuOpen" to="/katalok" class="mobile-category__name">
+                    <div class="category-item">
+                        <span>Автомобили</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </RouterLink>
+                <RouterLink @click="isMenuOpen = !isMenuOpen" to="/" class="mobile-category__name">
+                    <div class="category-item">
+                        <span>Коммерческий транспорт</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </RouterLink>
+                <RouterLink @click="isMenuOpen = !isMenuOpen" to="/motorcycle" class="mobile-category__name">
+                    <div class="category-item">
+                        <span>Мотоциклы</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </RouterLink>
             </div>
 
             <div class="contact-info">
@@ -127,16 +133,22 @@
                             </RouterLink>
                             <ul class="categories-list">
                                 <li>
-                                    <a href="#">Автомобили</a>
-                                    <img src="../assets/Images/Vector.png" alt="">
+                                    <RouterLink to="/katalok" class="categories-name">
+                                        <a href="#">Автомобили</a>
+                                        <img src="../assets/Images/Vector.png" alt="">
+                                    </RouterLink>
                                 </li>
                                 <li>
-                                    <a href="#">Коммерческий транспорт</a>
-                                    <img src="../assets/Images/Vector.png" alt="">
+                                    <RouterLink to="/" class="categories-name">
+                                        <a href="#">Коммерческий транспорт</a>
+                                        <img src="../assets/Images/Vector.png" alt="">
+                                    </RouterLink>
                                 </li>
                                 <li>
-                                    <a href="#">Мотоциклы</a>
-                                    <img src="../assets/Images/Vector.png" alt="">
+                                    <RouterLink to="/motorcycle" class="categories-name">
+                                        <a href="#">Мотоциклы</a>
+                                        <img src="../assets/Images/Vector.png" alt="">
+                                    </RouterLink>
                                 </li>
                             </ul>
                         </div>
@@ -259,6 +271,11 @@ const language = ref('rus');
     padding: 15px;
     background-color: #f5f5f5;
     margin-bottom: 1px;
+}
+
+.mobile-category__name {
+    text-decoration: none;
+    color: #000;
 }
 
 .contact-info {
@@ -398,7 +415,7 @@ const language = ref('rus');
         padding: 0;
     }
 
-    .categories-list li {
+    .categories-name {
         display: flex;
         align-items: center;
         gap: 10px;

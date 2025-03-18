@@ -5,7 +5,7 @@
                 <RouterLink to="/">Главная</RouterLink>
             </a-breadcrumb-item>
             <a-breadcrumb-item>
-                <RouterLink to="/katalok">Главная</RouterLink>
+                <RouterLink to="/katalok">Каталог</RouterLink>
             </a-breadcrumb-item>
         </a-breadcrumb>
         <Filter filterName="Каталог" />
