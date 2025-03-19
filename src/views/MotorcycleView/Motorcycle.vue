@@ -12,7 +12,11 @@
         <!-- filter component -->
         <Filter filter-name="Мотоциклы" />
         <!-- AvtoBar -->
-        <AvtoKatalok v-if="motorcycles.length" :avtomobiles="motorcycles" :new-current="current" />
+        <AvtoKatalok v-if="motorcycles.length" :avtomobiles="motorcycles" :new-current="current"
+            router="/motorcycle/moto-tovar" />
+        <div v-else class="loader shadow">
+            <a-spin />
+        </div>
     </div>
 </template>
 <script setup>

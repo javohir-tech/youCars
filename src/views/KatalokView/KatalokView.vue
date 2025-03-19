@@ -21,13 +21,17 @@
                 @change="onPageChange"
                 />
         </div> -->
-        <AvtoKatalok v-if="cars.length" :avtomobiles="cars" :newCurrent="current"/>
+        <AvtoKatalok v-if="cars.length" :avtomobiles="cars" :newCurrent="current" router="/katalok/cars-tovar"/>
+        <div v-else class="loader shadow">
+            <a-spin />
+        </div>
+        <RouterView />
     </div>
 </template>
 <script setup>
 import axios from 'axios';
 import { computed, onMounted, ref, watch } from 'vue';
-import { RouterLink } from 'vue-router';
+import { RouterLink, RouterView } from 'vue-router';
 //components
 import Filter from '../../components/Filter.vue';
 // import AvtoCard from '@/components/Ui/AvtoCard.vue';

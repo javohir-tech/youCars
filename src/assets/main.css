@@ -341,3 +341,10 @@
   /* Qizil */
   border-radius: 10px;
 }
+
+/*loader*/
+.loader{
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+}

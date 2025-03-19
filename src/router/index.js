@@ -1,14 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView/HomeView.vue'
+//componnents
 import AboutView from '../views/AboutView.vue'
 import ContactView from '@/views/ContactView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import LoginView from '@/views/LoginView.vue'
-import KatalokView from '@/views/KatalokView/KatalokView.vue'
 import NewsView from '@/views/NewsView.vue'
-import Motorcycle from '@/views/MotorcycleView/Motorcycle.vue'
-import CommerceCars from '@/views/Commerce-cars/CommerceCars.vue'
-import CardTovarView from '@/views/CardTovarView/CardTovarView.vue'
+import {
+  CarsTovar,
+  CommerceCars,
+  CommerceCarsTovar,
+  HomeView,
+  KatalokView,
+  Motorcycle,
+  MotoTovar
+} from '@/views'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,44 +29,54 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path:'/contact',
-      name:'contact',
-      component:ContactView
+      path: '/contact',
+      name: 'contact',
+      component: ContactView
     },
     {
-      path:'/katalok',
-      name:KatalokView,
-      component:KatalokView
+      path: '/katalok',
+      name: KatalokView,
+      component: KatalokView,
     },
     {
-      path:'/news',
-      name:'newsa',
-      component:NewsView
+      path: '/news',
+      name: 'newsa',
+      component: NewsView
     },
     {
-      path:'/register',
-      name:'register',
-      component:RegisterView
+      path: '/register',
+      name: 'register',
+      component: RegisterView
     },
     {
-      path:'/login',
-      name:'login',
-      component:LoginView
+      path: '/login',
+      name: 'login',
+      component: LoginView
     },
     {
-      path:'/motorcycle',
-      name:'motorcycle',
-      component:Motorcycle
+      path: '/motorcycle',
+      name: 'motorcycle',
+      component: Motorcycle
     },
     {
-      path:'/commerce-cars',
-      name:'CommerceCars',
-      component:CommerceCars,
+      path: '/commerce-cars',
+      name: 'CommerceCars',
+      component: CommerceCars,
     },
     {
-      path:'/card-tovar/:id',
-      name:'cardTovar',
-      component:CardTovarView,
+      path: '/katalok/cars-tovar/:id',
+      name: 'carsTovar',
+      component: CarsTovar,
+    },
+    {
+      path: '/commerce-cars/commerce-cars-tovar/:id',
+      name: 'commmerceCarsTovar',
+      component: CommerceCarsTovar,
+    },
+    {
+      path: '/motorcycle/moto-tovar/:id',
+      name: 'motoTovar',
+      component: MotoTovar
     }
   ],
 })

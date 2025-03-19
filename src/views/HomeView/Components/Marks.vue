@@ -1,9 +1,13 @@
 <template>
     <a-row v-if="marks.length">
-        <a-col v-for="mark in marks" :key="mark.id" :xs="{ span: 8 }" :md="{ span: 6 }" :lg="{ span: 4 }" class="mark-box">
+        <a-col v-for="mark in marks" :key="mark.id" :xs="{ span: 8 }" :md="{ span: 6 }" :lg="{ span: 4 }"
+            class="mark-box">
             <img :src="mark.image" class="img-fluid" alt="">
         </a-col>
     </a-row>
+    <div v-else class="loader shadow">
+        <a-spin />
+    </div>
 </template>
 <script setup>
 import axios from 'axios';

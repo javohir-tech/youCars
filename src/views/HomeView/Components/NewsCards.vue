@@ -2,7 +2,7 @@
     <div class="news mt-5">
         <h1 class="main-header">Новости</h1>
         <div class="news-cards desktop-version">
-            <a-row :gutter="[10, 10]">
+            <a-row v-if="ourNews.length" :gutter="[10, 10]">
                 <a-col :xs="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" v-for="ourNew in ourNews"
                     :key="ourNew.key">
                     <div class="news-card">
@@ -24,8 +24,11 @@
                     </div>
                 </a-col>
             </a-row>
+            <div v-else class="loader shadow">
+                <a-spin />
+            </div>
         </div>
-        <Swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
+        <Swiper v-if="ourNews.length" :spaceBetween="30" :centeredSlides="true" :autoplay="{
             delay: 2500,
             disableOnInteraction: false,
         }" :pagination="{
@@ -51,7 +54,10 @@
                     </div>
                 </div>
             </swiper-slide>
-        </swiper>
+        </Swiper>
+        <div v-else class="loader shadow mobile-version">
+            <a-spin />
+        </div>
     </div>
 </template>
 <script setup>
@@ -62,7 +68,7 @@ import { onMounted, ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // import required modules
-import { Pagination,  Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const modules = [Pagination, Autoplay]
 const ourNews = ref([])

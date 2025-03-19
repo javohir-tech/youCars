@@ -1,5 +1,4 @@
 <template>
-    <RouterLink :to="`/card-tovar/${props.idNumber}`">
         <div class="cars-card">
             <div class="cars-card-image">
                 <Swiper :scrollbar="{
@@ -34,13 +33,11 @@
                 </div>
             </div>
         </div>
-    </RouterLink>
 </template>
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 // import required modules
 import { Scrollbar } from 'swiper/modules';
-import { RouterLink } from 'vue-router';
 
 const modules = [Scrollbar]
 
@@ -54,10 +51,7 @@ const props = defineProps({
     country: String,
     milage: Number,
     model: String,
-    idNumber: Number
 })
-
-console.log('ID:', props.idNumber)
 
 </script>
 <style scoped>

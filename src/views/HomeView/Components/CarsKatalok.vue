@@ -3,10 +3,15 @@
         <h1 class="main-header">АВТОМОБИЛЬНЫЙ КАТАЛОГ</h1>
         <a-row :gutter="[10, 10]" v-if="cars.length">
             <a-col :xs="{ span: 24 }" :md="{ span: 8 }" :lg="{ span: 6 }" v-for="(car, index) in cars" :key="index">
-                <AvtoCard :images="car.image" :cost="car.cost" :country="car.country" :milage="car.milage"
-                    :model="car.model" :idNumber="car.id" />
+                <RouterLink :to="`/katalok/cars-tovar/${car.id}`">
+                    <AvtoCard :images="car.image" :cost="car.cost" :country="car.country" :milage="car.milage"
+                        :model="car.model" :idNumber="car.id" />
+                </RouterLink>
             </a-col>
         </a-row>
+        <div v-else class="loader shadow    ">
+            <a-spin />
+        </div>
     </div>
 </template>
 <script setup>
@@ -18,6 +23,7 @@ import axios from 'axios';
 
 //onMounted
 import { onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const cars = ref([])
 

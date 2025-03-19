@@ -9,7 +9,11 @@
             </a-breadcrumb-item>
         </a-breadcrumb>
         <Filter filter-name="Коммерческий транспорт" />
-        <AvtoKatalok :avtomobiles="commerceCars" :new-current="current"/>
+        <AvtoKatalok v-if="commerceCars.length" :avtomobiles="commerceCars" :new-current="current"
+            router="/commerce-cars/commerce-cars-tovar" />
+        <div v-else class="loader shadow">
+            <a-spin />
+        </div>
     </div>
 </template>
 <script setup>
@@ -27,12 +31,12 @@ const fetchCommerceCars = async () => {
     try {
         const response = await axios.get(`${import.meta.env.VITE_APP_API}/commerce-cars`)
         commerceCars.value = response.data
-    } catch (error) {   
+    } catch (error) {
         console.log(error)
     }
 }
 
-onMounted(()=>{
+onMounted(() => {
     fetchCommerceCars()
 })
 
