@@ -1,6 +1,6 @@
 <template>
     <div class="mt-4">
-        <a-row :gutter="[25, 15]">
+        <a-row :gutter="[20, 15]">
             <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
                 <div class="tovar-images">
                     <swiper :style="{
@@ -36,7 +36,7 @@
                     </a-flex>
                     <hr>
                     <div>
-                        
+
                     </div>
                 </div>
             </a-col>
