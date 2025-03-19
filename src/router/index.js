@@ -7,6 +7,8 @@ import LoginView from '@/views/LoginView.vue'
 import KatalokView from '@/views/KatalokView/KatalokView.vue'
 import NewsView from '@/views/NewsView.vue'
 import Motorcycle from '@/views/MotorcycleView/Motorcycle.vue'
+import CommerceCars from '@/views/Commerce-cars/CommerceCars.vue'
+import CardTovarView from '@/views/CardTovarView/CardTovarView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +52,16 @@ const router = createRouter({
       path:'/motorcycle',
       name:'motorcycle',
       component:Motorcycle
+    },
+    {
+      path:'/commerce-cars',
+      name:'CommerceCars',
+      component:CommerceCars,
+    },
+    {
+      path:'/card-tovar/:id',
+      name:'cardTovar',
+      component:CardTovarView,
     }
   ],
 })

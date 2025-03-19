@@ -44,7 +44,7 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
                 </RouterLink>
-                <RouterLink @click="isMenuOpen = !isMenuOpen" to="/" class="mobile-category__name">
+                <RouterLink @click="isMenuOpen = !isMenuOpen" to="/commerce-cars" class="mobile-category__name">
                     <div class="category-item">
                         <span>Коммерческий транспорт</span>
                         <i class="fa-solid fa-chevron-right"></i>
@@ -139,7 +139,7 @@
                                     </RouterLink>
                                 </li>
                                 <li>
-                                    <RouterLink to="/" class="categories-name">
+                                    <RouterLink to="/commerce-cars" class="categories-name">
                                         <a href="#">Коммерческий транспорт</a>
                                         <img src="../assets/Images/Vector.png" alt="">
                                     </RouterLink>

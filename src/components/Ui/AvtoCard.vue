@@ -1,35 +1,51 @@
 <template>
-    <div class="cars-card">
-        <div class="cars-card-image">
-            <img :src="image" class="img-fluid" alt="">
-        </div>
-        <div class="cars-card-info shadow">
-            <p class="avto-name">{{ model }}</p>
-            <p class="avto-cost">{{ cost }}$</p>
-            <div class="card-description">
-                <a-flex align="center" justify="space-between">
-                    <div>
-                        <p>{{ milage }}km</p>
-                        <p>1.4/100 л.с./Бензин</p>
-                    </div>
-                    <div>
-                        <p>Робот</p>
-                        <p>передний привод</p>
-                    </div>
-                </a-flex>
-                <a-flex align="center" justify="space-between">
-                    <p>{{ country }}</p>
-                    <div>
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                </a-flex>
+    <RouterLink :to="`/card-tovar/${props.idNumber}`">
+        <div class="cars-card">
+            <div class="cars-card-image">
+                <Swiper :scrollbar="{
+                    hide: false,
+                    draggable: true
+                }" :modules="modules" class="mySwiper">
+                    <swiper-slide v-for="(image, index) in props.images" :key="index">
+                        <img :src="image" class="img-fluid" alt="">
+                    </swiper-slide>
+                </Swiper>
+            </div>
+            <div class="cars-card-info shadow">
+                <p class="avto-name">{{ props.model }}</p>
+                <p class="avto-cost">{{ props.cost }}$</p>
+                <div class="card-description">
+                    <a-flex align="center" justify="space-between">
+                        <div>
+                            <p>{{ props.milage }}km</p>
+                            <p>1.4/100 л.с./Бензин</p>
+                        </div>
+                        <div>
+                            <p>Робот</p>
+                            <p>передний привод</p>
+                        </div>
+                    </a-flex>
+                    <a-flex align="center" justify="space-between">
+                        <p>{{ props.country }}</p>
+                        <div>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </a-flex>
+                </div>
             </div>
         </div>
-    </div>
+    </RouterLink>
 </template>
 <script setup>
-defineProps({
-    image: String,
+import { Swiper, SwiperSlide } from 'swiper/vue';
+// import required modules
+import { Scrollbar } from 'swiper/modules';
+import { RouterLink } from 'vue-router';
+
+const modules = [Scrollbar]
+
+const props = defineProps({
+    images: Array,
     title: String,
     cost: {
         type: Number,
@@ -37,8 +53,11 @@ defineProps({
     },
     country: String,
     milage: Number,
-    model: String
+    model: String,
+    idNumber: Number
 })
+
+console.log('ID:', props.idNumber)
 
 </script>
 <style scoped>

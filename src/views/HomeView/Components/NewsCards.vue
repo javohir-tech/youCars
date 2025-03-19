@@ -61,12 +61,6 @@ import { onMounted, ref } from 'vue';
 // import Swiper from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/pagination';
-
-
 // import required modules
 import { Pagination,  Autoplay } from 'swiper/modules';
 

@@ -326,3 +326,18 @@
   font-size: 30px;
   color: rgba(1, 1, 1, 1);
 }
+
+/*scroll bar design*/
+.mySwiper .swiper-scrollbar {
+  background-color: #e0e0e0;
+  /* Ochiq kulrang */
+  height: 4px;
+  border-radius: 10px;
+}
+
+/* Scrollbar drag qilish qismi rangi */
+.mySwiper .swiper-scrollbar-drag {
+  background-color: rgba(38, 132, 229, 1);
+  /* Qizil */
+  border-radius: 10px;
+}

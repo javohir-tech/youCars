@@ -3,8 +3,8 @@
         <a-row :gutter="[10, 10]" v-if="paginatedCars.length">
             <a-col :xs="{ span: 24 }" :md="{ span: 8 }" :lg="{ span: 6 }" v-for="(car, index) in paginatedCars"
                 :key="index">
-                <AvtoCard :image="car.image?.[0]" :cost="car.cost" :country="car.country" :milage="car.milage"
-                    :model="car.model" />
+                <AvtoCard :images="car.image" :cost="car.cost" :country="car.country" :milage="car.milage"
+                    :model="car.model" :id-number="car.id"/>
             </a-col>
         </a-row>
         <a-pagination class="pagination mt-3" v-model:current="current" :page-size="pageSize"
