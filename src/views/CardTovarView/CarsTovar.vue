@@ -8,7 +8,7 @@
                 <RouterLink to="/katalok">Каталог</RouterLink>
             </a-breadcrumb-item>
             <a-breadcrumb-item>
-                <RouterLink to="/">car name</RouterLink>
+                <RouterLink :to="`/katalok/cars-tovar/${route.params.id}`">{{ carData.model }}</RouterLink>
             </a-breadcrumb-item>
         </a-breadcrumb>
         <AvtoTovar v-if="tovarData" :tovar-data="carData"  :user-data="userData"/>
