@@ -18,7 +18,7 @@
 <script setup>
 
 //filter
-import Filter from '@/components/Filter.vue';
+import Filter from '@/components/Filter/Filter.vue';
 //components
 import { AboutCompony, Banner, CarsKatalok, Marks, NewsCards, WhyWe } from './Components';
 </script>

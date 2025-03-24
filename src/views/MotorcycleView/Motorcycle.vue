@@ -25,7 +25,7 @@ import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 //components
 import AvtoKatalok from '@/components/AvtoKatalok.vue';
-import Filter from '@/components/Filter.vue';
+import Filter from '@/components/Filter/Filter.vue';
 
 const motorcycles = ref([])
 const current = ref(1);

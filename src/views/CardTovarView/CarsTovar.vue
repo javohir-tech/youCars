@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import AvtoTovar from '@/components/AvtoTovar.vue';
+import AvtoTovar from '@/components/AvtoTovar/AvtoTovar.vue';
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';

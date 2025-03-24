@@ -33,7 +33,7 @@ import axios from 'axios';
 import { computed, onMounted, ref, watch } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 //components
-import Filter from '../../components/Filter.vue';
+import Filter from '../../components/Filter/Filter.vue';
 // import AvtoCard from '@/components/Ui/AvtoCard.vue';
 import AvtoKatalok from '@/components/AvtoKatalok.vue';
 
