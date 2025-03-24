@@ -8,7 +8,7 @@
                     <button>Оставить заявку</button>
                 </a-col>
                 <a-col :xs="{ span: 24 }" :lg="{ span: 11 }">
-                    <img src="../assets/Images/responseBanner.png" class="img-fluid" alt="banner-image">
+                    <img src="../../assets/Images/responseBanner.png" class="img-fluid" alt="banner-image">
                 </a-col>
             </a-row>
         </div>

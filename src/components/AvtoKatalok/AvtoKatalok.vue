@@ -17,7 +17,7 @@
 import { computed, ref, toRaw, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 //components
-import AvtoCard from './Ui/AvtoCard.vue';
+import AvtoCard from '../Ui/AvtoCard.vue';
 
 const props = defineProps({
     avtomobiles: Array,

@@ -73,51 +73,5 @@ const fetchMarks = async () => {
 
 </script>
 <style scoped>
-/* .footer {} */
-
-.footer-links {
-    padding: 20px;
-
-    h3 {
-        font-weight: 700;
-        font-size: 17px;
-        color: rgba(41, 56, 67, 1);
-    }
-}
-
-.social-icons {
-    i {
-        font-size: 18px;
-        margin-right: 10px;
-        color: #666;
-    }
-}
-
-.avto-broker {
-    font-weight: 500;
-    font-size: 13px;
-    color: rgba(41, 56, 67, 1);
-}
-
-.footer-list {
-    list-style: none;
-
-    li {
-        margin-bottom: 10px;
-
-        a {
-            font-weight: 500;
-            font-size: 15px;
-            color: rgba(90, 90, 90, 1);
-        }
-    }
-}
-
-.footer-col__links {
-    font-weight: 500;
-    font-size: 15px;
-    color: rgba(90, 90, 90, 1);
-    margin-bottom: 10px;
-    cursor: pointer;
-}
+@import './Footer.css'
 </style>

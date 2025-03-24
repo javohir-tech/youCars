@@ -5,5 +5,8 @@ import CommerceCars from "./Commerce-cars/CommerceCars.vue";
 import CarsTovar from "./CardTovarView/CarsTovar.vue";
 import CommerceCarsTovar from "./CardTovarView/CommerceCarsTovar.vue";
 import MotoTovar from "./CardTovarView/MotoTovar.vue";
+import AboutView from "./AboutView/AboutView.vue";
+import ContactView from "./ContactView/ContactView.vue";
+import NewsView from "./News/NewsView.vue";
 
-export {HomeView , KatalokView , Motorcycle ,CommerceCars , CarsTovar, CommerceCarsTovar , MotoTovar}
+export {HomeView , KatalokView , Motorcycle ,CommerceCars , CarsTovar, CommerceCarsTovar , MotoTovar, AboutView , ContactView, NewsView}

@@ -22,7 +22,7 @@ import { onMounted, ref } from 'vue';
 
 //components
 import Filter from '@/components/Filter/Filter.vue';
-import AvtoKatalok from '@/components/AvtoKatalok.vue';
+import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
 
 const commerceCars = ref([])
 const current = ref(1)

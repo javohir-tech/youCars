@@ -24,7 +24,7 @@ import axios from 'axios';
 import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 //components
-import AvtoKatalok from '@/components/AvtoKatalok.vue';
+import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
 import Filter from '@/components/Filter/Filter.vue';
 
 const motorcycles = ref([])

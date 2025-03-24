@@ -35,7 +35,7 @@ import { RouterLink, RouterView } from 'vue-router';
 //components
 import Filter from '../../components/Filter/Filter.vue';
 // import AvtoCard from '@/components/Ui/AvtoCard.vue';
-import AvtoKatalok from '@/components/AvtoKatalok.vue';
+import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
 
 const current = ref(1);
 // const pageSize = ref(8)

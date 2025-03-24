@@ -1,6 +1,6 @@
 <template>
     <div class="mt-4">
-        <a-row :gutter="[20, 15]">
+        <a-row :gutter="[20, 15]" align="stretch">
             <!-- images-->
             <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
                 <div class="tovar-images">
@@ -82,7 +82,7 @@
                         </a-flex>
                         <!-- <RouterLink to="/"> -->
                         <a-flex align="center" class="ms-4 message" gap="15">
-                            <img src="../assets/Images/Icons/messege2.png" class="img-fluid" alt="messege">
+                            <img src="../../assets/Images/Icons/messege2.png" class="img-fluid" alt="messege">
                             <p class="mb-0">Написать</p>
                         </a-flex>
                         <!-- </RouterLink> -->
@@ -96,7 +96,7 @@
             <p class="mb-0">{{ props.tovarData.description }}</p>
         </div>
 
-        <a-row :gutter="[10, 10]" class="mt-4" justify="space-between">
+        <a-row :gutter="[10, 10]" class="mt-4" justify="space-between" align="stretch" >
             <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
                 <div class="shadow technical-info">
                     <h1 class="main-header">Технические характеристики</h1>
@@ -151,12 +151,18 @@
             <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
                 <div class="shadow client-config">
                     <h1 class="main-header">Задайте вопрос продавцу</h1>
-                    <div>
-
+                    <div class="message-buttons">
+                        <button type="button">Здравствуйте</button>
+                        <button type="button">Какой срок доставки?</button>
+                        <button type="button">птс ОРИГИНАЛ?</button>
+                        <button type="button">Пробег оригинал?</button>
+                        <button type="button">Какой бензин?</button>
                     </div>
                 </div>
             </a-col>
         </a-row>
+
+
     </div>
 </template>
 
@@ -206,5 +212,5 @@ const formatDate = (dateString) => {
 </script>
 
 <style scoped>
-@import "./AvtoTovar.css"
+@import "./AvtoTovar.css";
 </style>
