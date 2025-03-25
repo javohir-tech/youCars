@@ -9,7 +9,7 @@
                 </RouterLink>
             </a-col>
         </a-row>
-        <div v-else class="loader shadow    ">
+        <div v-else class="loader shadow">
             <a-spin />
         </div>
     </div>

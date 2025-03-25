@@ -86,7 +86,14 @@ const router = createRouter({
       name: 'motoTovar',
       component: MotoTovar
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 // Har safar kirganda intro ko'rsatish uchun hech narsa saqlanmaydi

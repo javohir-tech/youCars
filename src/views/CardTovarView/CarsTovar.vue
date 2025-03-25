@@ -11,17 +11,19 @@
                 <RouterLink :to="`/katalok/cars-tovar/${route.params.id}`">{{ carData.model }}</RouterLink>
             </a-breadcrumb-item>
         </a-breadcrumb>
-        <AvtoTovar v-if="tovarData" :tovar-data="carData"  :user-data="userData"/>
-        <div v-else>
-            loading...
+        <AvtoTovar v-if="tovarData && similar.length" similar-route="/katalok/cars-tovar" :similar="similar" :car-data="carData" :user-data="userData" />
+        <div v-else class="loader shadow">
+            <a-spin />
         </div>
     </div>
 </template>
 
 <script setup>
+//components
 import AvtoTovar from '@/components/AvtoTovar/AvtoTovar.vue';
+
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, toRaw, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
@@ -29,23 +31,43 @@ const route = useRoute()
 const carData = ref([])
 const userData = ref([])
 const tovarData = ref([])
+const similar = ref([])
 
-const fetchCar = async() =>{
+const getRandomSimilar = (similar) => {
+    if (similar.length <= 3) return similar
+
+    return similar
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+}
+
+const fetchData = async () => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/cars/${route.params.id}`)
-        tovarData.value = response.data
-        carData.value = response.data.result
-        userData.value = response.data.userData
+        const [carResponse, similarResponse] = await Promise.all([
+            axios.get(`${import.meta.env.VITE_APP_API}/cars/${route.params.id}`),
+            axios.get(`${import.meta.env.VITE_APP_API}/cars`)
+        ])
+
+        tovarData.value = carResponse.data
+        carData.value = carResponse.data.result
+        userData.value = carResponse.data.userData
+        similar.value = getRandomSimilar(similarResponse.data)
+
+        // console.log('Car Data:', toRaw(carData.value))
+        // console.log('Similar:', toRaw(similar.value))
     } catch (error) {
-        console.log(error)
+        console.error('Error fetching data:', error)
     }
 }
 
-onMounted(()=>{
-    fetchCar()
+watch(() => route.params.id, () => {
+    fetchData()
+})
+
+onMounted(() => {
+    fetchData()
 })
 </script>
 
-<style scoped>
 
-</style>
+<style scoped></style>
