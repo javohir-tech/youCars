@@ -27,6 +27,7 @@
         </div>
         <RouterView />
     </div>
+    <a-back-top />
 </template>
 <script setup>
 import axios from 'axios';

@@ -2,6 +2,7 @@
     <div>
        contact 
     </div>
+    <a-back-top />
 </template>
 <script>
 export default {

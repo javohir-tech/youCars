@@ -13,6 +13,7 @@
     <Marks />
     <!--NewsCards-->
     <NewsCards />
+    <a-back-top />
   </div>
 </template>
 <script setup>
