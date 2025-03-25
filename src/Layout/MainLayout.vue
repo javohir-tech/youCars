@@ -3,7 +3,7 @@
     <main>
         <RouterView />
     </main>
-    <ResponseBanner/>
+    <!-- <ResponseBanner/> -->
     <Footer/>
 </template>
 <script setup>

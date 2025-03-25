@@ -15,8 +15,11 @@ import {
 } from '@/views'
 
 // Auth
-import { LoginView, RegisterView } from '@/Auth'
-import Intro from '@/views/Intro/Intro.vue'
+import { ForgetPassword, LoginView, RegisterView } from '@/Auth'
+// import Intro from '@/views/Intro/Intro.vue'
+
+//user page
+import { UserPage } from '@/User'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +43,16 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '/forgetPassword',
+      name: 'forgetPassword',
+      component: ForgetPassword
+    },
+    {
+      path: '/userPage',
+      name:'user accaund',
+      component: UserPage
     },
     {
       path: '/about',

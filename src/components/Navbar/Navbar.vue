@@ -158,8 +158,14 @@
                             <div>
                                 <img src="../assets/Images/messages.png" alt="">
                             </div>
-                            <router-link to="/login" class="login-btn">Войти</router-link>
-                            <router-link to="/register" class="register-btn">Регистрация</router-link>
+                            <a-flex v-if="!token" gap="10">
+                                <router-link to="/login" class="login-btn">Войти</router-link>
+                                <router-link to="/register" class="register-btn">Регистрация</router-link>
+                            </a-flex>
+                            <div>
+                                <h1> {{ user }}</h1>
+                                <RouterLink to="/userPage">otvol</RouterLink>
+                            </div>
                         </div>
                     </a-flex>
                 </div>
@@ -169,11 +175,37 @@
 </template>
 
 <script setup>
+import axios from 'axios';
 import { ref } from 'vue';
+import { onMounted } from 'vue';
 
 const isMenuOpen = ref(false);
 const searchValue = ref('');
 const language = ref('rus');
+
+const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+const user = ref('')
+
+const fetchUserData = async () => {
+    try {
+        const response = await axios.get(`${import.meta.env.VITE_APP_API}/user-dashboard`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        user.value = response.data.userData.name
+        console.log('Foydalanuvchi mlumotlari:', response.data);
+        console.log(response)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+onMounted(() => {
+    fetchUserData()
+})
+
 </script>
 
 <style scoped>
