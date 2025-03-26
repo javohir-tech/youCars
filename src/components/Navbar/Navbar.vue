@@ -165,8 +165,7 @@
                             <div v-else>
                                 <h1> {{ user }}</h1>
                                 <RouterLink to="/userPage">otvol</RouterLink>
-                                <a-avatar size="large" style="background-color: #7265e6; "   
-                                    :gap="gap">
+                                <a-avatar size="large" style="background-color: #7265e6; " :gap="gap">
                                     {{ user }}
                                 </a-avatar>
                             </div>
@@ -198,20 +197,21 @@ const fetchUserData = async () => {
             }
         });
         user.value = response.data.userData.name
-        console.log('Foydalanuvchi mlumotlari:', response.data);
-        console.log(response)
-
+        // console.log('Foydalanuvchi mlumotlari:', response.data);
+        // console.log(response)
     } catch (error) {
         console.log(error)
     }
 }
 
 onMounted(() => {
-    fetchUserData()
+    if (token) {
+        fetchUserData()
+    }
 })
 
 </script>
 
 <style scoped>
-@import "./Navbar.css"
+@import "./Navbar.css";
 </style>

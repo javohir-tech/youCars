@@ -22,7 +22,7 @@ import AvtoCard from '@/components/Ui/AvtoCard.vue';
 import { useFetch } from '@/Hooks/UseFatch';
 
 //Vue
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const cars = ref([])
@@ -32,7 +32,7 @@ const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/cars`)
 watch(data, (newData) => {
     cars.value = newData.slice(0, 8)
 })
-
 get()
+
 </script>
 <style></style>

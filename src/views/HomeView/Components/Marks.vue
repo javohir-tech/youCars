@@ -11,7 +11,7 @@
 </template>
 <script setup>
 //vue
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 //Hooks
 import { useFetch } from '@/Hooks/UseFatch';
@@ -23,7 +23,6 @@ const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/marks`)
 watch(data, (newData) => {
     marks.value = newData
 })
-
 get()
 
 </script>

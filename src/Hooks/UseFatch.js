@@ -2,6 +2,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import axios from 'axios';
 import { message } from 'ant-design-vue';
 
+const fetchFunctions = new Set();
+let isOnlineListenerAdded = false;
+
 export function useFetch(url, options = {}) {
     const data = ref(null);
     const loading = ref(false);
@@ -23,7 +26,7 @@ export function useFetch(url, options = {}) {
             });
 
             data.value = response.data;
-        } catch (err) {
+        } catch (err) { 
             error.value = err.response?.data?.message || err.message;
             console.error(err);
         } finally {
@@ -32,8 +35,7 @@ export function useFetch(url, options = {}) {
     };
 
     const get = async () => {
-        // message.success("get  method ishga tushdi")
-        fetchData('GET')
+        fetchData('GET');
     };
 
     const post = async (body) => fetchData('POST', body);
@@ -42,19 +44,23 @@ export function useFetch(url, options = {}) {
 
     const remove = async (body = null) => fetchData('DELETE', body);
 
-    const handleOnline = () => {
-        message.success('Internet tiklandi. Qayta urinish...');
-        get(); 
-    };
-
     onMounted(() => {
         get();
-        window.addEventListener('online', handleOnline);
+
+        fetchFunctions.add(get);
+
+        if (!isOnlineListenerAdded) {
+            window.addEventListener('online', () => {
+                message.success('Internet tiklandi. Qayta urinish...');
+                fetchFunctions.forEach((fn) => fn());
+            });
+
+            isOnlineListenerAdded = true;
+        }
     });
 
     onUnmounted(() => {
-        message.success("you are online")
-        window.removeEventListener('online', handleOnline);
+        fetchFunctions.delete(get);
     });
 
     return { data, loading, error, get, post, put, remove };

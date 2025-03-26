@@ -18,28 +18,24 @@
     <a-back-top />
 </template>
 <script setup>
-import axios from 'axios';
-import { onMounted, ref } from 'vue';
-
+//vue
+import { ref, watch } from 'vue';
+import { RouterLink } from 'vue-router';
 //components
 import Filter from '@/components/Filter/Filter.vue';
 import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
+//Hooks
+import { useFetch } from '@/Hooks/UseFatch';
 
 const commerceCars = ref([])
 const current = ref(1)
 
-const fetchCommerceCars = async () => {
-    try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/commerce-cars`)
-        commerceCars.value = response.data
-    } catch (error) {
-        console.log(error)
-    }
-}
+const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/commerce-cars`)
 
-onMounted(() => {
-    fetchCommerceCars()
+watch(data, (newData) => {
+    commerceCars.value = newData
 })
 
+get()
 </script>
 <style></style>

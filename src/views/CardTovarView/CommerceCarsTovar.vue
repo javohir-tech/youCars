@@ -8,10 +8,12 @@
                 <RouterLink to="/commerce-cars">Коммерческий транспорт</RouterLink>
             </a-breadcrumb-item>
             <a-breadcrumb-item>
-                <RouterLink :to="`/commerce-cars/commerce-cars-tovar/${route.params.id}`">{{ carData.model }}</RouterLink>
+                <RouterLink :to="`/commerce-cars/commerce-cars-tovar/${route.params.id}`">{{ carData.model }}
+                </RouterLink>
             </a-breadcrumb-item>
         </a-breadcrumb>
-        <AvtoTovar v-if="tovarData && similar.length" similar-route="/commerce-cars/commerce-cars-tovar" :similar="similar" :car-data="carData" :user-data="userData" />
+        <AvtoTovar v-if="tovarData && similar.length" similar-route="/commerce-cars/commerce-cars-tovar"
+            :similar="similar" :car-data="carData" :user-data="userData" />
         <div v-else class="loader shadow">
             <a-spin />
         </div>
@@ -22,9 +24,10 @@
 <script setup>
 //components
 import AvtoTovar from '@/components/AvtoTovar/AvtoTovar.vue';
-
-import axios from 'axios';
-import { onMounted, ref, toRaw, watch } from 'vue';
+//Hooks
+import { useFetch } from '@/Hooks/UseFatch';
+//vue
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
@@ -42,32 +45,22 @@ const getRandomSimilar = (similar) => {
         .slice(0, 3)
 }
 
-const fetchData = async () => {
-    try {
-        const [carResponse, similarResponse] = await Promise.all([
-            axios.get(`${import.meta.env.VITE_APP_API}/commerce-cars/${route.params.id}`),
-            axios.get(`${import.meta.env.VITE_APP_API}/commerce-cars`)
-        ])
+//Hooks
+const { data: carResponse, get: getCar } = useFetch(`${import.meta.env.VITE_APP_API}/commerce-cars/${route.params.id}`)
+const { data: similarResponse, get: getSimilar } = useFetch(`${import.meta.env.VITE_APP_API}/commerce-cars`)
 
-        tovarData.value = carResponse.data
-        carData.value = carResponse.data.result
-        userData.value = carResponse.data.userData
-        similar.value = getRandomSimilar(similarResponse.data)
-
-        // console.log('Car Data:', toRaw(carData.value))
-        // console.log('Similar:', toRaw(similar.value))
-    } catch (error) {
-        console.error('Error fetching data:', error)
-    }
-}
-
-watch(() => route.params.id, () => {
-    fetchData()
+watch(carResponse, (tovar) => {
+    tovarData.value = tovar
+    carData.value = tovar.result
+    userData.value = tovar.userData
+})
+watch(similarResponse, (similarData) => {
+    similar.value = getRandomSimilar(similarData)
 })
 
-onMounted(() => {
-    fetchData()
-})
+//get datas
+getCar()
+getSimilar()
 </script>
 
 

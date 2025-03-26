@@ -21,28 +21,23 @@
     <a-back-top />
 </template>
 <script setup>
-import axios from 'axios';
-import { onMounted, ref } from 'vue';
+//vue
+import { ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 //components
 import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
 import Filter from '@/components/Filter/Filter.vue';
+//Hooks
+import { useFetch } from '@/Hooks/UseFatch';
 
 const motorcycles = ref([])
 const current = ref(1);
 
-const fetchMotorcycles = async () => {
-    try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/motorcycles`)
-        motorcycles.value = response.data
-    } catch (error) {
-        console.log(error)
-    }
-}
+const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/motorcycles`)
 
-onMounted(() => {
-    fetchMotorcycles()
+watch(data, (newData) => {
+    motorcycles.value = newData
 })
-
+get()
 </script>
 <style></style>

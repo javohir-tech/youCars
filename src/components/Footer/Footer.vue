@@ -54,23 +54,21 @@
     </footer>
 </template>
 <script setup>
-import axios from 'axios';
-import { onMounted, ref } from 'vue';
+//vue
+import { ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
-onMounted(() => {
-    fetchMarks()
-})
-const marks = ref([])
-const fetchMarks = async () => {
-    try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/marks`)
-        // console.log(response)
-        marks.value = response.data
-    } catch (error) {
-        console.log(error)
-    }
-}
 
+//Hooks
+import { useFetch } from '@/Hooks/UseFatch';
+
+const marks = ref([])
+
+const { data,get } = useFetch(`${import.meta.env.VITE_APP_API}/marks`)
+
+watch(data, (newData) => {
+    marks.value = newData
+})
+get()
 </script>
 <style scoped>
 @import './Footer.css'

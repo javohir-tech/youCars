@@ -61,11 +61,14 @@
     </div>
 </template>
 <script setup>
-import axios from 'axios';
-import { onMounted, ref } from 'vue';
+//vue
+import { onMounted, ref, watch } from 'vue';
 
 // import Swiper from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+
+//Hooks
+import { useFetch } from '@/Hooks/UseFatch';
 
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -73,20 +76,15 @@ import { Pagination, Autoplay } from 'swiper/modules';
 const modules = [Pagination, Autoplay]
 const ourNews = ref([])
 
-onMounted(() => {
-    fetchNews()
-})
-const fetchNews = async () => {
-    try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/news`)
-        // console.log(import.meta.env.VITE_APP_API)
-        ourNews.value = response.data.slice(0, 3)
-        // console.log(news)
-    } catch (error) {
-        console.log(error)
-    }
-}
+const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/news`)
 
+watch(data, (newData) => {
+    ourNews.value = newData.slice(0, 3)
+})
+
+get()
+
+get()
 </script>
 <style scoped>
 .desktop-version {
