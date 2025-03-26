@@ -18,27 +18,21 @@
 //components 
 import AvtoCard from '@/components/Ui/AvtoCard.vue';
 
-//axios  
-import axios from 'axios';
+//hooks
+import { useFetch } from '@/Hooks/UseFatch';
 
-//onMounted
-import { onMounted, ref } from 'vue';
+//Vue
+import { ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const cars = ref([])
 
-const FetchData = async () => {
-    try {
-        const { data } = await axios.get(`${import.meta.env.VITE_APP_API}/cars`)
-        cars.value = data.slice(0, 8)
-        // console.log(data)
-    } catch (error) {
-        console.log(error)
-    }
-}
+const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/cars`)
 
-onMounted(() => {
-    FetchData()
+watch(data, (newData) => {
+    cars.value = newData.slice(0, 8)
 })
+
+get()
 </script>
 <style></style>

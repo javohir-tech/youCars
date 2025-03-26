@@ -10,21 +10,22 @@
     </div>
 </template>
 <script setup>
-import axios from 'axios';
-import { onMounted, ref } from 'vue';
-onMounted(() => {
-    fetchMarks()
-})
+//vue
+import { ref, watch } from 'vue';
+
+//Hooks
+import { useFetch } from '@/Hooks/UseFatch';
 
 const marks = ref([])
-const fetchMarks = async () => {
-    try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API}/marks`)
-        marks.value = response.data
-    } catch (error) {
-        console.log(error)
-    }
-}
+
+const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/marks`)
+
+watch(data, (newData) => {
+    marks.value = newData
+})
+
+get()
+
 </script>
 <style scoped>
 .mark-box {
