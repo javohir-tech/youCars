@@ -81,10 +81,6 @@ const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/news`)
 watch(data, (newData) => {
     ourNews.value = newData.slice(0, 3)
 })
-
-get()
-
-get()
 </script>
 <style scoped>
 .desktop-version {

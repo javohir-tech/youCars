@@ -32,7 +32,6 @@ const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/cars`)
 watch(data, (newData) => {
     cars.value = newData.slice(0, 8)
 })
-get()
 
 </script>
 <style></style>

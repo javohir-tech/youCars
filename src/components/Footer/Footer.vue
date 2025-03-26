@@ -68,7 +68,6 @@ const { data,get } = useFetch(`${import.meta.env.VITE_APP_API}/marks`)
 watch(data, (newData) => {
     marks.value = newData
 })
-get()
 </script>
 <style scoped>
 @import './Footer.css'
