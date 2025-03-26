@@ -5,7 +5,7 @@
                 <a-col :md="{ span: 24 }" :lg="{ span: 6 }">
                     <div>
                         <RouterLink>
-                            <img src="../assets/Images/YouCar.png" alt="">
+                            <img src="../../assets/Images/YouCar.png" alt="">
                         </RouterLink>
                         <div class="social-icons my-3">
                             <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>

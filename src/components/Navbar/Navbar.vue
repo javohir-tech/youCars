@@ -156,15 +156,19 @@
                             <a-input-search class="search-input" placeholder="Поиск по названию"
                                 v-model:value="searchValue" />
                             <div>
-                                <img src="../assets/Images/messages.png" alt="">
+                                <img src="../../assets/Images/messages.png" alt="">
                             </div>
                             <a-flex v-if="!token" gap="10">
                                 <router-link to="/login" class="login-btn">Войти</router-link>
                                 <router-link to="/register" class="register-btn">Регистрация</router-link>
                             </a-flex>
-                            <div>
+                            <div v-else>
                                 <h1> {{ user }}</h1>
                                 <RouterLink to="/userPage">otvol</RouterLink>
+                                <a-avatar size="large" style="background-color: #7265e6; "   
+                                    :gap="gap">
+                                    {{ user }}
+                                </a-avatar>
                             </div>
                         </div>
                     </a-flex>
