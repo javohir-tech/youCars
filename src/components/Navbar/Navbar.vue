@@ -160,8 +160,8 @@
                             </div>
                             <div v-if="token">
                                 <div class="user-data">
-                                    <h1 class="mb-0"> {{ user || 'user' }}</h1>
-                                    <RouterLink to="/userPage">
+                                    <h1 class="mb-0"> {{ user || userName }}</h1>
+                                    <RouterLink :to="userName ? `/${userName}` : '/guest'">
                                         <div v-if="svg" v-html="svg" class="avatar"></div>
                                         <a-avatar v-else >
                                             <template #icon>
@@ -191,6 +191,8 @@ import { onMounted } from 'vue';
 //Dicebear
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
+//Antd
+import { message } from 'ant-design-vue';
 
 const isMenuOpen = ref(false);
 const searchValue = ref('');
@@ -199,6 +201,8 @@ const user = ref('')
 const svg = ref('')
 const loading = ref(false)
 const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName')
+console.log(userName)
 
 const fetchUserData = async () => {
     loading.value = true
@@ -208,11 +212,12 @@ const fetchUserData = async () => {
                 Authorization: `Bearer ${token}`
             }
         });
+        // console.log(response)
         user.value = response.data.userData.name || 'user'
         await nextTick()
         generateAvatar()
     } catch (error) {
-        console.log(error)
+        message.error(error.message)
     } finally {
         loading.value = false
     }

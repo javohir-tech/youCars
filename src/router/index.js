@@ -19,7 +19,9 @@ import { ForgetPassword, LoginView, RegisterView } from '@/Auth'
 // import Intro from '@/views/Intro/Intro.vue'
 
 //user page
-import { UserPage } from '@/User'
+import { Featured, Message, UserPage } from '@/User'
+
+const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,9 +52,20 @@ const router = createRouter({
       component: ForgetPassword
     },
     {
-      path: '/userPage',
+      path: `/${userName}`,
       name:'user accaund',
-      component: UserPage
+      component: UserPage,
+      children : [
+        {
+          path:'Featured',
+          name:'Featured',
+          component: Featured
+        },{
+          path:'message',
+          name:'Message',
+          component:Message
+        }
+      ]
     },
     {
       path: '/about',
@@ -109,5 +122,4 @@ const router = createRouter({
   }
 })
 
-// Har safar kirganda intro ko'rsatish uchun hech narsa saqlanmaydi
 export default router

@@ -52,6 +52,7 @@
 <script setup>
 import { message } from 'ant-design-vue';
 import axios from 'axios';
+//Vue
 import { RouterLink, useRouter } from 'vue-router';
 import { reactive, ref, watch } from 'vue';
 
@@ -87,8 +88,12 @@ const onFinish = async () => {
 
         if (formState.remember) {
             localStorage.setItem('token', response.data.token)
+            localStorage.setItem('userName', response.data.userData.name)
+            localStorage.setItem('email', response.data.userData.email)
         } else {
             sessionStorage.setItem('token', response.data.token)
+            sessionStorage.setItem('userName', response.data.userData.name)
+            sessionStorage.setItem('email', response.data.userData.email)
         }
 
         message.success(`Success: ${response.data.message || 'Registered successfully!'}`)

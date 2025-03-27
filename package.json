@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@dicebear/collection": "^9.2.2",
     "@dicebear/core": "^9.2.2",
     "ant-design-vue": "^4.2.6",
