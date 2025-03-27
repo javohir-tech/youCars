@@ -12,11 +12,13 @@
         <!-- filter component -->
         <Filter filter-name="Мотоциклы" />
         <!-- AvtoBar -->
-        <AvtoKatalok v-if="motorcycles.length" :avtomobiles="motorcycles" :new-current="current"
-            router="/motorcycle/moto-tovar" />
-        <div v-else class="loader shadow">
+        <div v-if="loading" class="loader shadow">
             <a-spin />
         </div>
+        <AvtoKatalok v-else-if="motorcycles.length" :avtomobiles="motorcycles" :new-current="current"
+            router="/motorcycle/moto-tovar" />
+        <a-result v-else-if="error" status="404" title="404"
+            sub-title="Sorry, An error occurred while loading the data!" />
     </div>
     <a-back-top />
 </template>
@@ -33,11 +35,10 @@ import { useFetch } from '@/Hooks/UseFatch';
 const motorcycles = ref([])
 const current = ref(1);
 
-const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/motorcycles`)
+const { data, loading, error } = useFetch(`${import.meta.env.VITE_APP_API}/motorcycles`)
 
 watch(data, (newData) => {
     motorcycles.value = newData
 })
-get()
 </script>
 <style></style>

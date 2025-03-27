@@ -9,22 +9,14 @@
             </a-breadcrumb-item>
         </a-breadcrumb>
         <Filter filterName="Каталог" />
-        <!-- <div class="cars-katalok mt-5">
-            <a-row :gutter="[10, 10]" v-if="paginatedCars.length">
-                <a-col :xs="{ span: 24 }" :md="{ span: 8 }" :lg="{ span: 6 }" v-for="(car, index) in paginatedCars" :key="index">
-                    <AvtoCard :image="car.image?.[0]" :cost="car.cost" :country="car.country" :milage="car.milage"
-                        :model="car.model" />
-                </a-col>
-            </a-row>
-            <a-pagination class="pagination mt-3" v-model:current="current" :page-size="pageSize" :total="cars.length"
-                show-less-items 
-                @change="onPageChange"
-                />
-        </div> -->
-        <AvtoKatalok v-if="cars.length" :avtomobiles="cars" :newCurrent="current" router="/katalok/cars-tovar" />
-        <div v-else class="loader shadow">
+        <div v-if="loading" class="loader shadow">
             <a-spin />
         </div>
+        <AvtoKatalok v-else-if="cars.length" :avtomobiles="cars" :newCurrent="current" router="/katalok/cars-tovar" />
+        <a-result
+        v-else-if="error" status="404" title="404"
+        sub-title="Sorry, An error occurred while loading the data!"
+        />
     </div>
     <a-back-top />
 </template>
@@ -41,13 +33,11 @@ import { useFetch } from '@/Hooks/UseFatch';
 const current = ref(1);
 const cars = ref([])
 
-const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/cars`)
+const { data, loading,error } = useFetch(`${import.meta.env.VITE_APP_API}/cars`)
 
 watch(data, (newData) => {
     cars.value = newData
 })
-
-get()
 
 </script>
 <style scoped>

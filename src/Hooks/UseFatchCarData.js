@@ -1,4 +1,4 @@
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import axios from 'axios'
 import { useRoute } from 'vue-router'
 
@@ -10,6 +10,7 @@ export function useFetchCarData(apiBaseUrl) {
     const tovarData = ref([])
     const similar = ref([])
     const loading = ref(false)
+    const error = ref(null)
 
     const getRandomSimilar = (similar) => {
         if (similar.length <= 3) return similar
@@ -18,6 +19,7 @@ export function useFetchCarData(apiBaseUrl) {
 
     const fetchData = async (id) => {
         loading.value = true
+        error.value = null
         try {
             const [carResponse, similarResponse] = await Promise.all([
                 axios.get(`${apiBaseUrl}/${id}`),
@@ -28,8 +30,9 @@ export function useFetchCarData(apiBaseUrl) {
             carData.value = carResponse.data.result
             userData.value = carResponse.data.userData
             similar.value = getRandomSimilar(similarResponse.data)
-        } catch (error) {
-            console.error('Error fetching data:', error)
+        } catch (err) {
+            console.error('Error fetching data:', err)
+            error.value = err.message || 'Failed to load data'
         } finally {
             loading.value = false
         }
@@ -41,6 +44,16 @@ export function useFetchCarData(apiBaseUrl) {
 
     onMounted(() => {
         if (route.params.id) fetchData(route.params.id)
+        window.addEventListener('online', () => {
+            console.log('Internet tiklandi, ma\'lumotlar qayta yuklanmoqda...')
+            if (route.params.id) fetchData(route.params.id)
+        })
+    })
+
+    onUnmounted(() => {
+        window.removeEventListener('online', () => {
+            if (route.params.id) fetchData(route.params.id)
+        })
     })
 
     return {
@@ -49,6 +62,7 @@ export function useFetchCarData(apiBaseUrl) {
         tovarData,
         similar,
         loading,
+        error,
         fetchData
     }
 }

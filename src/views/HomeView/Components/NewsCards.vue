@@ -2,7 +2,10 @@
     <div class="news mt-5">
         <h1 class="main-header">Новости</h1>
         <div class="news-cards desktop-version">
-            <a-row v-if="ourNews.length" :gutter="[10, 10]">
+            <div v-if="loading" class="loader shadow">
+                <a-spin />
+            </div>
+            <a-row v-else-if="ourNews.length" :gutter="[10, 10]">
                 <a-col :xs="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 8 }" v-for="ourNew in ourNews"
                     :key="ourNew.key">
                     <div class="news-card">
@@ -24,11 +27,15 @@
                     </div>
                 </a-col>
             </a-row>
-            <div v-else class="loader shadow">
-                <a-spin />
-            </div>
+            <a-result v-else-if="error" status="404" title="404"
+                sub-title="Sorry, An error occurred while loading the data!" />
         </div>
-        <Swiper v-if="ourNews.length" :spaceBetween="30" :centeredSlides="true" :autoplay="{
+        <div v-if="loading" class="loader shadow mobile-version">
+            <a-spin />
+        </div>
+        <a-result class="mobile-version" v-else-if="error" status="404" title="404"
+            sub-title="Sorry, An error occurred while loading the data!" />
+        <Swiper v-else-if="ourNews.length" :spaceBetween="30" :centeredSlides="true" :autoplay="{
             delay: 2500,
             disableOnInteraction: false,
         }" :pagination="{
@@ -55,9 +62,6 @@
                 </div>
             </swiper-slide>
         </Swiper>
-        <div v-else class="loader shadow mobile-version">
-            <a-spin />
-        </div>
     </div>
 </template>
 <script setup>
@@ -76,7 +80,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 const modules = [Pagination, Autoplay]
 const ourNews = ref([])
 
-const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/news`)
+const { data, loading, error } = useFetch(`${import.meta.env.VITE_APP_API}/news`)
 
 watch(data, (newData) => {
     ourNews.value = newData.slice(0, 3)

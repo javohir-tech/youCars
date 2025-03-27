@@ -34,13 +34,15 @@
                             данных.</a-checkbox>
                     </div>
 
-                    <a-button type="primary" style="width: 100%; margin-top: 16px;" html-type="submit" :disabled="loading" >
-                        <a-spin size="small" v-if="loading"/>
+                    <a-button type="primary" style="width: 100%; margin-top: 16px;" html-type="submit"
+                        :disabled="loading">
+                        <a-spin size="small" v-if="loading" />
                         {{ loading ? 'Laoding...' : 'Зарегистрироваться' }}
                     </a-button>
                 </a-form>
                 <div class="under-link">
-                    <p>Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink></p>
+                    <p>Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink>
+                    </p>
                 </div>
             </div>
         </div>
@@ -91,7 +93,9 @@ const onFinish = async () => {
 
         message.success(`Success: ${response.data.message || 'Registered successfully!'}`)
 
-        route.push('/')
+        route.push('/').then(() => {
+            window.location.reload()
+        })
 
         formState.name = '';
         formState.email = '';
@@ -101,7 +105,7 @@ const onFinish = async () => {
     } catch (error) {
         console.error('Error:', error.response?.data || error.message);
         message.error(error.response?.data?.message || 'Ro‘yxatdan o‘tishda xato yuz berdi');
-    }finally{
+    } finally {
         loading.value = false
     }
 };

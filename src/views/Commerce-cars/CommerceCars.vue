@@ -9,11 +9,13 @@
             </a-breadcrumb-item>
         </a-breadcrumb>
         <Filter filter-name="Коммерческий транспорт" />
-        <AvtoKatalok v-if="commerceCars.length" :avtomobiles="commerceCars" :new-current="current"
-            router="/commerce-cars/commerce-cars-tovar" />
-        <div v-else class="loader shadow">
+        <div v-if="loading" class="loader shadow">
             <a-spin />
         </div>
+        <AvtoKatalok v-else-if="commerceCars.length" :avtomobiles="commerceCars" :new-current="current"
+            router="/commerce-cars/commerce-cars-tovar" />
+        <a-result v-else-if="error" status="404" title="404"
+            sub-title="Sorry, An error occurred while loading the data!" />
     </div>
     <a-back-top />
 </template>
@@ -30,12 +32,11 @@ import { useFetch } from '@/Hooks/UseFatch';
 const commerceCars = ref([])
 const current = ref(1)
 
-const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/commerce-cars`)
+const { data, loading, error } = useFetch(`${import.meta.env.VITE_APP_API}/commerce-cars`)
 
 watch(data, (newData) => {
     commerceCars.value = newData
 })
 
-get()
 </script>
 <style></style>

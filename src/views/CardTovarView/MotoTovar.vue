@@ -20,6 +20,10 @@
         :similar="similar"
         :car-data="carData" 
         :user-data="userData" />
+        <a-result
+        v-else-if="error" status="404" title="404"
+        sub-title="Sorry, An error occurred while loading the data!"
+        />
     </div>
     <a-back-top />
 </template>
@@ -34,7 +38,7 @@ import AvtoTovar from '@/components/AvtoTovar/AvtoTovar.vue';
 
 const route = useRoute()
 
-const { carData, userData, tovarData, similar, loading } = useFetchCarData(`${import.meta.env.VITE_APP_API}/motorcycles`)
+const { carData, userData, tovarData, similar, loading, error } = useFetchCarData(`${import.meta.env.VITE_APP_API}/motorcycles`)
 
 </script>
 

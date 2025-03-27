@@ -14,8 +14,16 @@
         <div v-if="loading" class="loader shadow">
             <a-spin />
         </div>
-        <AvtoTovar v-else-if="tovarData && similar.length" similar-route="/katalok/cars-tovar" :similar="similar"
-            :car-data="carData" :user-data="userData" />
+        <AvtoTovar
+         v-else-if="tovarData && similar.length" 
+         similar-route="/katalok/cars-tovar" 
+         :similar="similar"
+         :car-data="carData" :user-data="userData" 
+         />
+        <a-result
+        v-else-if="error" status="404" title="404"
+        sub-title="Sorry, An error occurred while loading the data!"
+        />
     </div>
     <a-back-top />
 </template>
@@ -29,7 +37,7 @@ import { useRoute } from 'vue-router';
 import AvtoTovar from '@/components/AvtoTovar/AvtoTovar.vue';
 const route = useRoute()
 
-const { carData, userData, tovarData, similar, loading } = useFetchCarData(`${import.meta.env.VITE_APP_API}/cars`)
+const { carData, userData, tovarData, similar, loading, error } = useFetchCarData(`${import.meta.env.VITE_APP_API}/cars`)
 </script>
 
 <style scoped></style>

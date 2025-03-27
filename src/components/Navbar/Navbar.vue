@@ -158,17 +158,24 @@
                             <div>
                                 <img src="../../assets/Images/messages.png" alt="">
                             </div>
-                            <a-flex v-if="!token" gap="10">
+                            <div v-if="token">
+                                <div class="user-data">
+                                    <h1 class="mb-0"> {{ user || 'user' }}</h1>
+                                    <RouterLink to="/userPage">
+                                        <div v-if="svg" v-html="svg" class="avatar"></div>
+                                        <a-avatar v-else >
+                                            <template #icon>
+                                                <UserOutlined />
+                                            </template>
+                                        </a-avatar>
+                                    </RouterLink>
+                                </div>
+                            </div>
+                            <a-flex v-else gap="10">
                                 <router-link to="/login" class="login-btn">Войти</router-link>
                                 <router-link to="/register" class="register-btn">Регистрация</router-link>
                             </a-flex>
-                            <div v-else>
-                                <h1> {{ user }}</h1>
-                                <RouterLink to="/userPage">otvol</RouterLink>
-                                <a-avatar size="large" style="background-color: #7265e6; " :gap="gap">
-                                    {{ user }}
-                                </a-avatar>
-                            </div>
+
                         </div>
                     </a-flex>
                 </div>
@@ -179,30 +186,51 @@
 
 <script setup>
 import axios from 'axios';
-import { ref } from 'vue';
+import { nextTick, ref, watch } from 'vue';
 import { onMounted } from 'vue';
+//Dicebear
+import { createAvatar } from '@dicebear/core';
+import { initials } from '@dicebear/collection';
 
 const isMenuOpen = ref(false);
 const searchValue = ref('');
 const language = ref('rus');
-
-const token = localStorage.getItem('token') || sessionStorage.getItem('token');
 const user = ref('')
+const svg = ref('')
+const loading = ref(false)
+const token = localStorage.getItem('token') || sessionStorage.getItem('token');
 
 const fetchUserData = async () => {
+    loading.value = true
     try {
         const response = await axios.get(`${import.meta.env.VITE_APP_API}/user-dashboard`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         });
-        user.value = response.data.userData.name
-        // console.log('Foydalanuvchi mlumotlari:', response.data);
-        // console.log(response)
+        user.value = response.data.userData.name || 'user'
+        await nextTick()
+        generateAvatar()
     } catch (error) {
         console.log(error)
+    } finally {
+        loading.value = false
     }
 }
+
+const generateAvatar = () => {
+    if (user.value) {
+        const avatar = createAvatar(initials, {
+            "seed": user.value || 'user'
+        });
+        svg.value = avatar.toString();
+    }
+}
+
+watch(user, () => {
+    generateAvatar()
+}, { immediate: true })
+
 
 onMounted(() => {
     if (token) {

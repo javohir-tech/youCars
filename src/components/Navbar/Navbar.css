@@ -152,6 +152,19 @@
     display: none;
 }
 
+.user-data{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar{
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
 /* Media query for desktop view */
 @media (min-width: 992px) {
     .header {

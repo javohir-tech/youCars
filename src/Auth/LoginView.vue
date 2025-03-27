@@ -71,7 +71,9 @@ const onFinish = async () => {
 
         message.success(`Success: ${response.data.message || 'Login successfully!'}`)
 
-        route.push('/')
+        route.push('/').then(() => {
+            window.location.reload()
+        })
         formState.email = ''
         formState.password = ''
         formState.remember = false

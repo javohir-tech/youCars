@@ -1,24 +1,25 @@
 <template>
-    <a-row v-if="marks.length">
+    <div v-if="loading" class="loader shadow">
+        <a-spin />
+    </div>
+    <a-row v-else-if="marks.length">
         <a-col v-for="mark in marks" :key="mark.id" :xs="{ span: 8 }" :md="{ span: 6 }" :lg="{ span: 4 }"
             class="mark-box">
             <img :src="mark.image" class="img-fluid" alt="">
         </a-col>
     </a-row>
-    <div v-else class="loader shadow">
-        <a-spin />
-    </div>
+    <a-result v-else-if="error" status="404" title="404" sub-title="Sorry, An error occurred while loading the data!" />
 </template>
 <script setup>
 //vue
-import { onMounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 
 //Hooks
 import { useFetch } from '@/Hooks/UseFatch';
 
 const marks = ref([])
 
-const { data, get } = useFetch(`${import.meta.env.VITE_APP_API}/marks`)
+const { data, loading, error } = useFetch(`${import.meta.env.VITE_APP_API}/marks`)
 
 watch(data, (newData) => {
     marks.value = newData
