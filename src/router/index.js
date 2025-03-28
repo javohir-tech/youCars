@@ -19,7 +19,7 @@ import { ForgetPassword, LoginView, RegisterView } from '@/Auth'
 // import Intro from '@/views/Intro/Intro.vue'
 
 //user page
-import { Featured, Message, UserPage } from '@/User'
+import { Featured, Message, MyAds, PlaceAd, Rate, Setting, UserPage } from '@/User'
 
 const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName')
 
@@ -53,17 +53,38 @@ const router = createRouter({
     },
     {
       path: `/${userName}`,
-      name:'user accaund',
+      name: 'user accaund',
       component: UserPage,
-      children : [
+      children: [
         {
-          path:'Featured',
-          name:'Featured',
+          path: '',
+          name: 'Featured',
           component: Featured
-        },{
-          path:'message',
-          name:'Message',
-          component:Message
+        },
+        {
+          path: 'message',
+          name: 'Message',
+          component: Message
+        },
+        {
+          path:'my-ads',
+          name: 'My Ads',
+          component:MyAds
+        },
+        {
+          path:'place-ad',
+          name: 'Place a Ad',
+          component: PlaceAd
+        },
+        {
+          path: 'rate',
+          name: 'Rate',
+          component: Rate
+        },
+        {
+          path: 'setting',
+          name: 'Settings',
+          component: Setting
         }
       ]
     },
