@@ -1,34 +1,34 @@
 import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
+import { message } from 'ant-design-vue';
 
-export const useCounterStore = defineStore('counter', () => {
-
+export const useCarStore = defineStore('counter', () => {
     //state
-    const count = ref(10)
+    const selectedCars = ref([]);
+
     //actions
-    const increament = () => {
-        count.value++
-    }
-    function decreament() {
-        count.value--
+    const addCar = (car) => {
+        if (!selectedCars.value.some(c => c.id === car.id)) {
+            selectedCars.value.push(car)
+            message.success('The car has been saved')
+        } else {
+            message.info('This car has already been added')
+        }
     }
 
-    //getters
-    const oddOrEven = computed(() => {
-        if (count.value % 2 ===0){
-            return 'even'
-        }
-        return 'odd'
-    })
+    const removeCar = (id) => {
+        selectedCars.value = selectedCars.value.filter(c => c.id !== id)
+        message.success('The car has been removed from saved items')
+    }
+
+    const isSelected = (car) => selectedCars.value.some(c => c.id === car.id)
 
     return {
         //state
-        count,
-        //Actions
-        increament,
-        decreament,
-        //getters
-        oddOrEven
+        selectedCars,
+        //actions
+        addCar,
+        removeCar,
+        isSelected
     }
-
 })

@@ -7,9 +7,16 @@
         <a-row :gutter="[10, 10]" v-else-if="cars.length">
             <a-col :xs="{ span: 24 }" :md="{ span: 8 }" :lg="{ span: 6 }" v-for="(car, index) in cars" :key="index">
                 <RouterLink :to="`/katalok/cars-tovar/${car.id}`">
-                    <AvtoCard :images="car.image" :cost="car.cost" :country="car.country" :milage="car.milage"
-                        :model="car.model" :idNumber="car.id" />
+                    <AvtoCard 
+                    :images="car.image" 
+                    :cost="car.cost" 
+                    :country="car.country" 
+                    :milage="car.milage"    
+                    :model="car.model"
+                    :idNumber="car.id" 
+                    />
                 </RouterLink>
+                <button @click="carsStore.addCar(car)">qoshish</button>
             </a-col>
         </a-row>
         <a-result v-else-if="error" status="404" title="404" sub-title="Sorry, An error occurred while loading the data!" />
@@ -25,8 +32,11 @@ import { useFetch } from '@/Hooks/UseFatch';
 //Vue
 import { ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
+//pinia
+import { useCarStore } from '@/Stores/Store';
 
 const cars = ref([])
+const carsStore = useCarStore()
 
 const { data, loading, error } = useFetch(`${import.meta.env.VITE_APP_API}/cars`)
 
