@@ -1,13 +1,7 @@
 <template lang="">
-    <div>
-        reklamani joylash
-    </div>
+  <div>reklamani joylash</div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>

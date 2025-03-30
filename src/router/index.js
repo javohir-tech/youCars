@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 // Components
 import {
@@ -11,17 +11,26 @@ import {
   KatalokView,
   Motorcycle,
   MotoTovar,
-  NewsView
-} from '@/views'
+  NewsView,
+} from '@/views';
 
 // Auth
-import { ForgetPassword, LoginView, RegisterView } from '@/Auth'
+import { ForgetPassword, LoginView, RegisterView } from '@/Auth';
 // import Intro from '@/views/Intro/Intro.vue'
 
 //user page
-import { Featured, Message, MyAds, PlaceAd, Rate, Setting, UserPage } from '@/User'
+import {
+  Featured,
+  Message,
+  MyAds,
+  PlaceAd,
+  Rate,
+  Setting,
+  UserPage,
+} from '@/User';
 
-const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName')
+const userName =
+  localStorage.getItem('userName') || sessionStorage.getItem('userName');
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,22 +43,22 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
     },
     {
       path: '/register',
       name: 'register',
-      component: RegisterView
+      component: RegisterView,
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: LoginView,
     },
     {
       path: '/forgetPassword',
       name: 'forgetPassword',
-      component: ForgetPassword
+      component: ForgetPassword,
     },
     {
       path: `/${userName}`,
@@ -59,88 +68,88 @@ const router = createRouter({
         {
           path: '',
           name: 'Featured',
-          component: Featured
+          component: Featured,
         },
         {
           path: 'message',
           name: 'Message',
-          component: Message
+          component: Message,
         },
         {
-          path:'my-ads',
+          path: 'my-ads',
           name: 'My Ads',
-          component:MyAds
+          component: MyAds,
         },
         {
-          path:'place-ad',
+          path: 'place-ad',
           name: 'Place a Ad',
-          component: PlaceAd
+          component: PlaceAd,
         },
         {
           path: 'rate',
           name: 'Rate',
-          component: Rate
+          component: Rate,
         },
         {
           path: 'setting',
           name: 'Settings',
-          component: Setting
-        }
-      ]
+          component: Setting,
+        },
+      ],
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: AboutView,
     },
     {
       path: '/contact',
       name: 'contact',
-      component: ContactView
+      component: ContactView,
     },
     {
       path: '/katalok',
       name: 'katalok',
-      component: KatalokView
+      component: KatalokView,
     },
     {
       path: '/news',
       name: 'news',
-      component: NewsView
+      component: NewsView,
     },
     {
       path: '/motorcycle',
       name: 'motorcycle',
-      component: Motorcycle
+      component: Motorcycle,
     },
     {
       path: '/commerce-cars',
       name: 'commerceCars',
-      component: CommerceCars
+      component: CommerceCars,
     },
     {
       path: '/katalok/cars-tovar/:id',
       name: 'carsTovar',
-      component: CarsTovar
+      component: CarsTovar,
     },
     {
       path: '/commerce-cars/commerce-cars-tovar/:id',
       name: 'commerceCarsTovar',
-      component: CommerceCarsTovar
+      component: CommerceCarsTovar,
     },
     {
       path: '/motorcycle/moto-tovar/:id',
       name: 'motoTovar',
-      component: MotoTovar
-    }
+      component: MotoTovar,
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
     } else {
-      return { top: 0 }
+      return { top: 0 };
     }
-  }
-})
+  },
+});
 
-export default router
+export default router;

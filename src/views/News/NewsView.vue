@@ -1,13 +1,7 @@
-<template >
-    <div>
-        news
-    </div>
+<template>
+  <div>news</div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
-<style >
-    
-</style>
+<style></style>

@@ -7,7 +7,6 @@ import { onMounted } from 'vue';
 // onMounted(() => {
 //   message.success("Welcome to Our Side")
 // });
-
 </script>
 
 <template>

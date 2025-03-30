@@ -1,19 +1,16 @@
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
-import dotenv from 'dotenv'
+import { fileURLToPath, URL } from 'node:url';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueDevTools from 'vite-plugin-vue-devtools';
+import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   server: {
@@ -22,8 +19,8 @@ export default defineConfig({
         target: process.env.VITE_APP_API || 'http://localhost:5000', // .env fayldan URL ni oladi
         changeOrigin: true,
         secure: true, // HTTPS bo‘lsa true, HTTP bo‘lsa false
-        rewrite: (path) => path.replace(/^\/api/, '') // `/api` ni o‘chirib tashlaydi
-      }
-    }
-  }
-})
+        rewrite: (path) => path.replace(/^\/api/, ''), // `/api` ni o‘chirib tashlaydi
+      },
+    },
+  },
+});

@@ -1,77 +1,77 @@
 .acc-layout,
 .acc-info {
-    padding: 25px 20px;
-    border-radius: 10px;
+  padding: 25px 20px;
+  border-radius: 10px;
 }
 
 .acc-info {
-    min-height: 500px;
+  min-height: 500px;
 }
 
 .avatar {
-    height: 48px;
-    width: 48px;
-    border-radius: 100%;
-    overflow: hidden;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  overflow: hidden;
 }
 
 .user-acc {
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(240, 240, 240, 1);
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(240, 240, 240, 1);
 
-    h1 {
-        font-weight: 700;
-        font-size: 15px;
-        color: rgba(41, 56, 67, 1);
-    }
+  h1 {
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(41, 56, 67, 1);
+  }
 
-    p {
-        font-weight: 400;
-        font-size: 14px;
-        color: rgba(90, 90, 90, 1);
-    }
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(90, 90, 90, 1);
+  }
 }
 
 .user-email {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
 
-    p {
-        color: rgba(90, 90, 90, 1);
-    }
+  p {
+    color: rgba(90, 90, 90, 1);
+  }
 
-    a {
-        color: rgba(38, 132, 229, 1);
-    }
+  a {
+    color: rgba(38, 132, 229, 1);
+  }
 }
 
 .acc-item {
-    padding: 15px;
-    border-radius: 10px;
-    transition: all 0.3s ease-in;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
 
-    i,
-    p,
-    a {
-        font-size: 15px;
-        font-size: 700;
-        line-height: 100%;
-        color: rgba(41, 56, 67, 1) !important;
-    }
+  i,
+  p,
+  a {
+    font-size: 15px;
+    font-size: 700;
+    line-height: 100%;
+    color: rgba(41, 56, 67, 1) !important;
+  }
 }
 
 .acc-item:hover {
-    background-color: rgba(243, 245, 252, 1);
+  background-color: rgba(243, 245, 252, 1);
 }
 
 .acc-button {
-    width: 100%;
-    border: none;
-    padding: 15px;
-    font-weight: 700;
-    font-size: 14px;
-    color: rgba(41, 56, 67, 1);
-    border-radius: 7px;
-    background-color: rgba(246, 246, 246, 1);
+  width: 100%;
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(41, 56, 67, 1);
+  border-radius: 7px;
+  background-color: rgba(246, 246, 246, 1);
 }

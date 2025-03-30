@@ -1,7 +1,3 @@
-<template>
-  about
-</template>
+<template>about</template>
 
-<style>
-
-</style>
+<style></style>

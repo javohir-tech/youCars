@@ -1,13 +1,7 @@
 <template lang="">
-    <div>
-        mening reklamalarim
-    </div>
+  <div>mening reklamalarim</div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>

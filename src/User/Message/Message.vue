@@ -1,13 +1,7 @@
 <template lang="">
-    <div>
-        message
-    </div>
+  <div>message</div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>

@@ -1,54 +1,55 @@
 .filter {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .tabs-container {
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    width: fit-content;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
 }
 
 .tab-button {
-    padding: 10px 16px;
-    border: none;
-    background-color: #f2f2f2;
-    color: #333;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  padding: 10px 16px;
+  border: none;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .tab-button.active {
-    background-color: #2c3e50;
-    color: white;
+  background-color: #2c3e50;
+  color: white;
 }
 
 .tab-button:first-child {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .tab-button:last-child {
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .filter-box {
-    padding: 25px 20px;
-    border-radius: 10px;
+  padding: 25px 20px;
+  border-radius: 10px;
 }
 
 .filter-dropdowns,
 .filter-btns {
-    gap: 10px;
+  gap: 10px;
 }
 
 @media (max-width: 576px) {
-
-    .filter-dropdowns,
-    .filter-btns {
-        flex-direction: column !important;
-        align-items: start !important;
-    }
+  .filter-dropdowns,
+  .filter-btns {
+    flex-direction: column !important;
+    align-items: start !important;
+  }
 }

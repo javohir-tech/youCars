@@ -1,232 +1,231 @@
 .mySwiper2 {
-    width: 100%;
-    height: 400px;
+  width: 100%;
+  height: 400px;
 }
 
 .mySwiper2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .mySwiper {
-    width: 100%;
-    height: 100px;
-    margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
 }
 
 .mySwiper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .mySwiper .swiper-slide {
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
 .mySwiper .swiper-slide-thumb-active {
-    opacity: 1;
-    border: 2px solid #fff;
-    border-radius: 4px;
+  opacity: 1;
+  border: 2px solid #fff;
+  border-radius: 4px;
 }
 
 .tovar-name {
-    font-weight: 500;
-    font-size: 25px;
-    color: rgba(41, 56, 67, 1);
+  font-weight: 500;
+  font-size: 25px;
+  color: rgba(41, 56, 67, 1);
 }
 
 .tovar-viewers {
-    color: rgba(152, 152, 152, 1);
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(152, 152, 152, 1);
+  color: rgba(152, 152, 152, 1);
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(152, 152, 152, 1);
 
-    span {
-        font-size: 14px;
-        font-weight: 400;
-    }
+  span {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
 
 .tovar-stock {
-    i {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100%;
-        font-weight: 700;
-        color: rgba(7, 197, 83, 1);
-        width: 25px;
-        height: 25px;
-        background-color: rgba(221, 250, 220, 1);
-    }
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-weight: 700;
+    color: rgba(7, 197, 83, 1);
+    width: 25px;
+    height: 25px;
+    background-color: rgba(221, 250, 220, 1);
+  }
 
-    p {
-        font-weight: 400;
-        font-size: 14px;
-        color: rgba(41, 56, 67, 1);
-    }
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(41, 56, 67, 1);
+  }
 }
 
 .tovar-info {
-    padding: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .tovar-data__item {
-    font-weight: 500;
+  font-weight: 500;
 
-    p {
-        font-size: 14px;
-        color: rgba(152, 152, 152, 1);
-    }
+  p {
+    font-size: 14px;
+    color: rgba(152, 152, 152, 1);
+  }
 
-    h3 {
-        font-size: 15px;
-        color: rgba(41, 56, 67, 1);
-    }
+  h3 {
+    font-size: 15px;
+    color: rgba(41, 56, 67, 1);
+  }
 }
 
 .user-data {
-    padding: 20px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+  padding: 20px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .user-card {
-    border: 2px solid rgba(238, 238, 238, 1);
-    padding: 10px 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+  border: 2px solid rgba(238, 238, 238, 1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
 
-    p {
-        font-weight: 700;
-        font-size: 18px;
-        color: rgba(41, 56, 67, 1);
-    }
+  p {
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(41, 56, 67, 1);
+  }
 
-    a {
-        font-weight: 400;
-        font-size: 14px;
-        color: rgba(41, 56, 67, 1);
-    }
+  a {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(41, 56, 67, 1);
+  }
 }
 
 .user-info {
-    padding-right: 50px;
-    border-right: 2px solid rgba(238, 238, 238, 1);
+  padding-right: 50px;
+  border-right: 2px solid rgba(238, 238, 238, 1);
 }
 
 .avatar {
-    background-color: rgba(238, 238, 238, 1);
-    vertical-align: middle;
-    color: rgba(41, 56, 67, 1);
-    font-weight: 700;
-    font-size: 18px;
+  background-color: rgba(238, 238, 238, 1);
+  vertical-align: middle;
+  color: rgba(41, 56, 67, 1);
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .tovar-price {
-    background-color: rgba(38, 132, 229, 1);
-    padding: 30px;
-    cursor: pointer;
+  background-color: rgba(38, 132, 229, 1);
+  padding: 30px;
+  cursor: pointer;
 
-    p {
-        font-weight: 700;
-        font-size: 16px;
-        color: rgba(255, 255, 255, 1);
-    }
+  p {
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+  }
 }
 
 .tovar-description {
-    padding: 25px;
-    border-radius: 10px;
+  padding: 25px;
+  border-radius: 10px;
 
-    p {
-        font-weight: 400;
-        font-size: 16px;
-        color: rgba(90, 90, 90, 1);
-    }
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(90, 90, 90, 1);
+  }
 }
 
 .item-header {
-    font-weight: 500;
-    font-size: 23px;
-    color: rgba(41, 56, 67, 1);
+  font-weight: 500;
+  font-size: 23px;
+  color: rgba(41, 56, 67, 1);
 }
 
-.technical-info, .client-config{
-    min-height: 100%;
-    padding: 30px;
-    border-radius: 10px;
+.technical-info,
+.client-config {
+  min-height: 100%;
+  padding: 30px;
+  border-radius: 10px;
 }
 
-.message-buttons{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.message-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.message-buttons button{
-    padding: 15px 20px;
-    border: none;
-    background-color: rgba(41, 56, 67, 1);
-    color: rgba(255, 255, 255, 1);
-    font-weight: 400;
-    font-size: 15px;
-    border-radius: 10px;
-    cursor: pointer;
+.message-buttons button {
+  padding: 15px 20px;
+  border: none;
+  background-color: rgba(41, 56, 67, 1);
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
+@media (max-width: 576px) {
+  .mySwiper2 {
+    height: 200px;
+  }
 
+  .mySwiper {
+    height: 60px;
+  }
 
-@media(max-width:576px) {
-    .mySwiper2 {
-        height: 200px;
+  .user-info {
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(238, 238, 238, 1);
+  }
+
+  .user-card {
+    flex-direction: column;
+  }
+
+  .message {
+    padding-top: 10px;
+  }
+
+  .tovar-viewers {
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .tovar-stock {
+    i {
+      width: 20px;
+      height: 20px;
     }
 
-    .mySwiper {
-        height: 60px;
+    p {
+      font-size: 12px;
     }
+  }
 
-    .user-info {
-        border-right: none;
-        padding-right: 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid rgba(238, 238, 238, 1);
-    }
-
-    .user-card {
-        flex-direction: column;
-    }
-
-    .message {
-        padding-top: 10px;
-    }
-
-    .tovar-viewers {
-        span {
-            font-size: 12px;
-        }
-    }
-
-    .tovar-stock {
-        i {
-            width: 20px;
-            height: 20px;
-        }
-
-        p {
-            font-size: 12px;
-        }
-    }
-
-    .message-buttons button{
-        width: 100%;
-    }
+  .message-buttons button {
+    width: 100%;
+  }
 }

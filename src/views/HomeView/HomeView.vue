@@ -2,7 +2,7 @@
   <div class="container">
     <Banner />
     <!--  filter -->
-    <Filter FilterName="АВТОМОБИЛЬНЫЙ КАТАЛОГ"/>
+    <Filter FilterName="АВТОМОБИЛЬНЫЙ КАТАЛОГ" />
     <!--Cars Katalok -->
     <CarsKatalok />
     <!-- WhyWe-->
@@ -17,10 +17,16 @@
   </div>
 </template>
 <script setup>
-
 //filter
 import Filter from '@/components/Filter/Filter.vue';
 //components
-import { AboutCompony, Banner, CarsKatalok, Marks, NewsCards, WhyWe } from './Components';
+import {
+  AboutCompony,
+  Banner,
+  CarsKatalok,
+  Marks,
+  NewsCards,
+  WhyWe,
+} from './Components';
 </script>
 <style></style>

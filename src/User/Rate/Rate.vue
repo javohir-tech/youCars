@@ -1,13 +1,7 @@
 <template lang="">
-    <div>
-        rate
-    </div>
+  <div>rate</div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>

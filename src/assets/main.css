@@ -16,7 +16,6 @@
 
 /* container-sm */
 @media (min-width: 576px) {
-
   .container,
   .container-sm {
     max-width: 540px;
@@ -25,7 +24,6 @@
 
 /* container-md */
 @media (min-width: 768px) {
-
   .container,
   .container-sm,
   .container-md {
@@ -35,7 +33,6 @@
 
 /* container-lg */
 @media (min-width: 992px) {
-
   .container,
   .container-sm,
   .container-md,
@@ -46,7 +43,6 @@
 
 /* container-xl */
 @media (min-width: 1200px) {
-
   .container,
   .container-sm,
   .container-md,
@@ -58,7 +54,6 @@
 
 /* container-xxl */
 @media (min-width: 1400px) {
-
   .container,
   .container-sm,
   .container-md,
@@ -343,7 +338,7 @@
 }
 
 /*loader*/
-.loader{
+.loader {
   text-align: center;
   padding: 50px;
   border-radius: 10px;
