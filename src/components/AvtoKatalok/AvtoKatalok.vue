@@ -4,8 +4,13 @@
             <a-col :xs="{ span: 24 }" :md="{ span: 8 }" :lg="{ span: 6 }" v-for="(car, index) in paginatedCars"
                 :key="index">
                 <RouterLink :to="`${props.router}/${car.id}`">
-                    <AvtoCard :images="car.image" :cost="car.cost" :country="car.country" :milage="car.milage"
-                        :model="car.model" />
+                    <AvtoCard 
+                    :avtomabil="car"
+                    :images="car.image" 
+                    :cost="car.cost" 
+                    :country="car.country" 
+                    :milage="car.milage"
+                    :model="car.model" />
                 </RouterLink>
             </a-col>
         </a-row>

@@ -1,47 +1,55 @@
 <template>
-        <div class="cars-card">
-            <div class="cars-card-image">
-                <Swiper :scrollbar="{
-                    hide: false,
-                    draggable: true
-                }" :modules="modules" class="mySwiper">
-                    <swiper-slide v-for="(image, index) in props.images" :key="index">
-                        <img :src="image" class="img-fluid" alt="">
-                    </swiper-slide>
-                </Swiper>
-            </div>
-            <div class="cars-card-info shadow">
-                <p class="avto-name">{{ props.model }}</p>
-                <p class="avto-cost">{{ props.cost }}$</p>
-                <div class="card-description">
-                    <a-flex align="center" justify="space-between">
-                        <div>
-                            <p>{{ props.milage }}km</p>
-                            <p>1.4/100 л.с./Бензин</p>
-                        </div>
-                        <div>
-                            <p>Робот</p>
-                            <p>передний привод</p>
-                        </div>
-                    </a-flex>
-                    <a-flex align="center" justify="space-between">
-                        <p>{{ props.country }}</p>
-                        <div>
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                    </a-flex>
-                </div>
+    <div class="cars-card">
+        <div class="cars-card-image">
+            <Swiper :scrollbar="{
+                hide: false,
+                draggable: true
+            }" :modules="modules" class="mySwiper">
+                <swiper-slide v-for="(image, index) in props.images" :key="index">
+                    <img :src="image" class="img-fluid" alt="">
+                </swiper-slide>
+            </Swiper>
+        </div>
+        <div class="cars-card-info shadow">
+            <p class="avto-name">{{ props.model }}</p>
+            <p class="avto-cost">{{ props.cost }}$</p>
+            <div class="card-description">
+                <a-flex align="center" justify="space-between">
+                    <div>
+                        <p>{{ props.milage }}km</p>
+                        <p>1.4/100 л.с./Бензин</p>
+                    </div>
+                    <div>
+                        <p>Робот</p>
+                        <p>передний привод</p>
+                    </div>
+                </a-flex>
+                <a-flex align="center" justify="space-between">
+                    <p>{{ props.country }}</p>
+                    <div>
+                        <i v-if="!carsStore.isSelected(props.avtomabil.id)"
+                            @click.prevent="carsStore.addCar(props.avtomabil)" class="bi bi-heart"></i>
+                        <i v-else @click.prevent="carsStore.removeCar(props.avtomabil.id)" class="bi bi-heart-fill"></i>
+                    </div>
+                </a-flex>
             </div>
         </div>
+    </div>
 </template>
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 // import required modules
 import { Scrollbar } from 'swiper/modules';
+// Pinia
+import { useCarStore } from '@/Stores/store';
 
 const modules = [Scrollbar]
+const carsStore = useCarStore()
 
 const props = defineProps({
+    avtomabil: {
+        type: Object,
+    },
     images: Array,
     title: String,
     cost: {
@@ -52,7 +60,6 @@ const props = defineProps({
     milage: Number,
     model: String,
 })
-
 </script>
 <style scoped>
 .cars-card-image img {
@@ -84,5 +91,9 @@ const props = defineProps({
     font-weight: 400;
     font-size: 15px;
     color: rgba(152, 152, 152, 1);
+}
+
+.bi-heart-fill {
+    color: rgba(255, 0, 0, 1);
 }
 </style>

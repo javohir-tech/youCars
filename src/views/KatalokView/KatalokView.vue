@@ -12,7 +12,11 @@
         <div v-if="loading" class="loader shadow">
             <a-spin />
         </div>
-        <AvtoKatalok v-else-if="cars.length" :avtomobiles="cars" :newCurrent="current" router="/katalok/cars-tovar" />
+        <AvtoKatalok 
+        v-else-if="cars.length" 
+        :avtomobiles="cars" 
+        :newCurrent="current" 
+        router="/katalok/cars-tovar" />
         <a-result
         v-else-if="error" status="404" title="404"
         sub-title="Sorry, An error occurred while loading the data!"

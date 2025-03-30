@@ -11,17 +11,15 @@ export const useCarStore = defineStore('counter', () => {
         if (!selectedCars.value.some(c => c.id === car.id)) {
             selectedCars.value.push(car)
             message.success('The car has been saved')
-        } else {
-            message.info('This car has already been added')
         }
     }
 
     const removeCar = (id) => {
         selectedCars.value = selectedCars.value.filter(c => c.id !== id)
-        message.success('The car has been removed from saved items')
+        message.info('The car has been removed from saved items')
     }
 
-    const isSelected = (car) => selectedCars.value.some(c => c.id === car.id)
+    const isSelected = (id) => selectedCars.value.some(c => c.id === id)
 
     return {
         //state

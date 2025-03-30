@@ -167,8 +167,13 @@
             <a-row :gutter="[10, 10]">
                 <a-col v-for="similarCar in similar" :key="similarCar.id" :xs="{ span: 24 }" :md="{ span: 8 }">
                     <RouterLink :to="`${props.similarRoute}/${similarCar.id}`">
-                        <AvtoCard :images="similarCar.image" :cost="similarCar.cost" :country="similarCar.country"
-                            :milage="similarCar.milage" :model="similarCar.model" />
+                        <AvtoCard 
+                        :avtomabil="similarCar"
+                        :images="similarCar.image"
+                        :cost="similarCar.cost" 
+                        :country="similarCar.country"
+                        :milage="similarCar.milage"
+                        :model="similarCar.model" />
                     </RouterLink>
                 </a-col>
             </a-row>
@@ -188,7 +193,6 @@ import 'swiper/css/thumbs'
 
 // Import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-
 
 //components
 import AvtoCard from '../Ui/AvtoCard.vue'

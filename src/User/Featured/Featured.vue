@@ -1,9 +1,10 @@
 <template>
     <div>
         <h1 class="main-header">Избранное</h1>
-        <a-row :gutter="[10, 10]">
-            <a-col v-for="selectedCar in carStore.selectedCars" :md="{ span: 8 }" :key="selectedCar.id">
+        <a-row v-if="carStore.selectedCars.length > 0" :gutter="[10, 10]">
+            <a-col  v-for="selectedCar in carStore.selectedCars" :md="{ span: 8 }" :key="selectedCar.id">
                 <AvtoCard
+                :avtomabil="selectedCar"
                 :images="selectedCar.image" 
                 :cost="selectedCar.cost" 
                 :country="selectedCar.country" 
@@ -12,11 +13,20 @@
                 />
             </a-col>
         </a-row>
+        <div v-else class="selectedCar">
+            <img src="../../assets/Images/selectedCars.png" class="img-fluid" alt="selected cars">
+            <h3>Нет сохраненных объявлений</h3>
+            <p>Чтобы добавить авто в избранное, нажмите на сердечко на карточке машины!</p>
+            <RouterLink  class="btn-primary" to="/katalok">
+                Перейти в каталог
+            </RouterLink>
+        </div>
     </div>
 </template>
 <script setup>
 import AvtoCard from '@/components/Ui/AvtoCard.vue';
-import { useCarStore } from '@/Stores/Store';
+import { useCarStore } from '@/Stores/store';
+import { RouterLink } from 'vue-router';
 
 const carStore = useCarStore()
 </script>
@@ -24,5 +34,13 @@ const carStore = useCarStore()
 .buttons button {
     padding: 10px;
     margin-right: 10px;
+}
+
+.selectedCar{
+    display: flex;
+    align-items: center ;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
 }
 </style>
