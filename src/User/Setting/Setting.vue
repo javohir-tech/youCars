@@ -25,12 +25,15 @@
                         </a-form-item>
                     </a-col>
                 </a-row>
+                <a-button type="primary" html-type="submit" :disabled="loading">
+                    <template v-if="loading">
+                        <a-spin /> Loading...
+                    </template>
+                    <template v-else>
+                        Сохранить
+                    </template>
+                </a-button>
 
-                <a-form-item>
-                    <a-button type="primary" html-type="submit">
-                        {{ loading ? 'Loading...' : 'Сохранить' }}
-                    </a-button>
-                </a-form-item>
             </a-form>
         </div>
     </div>
@@ -39,26 +42,30 @@
 import { message } from 'ant-design-vue';
 import axios from 'axios';
 import { reactive, ref } from 'vue';
+import { useUserStore } from '@/Stores/useUserStore';
 
-const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName')
-const userEmail = localStorage.getItem('email') || sessionStorage.getItem('email')
-const userId = localStorage.getItem('id') || sessionStorage.getItem('id')
+const userStore = useUserStore()
 const loading = ref(false)
 
 const formState = reactive({
-    username: userName,
-    email: userEmail,
+    username: userStore.userInfo.name,
+    email: userStore.userInfo.email,
     // remember: true,
 });
 
 const onFinish = async () => {
     try {
-        const response = await axios.put(`${import.meta.env.VITE_APP_API}/update-name-email/${userId}`, {
+        const response = await axios.put(`${import.meta.env.VITE_APP_API}/update-name-email/${userStore.userInfo.id}`, {
             newName: formState.username,
             newEmail: formState.email
         })
-        localStorage.setItem('userName', formState.username)
-        // console.log(response)
+        console.log(response.data)
+        userStore.setUser({
+            name: formState.username,
+            email: formState.email,
+            id: userStore.userInfo.id,
+            token: userStore.userInfo.token
+        })
         message.success(response.data.message)
     } catch (error) {
         console.log(error)

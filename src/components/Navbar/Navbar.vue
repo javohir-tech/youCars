@@ -8,10 +8,7 @@
         </RouterLink>
       </div>
       <div class="search-box">
-        <a-input-search
-          placeholder="Поиск по названию"
-          v-model:value="searchValue"
-        />
+        <a-input-search placeholder="Поиск по названию" v-model:value="searchValue" />
       </div>
       <div class="menu-toggle" @click="isMenuOpen = !isMenuOpen">
         <img src="../../assets/Images/toggleButton.png" alt="" />
@@ -21,33 +18,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" :class="{ open: isMenuOpen }">
       <div class="nav-links">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link"
-          >Главная</router-link
-        >
-        <router-link
-          @click="isMenuOpen = !isMenuOpen"
-          to="/katalok"
-          class="nav-link"
-          >Каталог</router-link
-        >
-        <router-link
-          @click="isMenuOpen = !isMenuOpen"
-          to="/about"
-          class="nav-link"
-          >О нас</router-link
-        >
-        <router-link
-          @click="isMenuOpen = !isMenuOpen"
-          to="/news"
-          class="nav-link"
-          >Новости</router-link
-        >
-        <router-link
-          @click="isMenuOpen = !isMenuOpen"
-          to="/contact"
-          class="nav-link"
-          >Контакты</router-link
-        >
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link">Главная</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/katalok" class="nav-link">Каталог</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/about" class="nav-link">О нас</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/news" class="nav-link">Новости</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/contact" class="nav-link">Контакты</router-link>
       </div>
 
       <div class="language-selector">
@@ -63,31 +38,19 @@
       </div>
 
       <div class="categories">
-        <RouterLink
-          @click="isMenuOpen = !isMenuOpen"
-          to="/katalok"
-          class="mobile-category__name"
-        >
+        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/katalok" class="mobile-category__name">
           <div class="category-item">
             <span>Автомобили</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink
-          @click="isMenuOpen = !isMenuOpen"
-          to="/commerce-cars"
-          class="mobile-category__name"
-        >
+        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/commerce-cars" class="mobile-category__name">
           <div class="category-item">
             <span>Коммерческий транспорт</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink
-          @click="isMenuOpen = !isMenuOpen"
-          to="/motorcycle"
-          class="mobile-category__name"
-        >
+        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/motorcycle" class="mobile-category__name">
           <div class="category-item">
             <span>Мотоциклы</span>
             <i class="fa-solid fa-chevron-right"></i>
@@ -111,30 +74,14 @@
       </div>
 
       <div class="social-icons">
-        <a href="#" target="_blank" class="social-icon"
-          ><i class="fa-brands fa-vk"></i
-        ></a>
-        <a href="#" target="_blank" class="social-icon"
-          ><i class="fa-brands fa-whatsapp"></i
-        ></a>
-        <a href="#" target="_blank" class="social-icon"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-vk"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
       </div>
 
       <div class="auth-buttons">
-        <router-link
-          @click="isMenuOpen = !isMenuOpen"
-          to="/register"
-          class="register-btn"
-          >Регистрация</router-link
-        >
-        <router-link
-          @click="isMenuOpen = !isMenuOpen"
-          to="/login"
-          class="login-btn"
-          >Войти</router-link
-        >
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/register" class="register-btn">Регистрация</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/login" class="login-btn">Войти</router-link>
       </div>
     </div>
     <!--desktop-->
@@ -151,12 +98,8 @@
             </ul>
             <div class="navbar-right">
               <div class="social-icons">
-                <a target="_blank" href="#"
-                  ><i class="fa-brands fa-instagram"></i
-                ></a>
-                <a target="_blank" href="#"
-                  ><i class="fa-brands fa-whatsapp"></i
-                ></a>
+                <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 <a target="_blank" href="#"><i class="fa-brands fa-vk"></i></a>
               </div>
               <a href="#" target="_blank">
@@ -209,17 +152,13 @@
               </ul>
             </div>
             <div class="navbar-actions">
-              <a-input-search
-                class="search-input"
-                placeholder="Поиск по названию"
-                v-model:value="searchValue"
-              />
+              <a-input-search class="search-input" placeholder="Поиск по названию" v-model:value="searchValue" />
               <div>
                 <img src="../../assets/Images/messages.png" alt="" />
               </div>
-              <div v-if="token">
+              <div v-if="userStore.userInfo.token">
                 <div class="user-data">
-                  <p class="mb-0">{{ user || userName }}</p>
+                  <p class="mb-0">{{ userStore.userInfo.name }}</p>
                   <RouterLink :to="userName ? `/${userName}` : '/guest'">
                     <div v-if="svg" v-html="svg" class="avatar"></div>
                     <a-avatar v-else>
@@ -232,9 +171,7 @@
               </div>
               <a-flex v-else gap="10">
                 <router-link to="/login" class="login-btn">Войти</router-link>
-                <router-link to="/register" class="register-btn"
-                  >Регистрация</router-link
-                >
+                <router-link to="/register" class="register-btn">Регистрация</router-link>
               </a-flex>
             </div>
           </a-flex>
@@ -245,71 +182,34 @@
 </template>
 
 <script setup>
-import axios from 'axios';
-import { nextTick, ref, watch } from 'vue';
-import { onMounted } from 'vue';
-//Dicebear
+import { ref, computed, onMounted, watch } from 'vue';
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
-//Antd
-import { message } from 'ant-design-vue';
+import { useUserStore } from '@/Stores/useUserStore';
 
+// State
 const isMenuOpen = ref(false);
 const searchValue = ref('');
 const language = ref('rus');
-
-const user = ref('');
 const svg = ref('');
-const loading = ref(false);
-const token = localStorage.getItem('token') || sessionStorage.getItem('token');
-const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName');
-console.log(userName);
 
-const fetchUserData = async () => {
-  loading.value = true;
-  try {
-    const response = await axios.get(
-      `${import.meta.env.VITE_APP_API}/user-dashboard`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-   
+// User store
+const userStore = useUserStore();
+const token = computed(() => localStorage.getItem('token') || sessionStorage.getItem('token'));
+const userName = computed(() => userStore.userInfo?.name || 'User');
 
-    user.value = response.data.userData.name || 'user';
-    await nextTick();
-    generateAvatar();
-  } catch (error) {
-    message.error(error.message);
-  } finally {
-    loading.value = false;
-  }
-};
-
+// Generate avatar
 const generateAvatar = () => {
-  if (user.value) {
-    const avatar = createAvatar(initials, {
-      seed: user.value || 'user',
-    });
-    svg.value = avatar.toString();
-  }
+  const avatar = createAvatar(initials, { seed: userName.value });
+  svg.value = avatar.toString();
 };
 
-watch(
-  user,
-  () => {
-    generateAvatar();
-  },
-  { immediate: true }
-);
+onMounted(generateAvatar);
 
-onMounted(() => {
-  if (token) {
-    fetchUserData();
-  }
-});
+watch(userName, () => {
+  generateAvatar()
+})
+
 </script>
 
 <style scoped>

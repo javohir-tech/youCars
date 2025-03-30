@@ -16,9 +16,8 @@ import {
 
 // Auth
 import { ForgetPassword, LoginView, RegisterView } from '@/Auth';
-// import Intro from '@/views/Intro/Intro.vue'
 
-//user page
+// User Page Components
 import {
   Featured,
   Message,
@@ -29,17 +28,9 @@ import {
   UserPage,
 } from '@/User';
 
-const userName =
-  localStorage.getItem('userName') || sessionStorage.getItem('userName');
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'intro',
-    //   component: Intro
-    // },
     {
       path: '/',
       name: 'home',
@@ -61,8 +52,8 @@ const router = createRouter({
       component: ForgetPassword,
     },
     {
-      path: `/${userName}`,
-      name: 'user accaund',
+      path: '/:userName',
+      name: 'user account',
       component: UserPage,
       children: [
         {

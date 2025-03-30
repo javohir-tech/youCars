@@ -16,9 +16,7 @@
           </a-flex>
           <a-flex justify="space-between" class="user-email">
             <p>Базовый тариф</p>
-            <a href="#" aria-disabled="true"
-              ><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a
-            >
+            <a href="#" aria-disabled="true"><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a>
           </a-flex>
           <RouterLink :to="`/${userName}/`">
             <a-flex class="acc-item" align="center" gap="10">
@@ -42,14 +40,10 @@
               <template #overlay>
                 <a-menu>
                   <a-menu-item>
-                    <RouterLink :to="`/${userName}/my-ads`"
-                      >Мои объявления</RouterLink
-                    >
+                    <RouterLink :to="`/${userName}/my-ads`">Мои объявления</RouterLink>
                   </a-menu-item>
                   <a-menu-item>
-                    <RouterLink :to="`/${userName}/place-ad`"
-                      >Разместить объявление</RouterLink
-                    >
+                    <RouterLink :to="`/${userName}/place-ad`">Разместить объявление</RouterLink>
                   </a-menu-item>
                 </a-menu>
               </template>
@@ -79,21 +73,35 @@
   </div>
 </template>
 <script setup>
-//Dicebear
+import { computed, ref, onMounted, watch } from 'vue';
+// Dicebear
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
-//Vue Router
+// Vue Router
 import { RouterLink, RouterView } from 'vue-router';
+// Pinia Store
+import { useUserStore } from '@/Stores/useUserStore';
 
-const userName =
-  localStorage.getItem('userName') || sessionStorage.getItem('userName');
-const email = localStorage.getItem('email') || sessionStorage.getItem('email');
+const userStore = useUserStore();
 
-const avatar = createAvatar(initials, {
-  seed: userName || 'javohir',
+const userName = computed(() => userStore.userInfo?.name || 'javohir');
+const email = computed(() => userStore.userInfo?.email || 'user@example.com');
+
+const svg = ref('');
+
+onMounted(() => {
+  const avatar = createAvatar(initials, {
+    seed: userName.value,
+  });
+  svg.value = avatar.toString();
 });
 
-const svg = avatar.toString();
+watch(userName, () => {
+  const avatar = createAvatar(initials, {
+    seed: userName.value,
+  });
+  svg.value = avatar.toString();
+})
 </script>
 <style scoped>
 @import './UserPage.css';
