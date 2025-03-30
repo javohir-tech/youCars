@@ -99,10 +99,12 @@ const onFinish = async () => {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userName', response.data.userData.name);
       localStorage.setItem('email', response.data.userData.email);
+      localStorage.setItem('id' , response.data.userData.id)
     } else {
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('userName', response.data.userData.name);
       sessionStorage.setItem('email', response.data.userData.email);
+      sessionStorage.setItem('id' , response.data.userData.id)
     }
 
     message.success(

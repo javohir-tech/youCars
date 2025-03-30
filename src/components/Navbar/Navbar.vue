@@ -257,12 +257,12 @@ import { message } from 'ant-design-vue';
 const isMenuOpen = ref(false);
 const searchValue = ref('');
 const language = ref('rus');
+
 const user = ref('');
 const svg = ref('');
 const loading = ref(false);
 const token = localStorage.getItem('token') || sessionStorage.getItem('token');
-const userName =
-  localStorage.getItem('userName') || sessionStorage.getItem('userName');
+const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName');
 console.log(userName);
 
 const fetchUserData = async () => {
@@ -276,7 +276,8 @@ const fetchUserData = async () => {
         },
       }
     );
-    // console.log(response)
+   
+
     user.value = response.data.userData.name || 'user';
     await nextTick();
     generateAvatar();
