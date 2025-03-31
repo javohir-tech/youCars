@@ -45,8 +45,10 @@ import { RouterLink } from 'vue-router';
 
 const cars = ref([]);
 
+const API_BASE_URL = import.meta.env.VITE_APP_API
+
 const { data, loading, error } = useFetch(
-  `${import.meta.env.VITE_APP_API}/cars`
+  `${API_BASE_URL}/cars`
 );
 
 watch(data, (newData) => {
