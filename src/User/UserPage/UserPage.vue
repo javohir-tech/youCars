@@ -61,7 +61,9 @@
               <p class="mb-0">Настройки аккаунта</p>
             </a-flex>
           </RouterLink>
-          <button class="acc-button">Выйти</button>
+          <a-popconfirm title="Are you sure you want to log out?" @confirm="logOut" @cancel="cancel">
+            <button class="acc-button" type="button">Выйти</button>
+          </a-popconfirm>
         </div>
       </a-col>
       <a-col :md="{ span: 18 }">
@@ -78,11 +80,14 @@ import { computed, ref, onMounted, watch } from 'vue';
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
 // Vue Router
+import { useRouter } from 'vue-router';
 import { RouterLink, RouterView } from 'vue-router';
 // Pinia Store
 import { useUserStore } from '@/Stores/useUserStore';
+import { message } from 'ant-design-vue';
 
 const userStore = useUserStore();
+const route = useRouter()
 
 const userName = computed(() => userStore.userInfo?.name || 'javohir');
 const email = computed(() => userStore.userInfo?.email || 'user@example.com');
@@ -102,6 +107,18 @@ watch(userName, () => {
   });
   svg.value = avatar.toString();
 })
+
+const logOut = () => {
+  localStorage.removeItem('token')
+  localStorage.removeItem('userInfo')
+  userStore.setUser({})
+  message.success('hayr')
+  route.push('/')
+}
+
+const cancel = () => {
+  message.error("We're happy to have you with us.");
+};
 </script>
 <style scoped>
 @import './UserPage.css';

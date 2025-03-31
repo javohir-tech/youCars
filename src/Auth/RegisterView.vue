@@ -23,6 +23,7 @@
 
           <a-form-item name="password" :rules="[
             { required: true, message: 'Please input your password!' },
+            { min: 6, message: 'The password must be at least 6 characters long!' }
           ]">
             <a-input-password v-model:value="formState.password" placeholder="Введите пароль" />
           </a-form-item>
@@ -133,7 +134,7 @@ const onFinish = async () => {
   } catch (error) {
     console.error('Error:', error.response?.data || error.message);
     message.error(
-      error.response?.data?.message || 'Ro‘yxatdan o‘tishda xato yuz berdi'
+      error?.message || 'Ro‘yxatdan o‘tishda xato yuz berdi'
     );
   } finally {
     loading.value = false;
