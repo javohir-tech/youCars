@@ -36,7 +36,7 @@
             </a-form>
         </div>
 
-        <div class="user-password__box">
+        <div class="user-password__box mt-4">
             <p>Смена пароля</p>
             <a-form :model="formState" autocomplete="off" layout="vertical" name="passwordUpdate"
                 @finish="updatePassword" @finishFailed="onFinishFailed">
