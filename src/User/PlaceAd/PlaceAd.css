@@ -1,0 +1,83 @@
+.place-add__box {
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.navigation-container {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 0;
+    padding: 5px;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.tabs-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 16px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    outline: none;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.tab:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tab.active {
+    background-color: white;
+    font-weight: 500;
+}   
+
+.add-section__header{
+    text-align: center;
+    h1{
+        font-weight: 600;
+        font-size: 35px;
+        color: #010101;
+    }
+    p{
+        font-weight: 500;
+        font-size: 15px;
+        color: #293843;
+    }
+}
+
+.input-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    align-items: center;
+    border-bottom: 1px solid #F0F0F0;
+    border-top: 1px solid #F0F0F0;
+}
+
+@media (max-width: 600px) {
+    .tab {
+        font-size: 12px;
+        padding: 10px 8px;
+    }
+    .navigation-container {
+        border-radius: 10px;
+    }
+    .tabs-container{
+        flex-direction: column;
+    }
+}

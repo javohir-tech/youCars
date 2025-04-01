@@ -43,7 +43,7 @@
                     <RouterLink :to="`/${userName}/my-ads`">Мои объявления</RouterLink>
                   </a-menu-item>
                   <a-menu-item>
-                    <RouterLink :to="`/${userName}/place-ad`">Разместить объявление</RouterLink>
+                    <RouterLink to="/place-ad">Разместить объявление</RouterLink>
                   </a-menu-item>
                 </a-menu>
               </template>

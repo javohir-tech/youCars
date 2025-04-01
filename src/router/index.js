@@ -28,6 +28,7 @@ import {
   UserPage,
 } from '@/User';
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -72,11 +73,6 @@ const router = createRouter({
           component: MyAds,
         },
         {
-          path: 'place-ad',
-          name: 'Place a Ad',
-          component: PlaceAd,
-        },
-        {
           path: 'rate',
           name: 'Rate',
           component: Rate,
@@ -87,6 +83,11 @@ const router = createRouter({
           component: Setting,
         },
       ],
+    },
+    {
+      path: '/place-ad',
+      name: 'Place a Ad',
+      component: PlaceAd,
     },
     {
       path: '/about',
