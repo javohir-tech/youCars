@@ -44,23 +44,25 @@
 .tab.active {
     background-color: white;
     font-weight: 500;
-}   
+}
 
-.add-section__header{
+.add-section__header {
     text-align: center;
-    h1{
+
+    h1 {
         font-weight: 600;
         font-size: 35px;
         color: #010101;
     }
-    p{
+
+    p {
         font-weight: 500;
         font-size: 15px;
         color: #293843;
     }
 }
 
-.input-box{
+.input-box {
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
@@ -74,10 +76,12 @@
         font-size: 12px;
         padding: 10px 8px;
     }
+
     .navigation-container {
         border-radius: 10px;
     }
-    .tabs-container{
+
+    .tabs-container {
         flex-direction: column;
     }
 }
