@@ -30,7 +30,7 @@
       sub-title="Sorry, An error occurred while loading the data!"
     />
   </div>
-  <a-back-top />
+  
 </template>
 
 <script setup>

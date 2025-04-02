@@ -5,6 +5,7 @@
   </main>
   <!-- <ResponseBanner/> -->
   <Footer />
+  <a-back-top />
 </template>
 <script setup>
 //components

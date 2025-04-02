@@ -1,6 +1,21 @@
 .place-add__box {
-    padding: 20px 30px;
+    padding: 20px 80px;
     border-radius: 10px;
+    max-width: 1000px;
+    margin: 15px auto;
+}
+
+.place-add__upload{
+    max-width: 1000px;
+    margin: 30px auto;
+    button{
+        background-color: #D7EAFF;
+        color: #2684E5;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
 .navigation-container {
@@ -69,9 +84,17 @@
     align-items: center;
     border-bottom: 1px solid #F0F0F0;
     border-top: 1px solid #F0F0F0;
+    p{
+        font-weight: 500;
+        font-size: 15px;
+        color: #989898;
+    }
 }
 
 @media (max-width: 600px) {
+    .place-add__box{
+        padding: 20px ;
+    }
     .tab {
         font-size: 12px;
         padding: 10px 8px;
