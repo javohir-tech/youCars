@@ -216,5 +216,5 @@ const setActiveTab = (index) => {
 
 </script>
 <style scoped>
-@import './PLaceAd.css';
+@import './PlaceAd.css';
 </style>
