@@ -12,7 +12,7 @@
     <!--Marks-->
     <Marks />
     <!--NewsCards-->
-    <NewsCards /> 
+    <NewsCards />
   </div>
 </template>
 <script setup>
@@ -24,8 +24,8 @@ import {
   Banner,
   CarsKatalok,
   Marks,
-  NewsCards,
   WhyWe,
 } from './Components';
+import { NewsCards } from '@/components';
 </script>
 <style></style>

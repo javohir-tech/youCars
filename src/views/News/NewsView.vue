@@ -1,7 +1,18 @@
 <template>
-  <div>news</div>
+  <div class="container">
+    <a-breadcrumb class="mt-4">
+      <a-breadcrumb-item>
+        <RouterLink to="/">Главная</RouterLink>
+      </a-breadcrumb-item>
+      <a-breadcrumb-item>
+        <RouterLink to="/news">Новости</RouterLink>
+      </a-breadcrumb-item>
+    </a-breadcrumb>
+      <NewsCards />
+  </div>
 </template>
-<script>
-export default {};
+<script  setup>
+import { NewsCards } from '@/components';
+
 </script>
 <style></style>

@@ -8,6 +8,7 @@ import MotoTovar from './CardTovarView/MotoTovar.vue';
 import AboutView from './AboutView/AboutView.vue';
 import ContactView from './ContactView/ContactView.vue';
 import NewsView from './News/NewsView.vue';
+import NewsItem from './NewsItemView/NewsItem.vue';
 
 export {
   HomeView,
@@ -20,4 +21,5 @@ export {
   AboutView,
   ContactView,
   NewsView,
+  NewsItem
 };

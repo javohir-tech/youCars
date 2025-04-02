@@ -11,6 +11,7 @@ import {
   KatalokView,
   Motorcycle,
   MotoTovar,
+  NewsItem,
   NewsView,
 } from '@/views';
 
@@ -108,6 +109,11 @@ const router = createRouter({
       path: '/news',
       name: 'news',
       component: NewsView,
+    },
+    {
+      path: '/news/:id',
+      name: 'news item',
+      component: NewsItem
     },
     {
       path: '/motorcycle',

@@ -24,12 +24,12 @@
                   {{ ourNew.content?.split(' ').slice(0, 35).join(' ') }}...
                 </p>
               </div>
-              <a href="#" class="card-link">
+              <RouterLink :to="`/news/${ourNew.id}`" class="card-link">
                 <a-flex align="center" :gap="10">
                   <p class="mb-0">Подробнее</p>
                   <i class="fa-solid fa-right-to-bracket"></i>
                 </a-flex>
-              </a>
+              </RouterLink>
             </div>
           </div>
         </a-col>
@@ -76,12 +76,12 @@
               <h2>{{ ourNew.title }}</h2>
               <p>{{ ourNew.content?.split(' ').slice(0, 35).join(' ') }}...</p>
             </div>
-            <a href="#" class="card-link">
+            <RouterLink :to="`/news/${ourNew.id}`" class="card-link">
               <a-flex align="center" :gap="10">
                 <p class="mb-0">Подробнее</p>
                 <i class="fa-solid fa-right-to-bracket"></i>
               </a-flex>
-            </a>
+            </RouterLink>
           </div>
         </div>
       </swiper-slide>
@@ -100,6 +100,8 @@ import { useFetch } from '@/Hooks/UseFatch';
 
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
+//Router
+import { RouterLink } from 'vue-router';
 
 const modules = [Pagination, Autoplay];
 const ourNews = ref([]);
