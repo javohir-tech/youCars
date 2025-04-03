@@ -106,7 +106,7 @@ onMounted(() => {
 }
 
 .news-accardion {
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 10px;
 
     h3 {
