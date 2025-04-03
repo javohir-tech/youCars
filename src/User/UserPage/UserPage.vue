@@ -18,16 +18,11 @@
             <p>Базовый тариф</p>
             <a href="#" aria-disabled="true"><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a>
           </a-flex>
-          <RouterLink :to="`/${userName}/`">
+          <!--router links-->
+          <RouterLink v-for="item in menuItems" :key="item.path" :to="`/${userName}/${item.path}`">
             <a-flex class="acc-item" align="center" gap="10">
-              <i class="bi bi-star"></i>
-              <p class="mb-0">Избранное</p>
-            </a-flex>
-          </RouterLink>
-          <RouterLink :to="`/${userName}/message`">
-            <a-flex class="acc-item" align="center" gap="10">
-              <i class="bi bi-chat-dots"></i>
-              <p class="mb-0">Сообщения</p>
+              <i :class="`bi ${item.icon}`"></i>
+              <p class="mb-0">{{ item.label }}</p>
             </a-flex>
           </RouterLink>
           <a-flex class="acc-item" align="center" gap="10">
@@ -49,16 +44,11 @@
               </template>
             </a-dropdown>
           </a-flex>
-          <RouterLink :to="`/${userName}/rate`">
+          <!--router links-->
+          <RouterLink v-for="item in menuItems2" :key="item.path" :to="`/${userName}/${item.path}`">
             <a-flex class="acc-item" align="center" gap="10">
-              <i class="bi bi-fire"></i>
-              <p class="mb-0">Тариф</p>
-            </a-flex>
-          </RouterLink>
-          <RouterLink :to="`/${userName}/setting`">
-            <a-flex class="acc-item mb-3" align="center" gap="10">
-              <i class="bi bi-gear"></i>
-              <p class="mb-0">Настройки аккаунта</p>
+              <i :class="`bi ${item.icon}`"></i>
+              <p class="mb-0">{{ item.label }}</p>
             </a-flex>
           </RouterLink>
           <a-popconfirm title="Are you sure you want to log out?" @confirm="logOut" @cancel="cancel">
@@ -88,6 +78,16 @@ import { message } from 'ant-design-vue';
 
 const userStore = useUserStore();
 const route = useRouter()
+const menuItems = [
+  { path: '', icon: 'bi-star', label: 'Избранное' },
+  { path: 'message', icon: 'bi-chat-dots', label: 'Сообщения' },
+];
+
+const menuItems2 = [
+  { path: 'rate', icon: 'bi-fire', label: 'Тариф' },
+  { path: 'setting', icon: 'bi-gear', label: 'Настройки аккаунта' }
+]
+
 
 const userName = computed(() => userStore.userInfo?.name || 'javohir');
 const email = computed(() => userStore.userInfo?.email || 'user@example.com');
