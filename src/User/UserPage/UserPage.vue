@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- <RouterLink to="/rate">Salom</RouterLink> -->
     <a-row class="mt-4" :gutter="[10, 10]" justify="space-between">
       <a-col :md="{ span: 6 }">
         <div class="shadow acc-layout">

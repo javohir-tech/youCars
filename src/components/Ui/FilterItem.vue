@@ -2,7 +2,7 @@
   <div class="dropdown-container">
     <div class="filter-item">
       <p>{{ filterName }}</p>
-      <a-dropdown :placement="yonalish" class="my-dropdown">
+      <a-dropdown :placement="yonalish" class="my-dropdown" v-model="salom">
         <a-button class="dropdown-button">
           <span>{{ filterCategoriesDefault }}</span>
           <span class="dropdown-icon">▼</span>
@@ -26,6 +26,8 @@ defineProps({
   filterCategoriesDefault: String || Number,
   filterCategories: String || Number,
 });
+
+const salom = ref(0)
 </script>
 <style scoped>
 .dropdown-container {
