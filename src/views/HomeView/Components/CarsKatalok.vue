@@ -14,7 +14,7 @@
       >
         <RouterLink :to="`/katalok/cars-tovar/${car.id}`">
           <AvtoCard
-            :avtomabil="car"
+            :avtomabil="{ ...car, route: '/katalok/cars-tovar' }"
             :images="car.image"
             :cost="car.cost"
             :country="car.country"
@@ -45,11 +45,9 @@ import { RouterLink } from 'vue-router';
 
 const cars = ref([]);
 
-const API_BASE_URL = import.meta.env.VITE_APP_API
+const API_BASE_URL = import.meta.env.VITE_APP_API;
 
-const { data, loading, error } = useFetch(
-  `${API_BASE_URL}/cars`
-);
+const { data, loading, error } = useFetch(`${API_BASE_URL}/cars`);
 
 watch(data, (newData) => {
   cars.value = newData.slice(0, 8);

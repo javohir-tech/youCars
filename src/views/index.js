@@ -21,5 +21,5 @@ export {
   AboutView,
   ContactView,
   NewsView,
-  NewsItem
+  NewsItem,
 };

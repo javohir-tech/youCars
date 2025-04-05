@@ -7,7 +7,7 @@ export const useUserStore = defineStore('userStore', () => {
     name: null,
     email: null,
     id: null,
-    token: null
+    token: null,
   };
 
   const userInfo = ref(storedUser);
@@ -16,13 +16,17 @@ export const useUserStore = defineStore('userStore', () => {
     userInfo.value = { ...user };
   };
 
-  watch(userInfo, (newValue) => {
-    if (newValue.token) {
-      localStorage.setItem('userInfo', JSON.stringify(newValue));
-    } else {
-      localStorage.removeItem('userInfo'); 
-    }
-  }, { deep: true });
+  watch(
+    userInfo,
+    (newValue) => {
+      if (newValue.token) {
+        localStorage.setItem('userInfo', JSON.stringify(newValue));
+      } else {
+        localStorage.removeItem('userInfo');
+      }
+    },
+    { deep: true }
+  );
 
   return {
     userInfo,

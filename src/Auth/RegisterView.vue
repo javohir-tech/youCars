@@ -4,54 +4,87 @@
       <h1 class="title">Регистрация</h1>
       <p class="subtitle">Заполните поля ниже для создания аккаунта.</p>
       <div>
-        <a-form :model="formState" name="basic" autocomplete="off" @finish="onFinish" @finishFailed="onFinishFailed">
-          <a-form-item name="name" :rules="[
-            { required: true, message: 'Please input your username!' },
-          ]">
+        <a-form
+          :model="formState"
+          name="basic"
+          autocomplete="off"
+          @finish="onFinish"
+          @finishFailed="onFinishFailed"
+        >
+          <a-form-item
+            name="name"
+            :rules="[
+              { required: true, message: 'Please input your username!' },
+            ]"
+          >
             <a-input v-model:value="formState.name" placeholder="Имя" />
           </a-form-item>
 
-          <a-form-item name="email" :rules="[
-            {
-              required: true,
-              message: 'Please input your email!',
-              type: 'email',
-            },
-          ]">
+          <a-form-item
+            name="email"
+            :rules="[
+              {
+                required: true,
+                message: 'Please input your email!',
+                type: 'email',
+              },
+            ]"
+          >
             <a-input v-model:value="formState.email" placeholder="E-mail" />
           </a-form-item>
 
-          <a-form-item name="password" :rules="[
-            { required: true, message: 'Please input your password!' },
-            { min: 6, message: 'The password must be at least 6 characters long!' }
-          ]">
-            <a-input-password v-model:value="formState.password" placeholder="Введите пароль" />
+          <a-form-item
+            name="password"
+            :rules="[
+              { required: true, message: 'Please input your password!' },
+              {
+                min: 6,
+                message: 'The password must be at least 6 characters long!',
+              },
+            ]"
+          >
+            <a-input-password
+              v-model:value="formState.password"
+              placeholder="Введите пароль"
+            />
           </a-form-item>
 
-          <a-form-item name="confirmPassword" :rules="[
-            {
-              required: true,
-              message: 'Please confirm your password!',
-            },
-            {
-              validator: validateConfirmPassword,
-            },
-          ]">
-            <a-input-password v-model:value="formState.confirmPassword" placeholder="Повторите пароль" />
+          <a-form-item
+            name="confirmPassword"
+            :rules="[
+              {
+                required: true,
+                message: 'Please confirm your password!',
+              },
+              {
+                validator: validateConfirmPassword,
+              },
+            ]"
+          >
+            <a-input-password
+              v-model:value="formState.confirmPassword"
+              placeholder="Повторите пароль"
+            />
           </a-form-item>
 
           <div>
-            <a-checkbox v-model:checked="formState.remember">Согласен с политикой обработки данных.</a-checkbox>
+            <a-checkbox v-model:checked="formState.remember"
+              >Согласен с политикой обработки данных.</a-checkbox
+            >
           </div>
 
-          <a-button type="primary" style="width: 100%; margin-top: 16px" html-type="submit" :disabled="loading">
+          <a-button
+            type="primary"
+            style="width: 100%; margin-top: 16px"
+            html-type="submit"
+            :disabled="loading"
+          >
             <a-spin size="small" v-if="loading" />
             {{ loading ? 'Laoding...' : 'Зарегистрироваться' }}
           </a-button>
         </a-form>
         <div class="under-link">
-          <p>Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink>
-          </p>
+          <p>Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink></p>
         </div>
       </div>
     </div>
@@ -68,7 +101,7 @@ import { reactive, ref, watch } from 'vue';
 import { useUserStore } from '@/Stores/useUserStore';
 
 const route = useRouter();
-const userStore = useUserStore()
+const userStore = useUserStore();
 const loading = ref(false);
 
 const formState = reactive({
@@ -106,16 +139,16 @@ const onFinish = async () => {
         name: response.data.userData.name,
         email: response.data.userData.email,
         id: response.data.userData.id,
-        token: response.data.token
-      })
+        token: response.data.token,
+      });
     } else {
       sessionStorage.setItem('token', response.data.token);
       userStore.setUser({
         name: response.data.userData.name,
         email: response.data.userData.email,
         id: response.data.userData.id,
-        token: response.data.token
-      })
+        token: response.data.token,
+      });
     }
 
     message.success(
@@ -133,9 +166,7 @@ const onFinish = async () => {
     formState.remember = false;
   } catch (error) {
     console.error('Error:', error.response?.data || error.message);
-    message.error(
-      error?.message || 'Ro‘yxatdan o‘tishda xato yuz berdi'
-    );
+    message.error(error?.message || 'Ro‘yxatdan o‘tishda xato yuz berdi');
   } finally {
     loading.value = false;
   }
@@ -156,7 +187,7 @@ watch(
   () => formState.password,
   () => {
     if (formState.confirmPassword) {
-      validateConfirmPassword(null, formState.confirmPassword).catch(() => { });
+      validateConfirmPassword(null, formState.confirmPassword).catch(() => {});
     }
   }
 );

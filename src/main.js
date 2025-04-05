@@ -1,8 +1,10 @@
 import './assets/main.css';
 
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
 import App from './App.vue';
+import { createApp } from 'vue';
+//PINIA
+import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 //antd
 import Antd from 'ant-design-vue';
@@ -16,7 +18,10 @@ import 'swiper/css/scrollbar';
 //router
 import router from './router';
 
+//pinia
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
 const app = createApp(App);
 
 app.use(pinia);

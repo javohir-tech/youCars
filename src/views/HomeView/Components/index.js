@@ -4,4 +4,4 @@ import WhyWe from './WhyWe.vue';
 import AboutCompony from './AboutCompony.vue';
 import Marks from './Marks.vue';
 
-export { WhyWe, CarsKatalok, Banner, AboutCompony, Marks};
+export { WhyWe, CarsKatalok, Banner, AboutCompony, Marks };

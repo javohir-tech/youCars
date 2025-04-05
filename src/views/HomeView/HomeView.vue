@@ -19,13 +19,7 @@
 //filter
 import Filter from '@/components/Filter/Filter.vue';
 //components
-import {
-  AboutCompony,
-  Banner,
-  CarsKatalok,
-  Marks,
-  WhyWe,
-} from './Components';
+import { AboutCompony, Banner, CarsKatalok, Marks, WhyWe } from './Components';
 import { NewsCards } from '@/components';
 </script>
 <style></style>

@@ -8,11 +8,10 @@
         <RouterLink to="/news">Новости</RouterLink>
       </a-breadcrumb-item>
     </a-breadcrumb>
-      <NewsCards />
+    <NewsCards />
   </div>
 </template>
-<script  setup>
+<script setup>
 import { NewsCards } from '@/components';
-
 </script>
 <style></style>

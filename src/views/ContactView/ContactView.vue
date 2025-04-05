@@ -19,7 +19,10 @@
                 <p class="mb-0">+998 77 123 29 04</p>
               </div>
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suvonovjavohir625@gmail.com" target="_blank">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=suvonovjavohir625@gmail.com"
+              target="_blank"
+            >
               <div class="contact-item">
                 <i class="bi bi-envelope"></i>
                 <p class="mb-0">suvonovjavohir625@gmail.com</p>
@@ -37,7 +40,10 @@
             <a href="https://t.me/Suvonov_Javoh1r" target="_blank">
               <i class="bi bi-telegram"></i>
             </a>
-            <a href="https://www.instagram.com/suvonov_javohir1/" target="_blank">
+            <a
+              href="https://www.instagram.com/suvonov_javohir1/"
+              target="_blank"
+            >
               <i class="bi bi-instagram"></i>
             </a>
             <a href="">
@@ -50,16 +56,18 @@
         <div class="map-box">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.59854203195!2d69.11455762018232!3d41.282479929544316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1743678669623!5m2!1sen!2s"
-            class="map" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            class="map"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </a-col>
     </a-row>
   </div>
 </template>
-<script setup>
-
-</script>
+<script setup></script>
 <style scoped>
 .contact-item {
   display: flex;
@@ -70,13 +78,13 @@
   i {
     width: 57px;
     height: 57px;
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 3px;
     transition: all 0.3s ease-in;
-    color: #050B20;
+    color: #050b20;
     font-size: 24px;
   }
 
@@ -84,13 +92,13 @@
     font-weight: 500;
     font-size: 17px;
     transition: all 0.3s ease-in;
-    color: #5A5A5A;
+    color: #5a5a5a;
   }
 }
 
 .contact-item:hover {
   i {
-    background-color: #E0E0E0;
+    background-color: #e0e0e0;
   }
 
   p {

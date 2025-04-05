@@ -281,7 +281,7 @@
         >
           <RouterLink :to="`${props.similarRoute}/${similarCar.id}`">
             <AvtoCard
-              :avtomabil="similarCar"
+              :avtomabil="{ ...similarCar, route: props.similarRoute }"
               :images="similarCar.image"
               :cost="similarCar.cost"
               :country="similarCar.country"

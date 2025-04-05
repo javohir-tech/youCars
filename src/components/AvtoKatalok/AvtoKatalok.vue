@@ -10,7 +10,7 @@
       >
         <RouterLink :to="`${props.router}/${car.id}`">
           <AvtoCard
-            :avtomabil="car"
+            :avtomabil="{ ...car, route: props.router }"
             :images="car.image"
             :cost="car.cost"
             :country="car.country"

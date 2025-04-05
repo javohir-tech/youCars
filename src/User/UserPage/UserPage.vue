@@ -17,10 +17,16 @@
           </a-flex>
           <a-flex justify="space-between" class="user-email">
             <p>Базовый тариф</p>
-            <a href="#" aria-disabled="true"><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a>
+            <a href="#" aria-disabled="true"
+              ><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a
+            >
           </a-flex>
           <!--router links-->
-          <RouterLink v-for="item in menuItems" :key="item.path" :to="`/${userName}/${item.path}`">
+          <RouterLink
+            v-for="item in menuItems"
+            :key="item.path"
+            :to="`/${userName}/${item.path}`"
+          >
             <a-flex class="acc-item" align="center" gap="10">
               <i :class="`bi ${item.icon}`"></i>
               <p class="mb-0">{{ item.label }}</p>
@@ -36,23 +42,35 @@
               <template #overlay>
                 <a-menu>
                   <a-menu-item>
-                    <RouterLink :to="`/${userName}/my-ads`">Мои объявления</RouterLink>
+                    <RouterLink :to="`/${userName}/my-ads`"
+                      >Мои объявления</RouterLink
+                    >
                   </a-menu-item>
                   <a-menu-item>
-                    <RouterLink to="/place-ad">Разместить объявление</RouterLink>
+                    <RouterLink to="/place-ad"
+                      >Разместить объявление</RouterLink
+                    >
                   </a-menu-item>
                 </a-menu>
               </template>
             </a-dropdown>
           </a-flex>
           <!--router links-->
-          <RouterLink v-for="item in menuItems2" :key="item.path" :to="`/${userName}/${item.path}`">
+          <RouterLink
+            v-for="item in menuItems2"
+            :key="item.path"
+            :to="`/${userName}/${item.path}`"
+          >
             <a-flex class="acc-item" align="center" gap="10">
               <i :class="`bi ${item.icon}`"></i>
               <p class="mb-0">{{ item.label }}</p>
             </a-flex>
           </RouterLink>
-          <a-popconfirm title="Are you sure you want to log out?" @confirm="logOut" @cancel="cancel">
+          <a-popconfirm
+            title="Are you sure you want to log out?"
+            @confirm="logOut"
+            @cancel="cancel"
+          >
             <button class="acc-button" type="button">Выйти</button>
           </a-popconfirm>
         </div>
@@ -75,10 +93,12 @@ import { useRouter } from 'vue-router';
 import { RouterLink, RouterView } from 'vue-router';
 // Pinia Store
 import { useUserStore } from '@/Stores/useUserStore';
+import { useCarStore } from '@/Stores/store';
 import { message } from 'ant-design-vue';
 
 const userStore = useUserStore();
-const route = useRouter()
+const CarStore = useCarStore();
+const route = useRouter();
 const menuItems = [
   { path: '', icon: 'bi-star', label: 'Избранное' },
   { path: 'message', icon: 'bi-chat-dots', label: 'Сообщения' },
@@ -86,9 +106,8 @@ const menuItems = [
 
 const menuItems2 = [
   { path: 'rate', icon: 'bi-fire', label: 'Тариф' },
-  { path: 'setting', icon: 'bi-gear', label: 'Настройки аккаунта' }
-]
-
+  { path: 'setting', icon: 'bi-gear', label: 'Настройки аккаунта' },
+];
 
 const userName = computed(() => userStore.userInfo?.name || 'javohir');
 const email = computed(() => userStore.userInfo?.email || 'user@example.com');
@@ -107,15 +126,16 @@ watch(userName, () => {
     seed: userName.value,
   });
   svg.value = avatar.toString();
-})
+});
 
 const logOut = () => {
-  localStorage.removeItem('token')
-  localStorage.removeItem('userInfo')
-  userStore.setUser({})
-  message.success('hayr')
-  route.push('/')
-}
+  localStorage.removeItem('token');
+  localStorage.removeItem('userInfo');
+  userStore.setUser({});
+  CarStore.selectedCars = [];
+  message.success('hayr');
+  route.push('/');
+};
 
 const cancel = () => {
   message.error("We're happy to have you with us.");

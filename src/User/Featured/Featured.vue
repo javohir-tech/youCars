@@ -7,14 +7,16 @@
         :md="{ span: 8 }"
         :key="selectedCar.id"
       >
-        <AvtoCard
-          :avtomabil="selectedCar"
-          :images="selectedCar.image"
-          :cost="selectedCar.cost"
-          :country="selectedCar.country"
-          :milage="selectedCar.milage"
-          :model="selectedCar.model"
-        />
+        <RouterLink :to="`${selectedCar.route}/${selectedCar.id}`">
+          <AvtoCard
+            :avtomabil="selectedCar"
+            :images="selectedCar.image"
+            :cost="selectedCar.cost"
+            :country="selectedCar.country"
+            :milage="selectedCar.milage"
+            :model="selectedCar.model"
+          />
+        </RouterLink>
       </a-col>
     </a-row>
     <div v-else class="selectedCar">

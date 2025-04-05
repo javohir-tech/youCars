@@ -25,7 +25,6 @@
       sub-title="Sorry, An error occurred while loading the data!"
     />
   </div>
-  
 </template>
 <script setup>
 //vue

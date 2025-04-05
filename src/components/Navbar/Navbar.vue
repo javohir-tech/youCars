@@ -8,7 +8,10 @@
         </RouterLink>
       </div>
       <div class="search-box">
-        <a-input-search placeholder="Поиск по названию" v-model:value="searchValue" />
+        <a-input-search
+          placeholder="Поиск по названию"
+          v-model:value="searchValue"
+        />
       </div>
       <div class="menu-toggle" @click="isMenuOpen = !isMenuOpen">
         <img src="../../assets/Images/toggleButton.png" alt="" />
@@ -18,11 +21,33 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" :class="{ open: isMenuOpen }">
       <div class="nav-links">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link">Главная</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/katalok" class="nav-link">Каталог</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/about" class="nav-link">О нас</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/news" class="nav-link">Новости</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/contact" class="nav-link">Контакты</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link"
+          >Главная</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/katalok"
+          class="nav-link"
+          >Каталог</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/about"
+          class="nav-link"
+          >О нас</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/news"
+          class="nav-link"
+          >Новости</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/contact"
+          class="nav-link"
+          >Контакты</router-link
+        >
       </div>
 
       <div class="language-selector">
@@ -38,19 +63,31 @@
       </div>
 
       <div class="categories">
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/katalok" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/katalok"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>Автомобили</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/commerce-cars" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/commerce-cars"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>Коммерческий транспорт</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/motorcycle" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/motorcycle"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>Мотоциклы</span>
             <i class="fa-solid fa-chevron-right"></i>
@@ -74,14 +111,30 @@
       </div>
 
       <div class="social-icons">
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-vk"></i></a>
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-vk"></i
+        ></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
       </div>
 
       <div class="auth-buttons">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/register" class="register-btn">Регистрация</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/login" class="login-btn">Войти</router-link>
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/register"
+          class="register-btn"
+          >Регистрация</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/login"
+          class="login-btn"
+          >Войти</router-link
+        >
       </div>
     </div>
     <!--desktop-->
@@ -98,8 +151,12 @@
             </ul>
             <div class="navbar-right">
               <div class="social-icons">
-                <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a target="_blank" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-whatsapp"></i
+                ></a>
                 <a target="_blank" href="#"><i class="fa-brands fa-vk"></i></a>
               </div>
               <a href="#" target="_blank">
@@ -152,7 +209,11 @@
               </ul>
             </div>
             <div class="navbar-actions">
-              <a-input-search class="search-input" placeholder="Поиск по названию" v-model:value="searchValue" />
+              <a-input-search
+                class="search-input"
+                placeholder="Поиск по названию"
+                v-model:value="searchValue"
+              />
               <div>
                 <img src="../../assets/Images/messages.png" alt="" />
               </div>
@@ -171,7 +232,9 @@
               </div>
               <a-flex v-else gap="10">
                 <router-link to="/login" class="login-btn">Войти</router-link>
-                <router-link to="/register" class="register-btn">Регистрация</router-link>
+                <router-link to="/register" class="register-btn"
+                  >Регистрация</router-link
+                >
               </a-flex>
             </div>
           </a-flex>
@@ -195,7 +258,9 @@ const svg = ref('');
 
 // User store
 const userStore = useUserStore();
-const token = computed(() => localStorage.getItem('token') || sessionStorage.getItem('token'));
+const token = computed(
+  () => localStorage.getItem('token') || sessionStorage.getItem('token')
+);
 const userName = computed(() => userStore.userInfo?.name || 'User');
 
 // Generate avatar
@@ -207,9 +272,8 @@ const generateAvatar = () => {
 onMounted(generateAvatar);
 
 watch(userName, () => {
-  generateAvatar()
-})
-
+  generateAvatar();
+});
 </script>
 
 <style scoped>

@@ -2,8 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 // Components
 import {
-  AboutView, CarsTovar, CommerceCars, CommerceCarsTovar, ContactView, HomeView,
-  KatalokView, Motorcycle, MotoTovar, NewsItem, NewsView,
+  AboutView,
+  CarsTovar,
+  CommerceCars,
+  CommerceCarsTovar,
+  ContactView,
+  HomeView,
+  KatalokView,
+  Motorcycle,
+  MotoTovar,
+  NewsItem,
+  NewsView,
 } from '@/views';
 
 // Auth
@@ -11,7 +20,13 @@ import { ForgetPassword, LoginView, RegisterView } from '@/Auth';
 
 // User Page Components
 import {
-  Featured, Message, MyAds, PlaceAd, Rate, Setting, UserPage,
+  Featured,
+  Message,
+  MyAds,
+  PlaceAd,
+  Rate,
+  Setting,
+  UserPage,
 } from '@/User';
 
 const routes = [
@@ -152,6 +167,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
 
 export default router;
