@@ -4,6 +4,7 @@
     <a-row v-if="carStore.selectedCars.length > 0" :gutter="[10, 10]">
       <a-col
         v-for="selectedCar in carStore.selectedCars"
+        :xs="{span: 24}"
         :md="{ span: 8 }"
         :key="selectedCar.id"
       >

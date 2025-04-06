@@ -75,3 +75,13 @@
   border-radius: 7px;
   background-color: rgba(246, 246, 246, 1);
 }
+
+.acc-info{
+  display: block;
+}
+
+@media(max-width: 768px) {
+  .acc-info{
+    display: none;
+  }
+}

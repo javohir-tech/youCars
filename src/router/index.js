@@ -55,16 +55,6 @@ const routes = [
     name: 'user account',
     component: UserPage,
     children: [
-      // {
-      //   path: '',
-      //   redirect: (to) => {
-      //     if(window.innerWidth > 768){
-      //       return { path: `/${to.params.userName}/featured` };
-      //     }else{
-      //       return false
-      //     }
-      //   }
-      // },
       {
         path: 'featured',
         name: 'Featured',
@@ -184,7 +174,7 @@ router.beforeEach((to, from, next) => {
     if (!isMobile) {
       next({ path: `/${to.params.userName}/featured` });
     } else {
-      next(); // Mobileda hech qayerga yo'naltirmaydi
+      next(); 
     }
   } else {
     next();

@@ -2,7 +2,7 @@
   <div class="container">
     <!-- <RouterLink to="/rate">Salom</RouterLink> -->
     <a-row class="mt-4" :gutter="[10, 10]" justify="space-between">
-      <a-col :md="{ span: 6 }">
+      <a-col :xs="{ span: 24 }" :md="{ span: 6 }">
         <div class="shadow acc-layout">
           <a-flex align="center" gap="10" class="user-acc">
             <div v-html="svg" class="avatar"></div>
@@ -17,16 +17,10 @@
           </a-flex>
           <a-flex justify="space-between" class="user-email">
             <p>Базовый тариф</p>
-            <a href="#" aria-disabled="true"
-              ><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a
-            >
+            <a href="#" aria-disabled="true"><i class="bi bi-exclamation-square me-1"></i>Базовый тариф</a>
           </a-flex>
           <!--router links-->
-          <RouterLink
-            v-for="item in menuItems"
-            :key="item.path"
-            :to="`/${userName}/${item.path}`"
-          >
+          <RouterLink v-for="item in menuItems" :key="item.path" :to="`/${userName}/${item.path}`">
             <a-flex class="acc-item" align="center" gap="10">
               <i :class="`bi ${item.icon}`"></i>
               <p class="mb-0">{{ item.label }}</p>
@@ -42,35 +36,23 @@
               <template #overlay>
                 <a-menu>
                   <a-menu-item>
-                    <RouterLink :to="`/${userName}/my-ads`"
-                      >Мои объявления</RouterLink
-                    >
+                    <RouterLink :to="`/${userName}/my-ads`">Мои объявления</RouterLink>
                   </a-menu-item>
                   <a-menu-item>
-                    <RouterLink to="/place-ad"
-                      >Разместить объявление</RouterLink
-                    >
+                    <RouterLink to="/place-ad">Разместить объявление</RouterLink>
                   </a-menu-item>
                 </a-menu>
               </template>
             </a-dropdown>
           </a-flex>
           <!--router links-->
-          <RouterLink
-            v-for="item in menuItems2"
-            :key="item.path"
-            :to="`/${userName}/${item.path}`"
-          >
+          <RouterLink v-for="item in menuItems2" :key="item.path" :to="`/${userName}/${item.path}`">
             <a-flex class="acc-item" align="center" gap="10">
               <i :class="`bi ${item.icon}`"></i>
               <p class="mb-0">{{ item.label }}</p>
             </a-flex>
           </RouterLink>
-          <a-popconfirm
-            title="Are you sure you want to log out?"
-            @confirm="logOut"
-            @cancel="cancel"
-          >
+          <a-popconfirm title="Are you sure you want to log out?" @confirm="logOut" @cancel="cancel">
             <button class="acc-button" type="button">Выйти</button>
           </a-popconfirm>
         </div>
