@@ -242,6 +242,15 @@
       </div>
     </div>
   </div>
+  <!-- vaqtincha-->
+  <RouterLink :to="userName ? `/${userName}` : '/guest'">
+                    <div v-if="svg" v-html="svg" class="avatar"></div>
+                    <a-avatar v-else>
+                      <template #icon>
+                        <UserOutlined />
+                      </template>
+                    </a-avatar>
+                  </RouterLink>
 </template>
 
 <script setup>

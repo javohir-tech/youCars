@@ -96,11 +96,14 @@ import { useUserStore } from '@/Stores/useUserStore';
 import { useCarStore } from '@/Stores/store';
 import { message } from 'ant-design-vue';
 
+//Pinia
 const userStore = useUserStore();
 const CarStore = useCarStore();
+//Route
 const route = useRouter();
+//menu items
 const menuItems = [
-  { path: '', icon: 'bi-star', label: 'Избранное' },
+  { path: 'featured', icon: 'bi-star', label: 'Избранное' },
   { path: 'message', icon: 'bi-chat-dots', label: 'Сообщения' },
 ];
 
@@ -109,10 +112,11 @@ const menuItems2 = [
   { path: 'setting', icon: 'bi-gear', label: 'Настройки аккаунта' },
 ];
 
+//userInfo
 const userName = computed(() => userStore.userInfo?.name || 'javohir');
 const email = computed(() => userStore.userInfo?.email || 'user@example.com');
-
 const svg = ref('');
+
 
 onMounted(() => {
   const avatar = createAvatar(initials, {
@@ -128,6 +132,8 @@ watch(userName, () => {
   svg.value = avatar.toString();
 });
 
+
+//LogOut Function
 const logOut = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('userInfo');

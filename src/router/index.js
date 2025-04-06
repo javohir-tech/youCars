@@ -55,37 +55,54 @@ const routes = [
     name: 'user account',
     component: UserPage,
     children: [
+      // {
+      //   path: '',
+      //   redirect: (to) => {
+      //     if(window.innerWidth > 768){
+      //       return { path: `/${to.params.userName}/featured` };
+      //     }else{
+      //       return false
+      //     }
+      //   }
+      // },
       {
-        path: '',
+        path: 'featured',
         name: 'Featured',
         component: Featured,
-        meta: { requiresDesktop: true },
+        beforeEnter: (to, from, next) => {
+          if (window.innerWidth <= 768) {
+            next({ name: 'FeaturedPageMobile', params: { userName: to.params.userName } });
+          } else {
+            next();
+          }
+        }
       },
       {
         path: 'message',
         name: 'Message',
         component: Message,
-        meta: { requiresDesktop: true },
       },
       {
         path: 'my-ads',
         name: 'My Ads',
         component: MyAds,
-        meta: { requiresDesktop: true },
       },
       {
         path: 'rate',
         name: 'Rate',
         component: Rate,
-        meta: { requiresDesktop: true },
       },
       {
         path: 'setting',
         name: 'Settings',
         component: Setting,
-        meta: { requiresDesktop: true },
       },
     ],
+  },
+  {
+    path: '/:userName/featured',
+    name: 'FeaturedPageMobile',
+    component: () => import('../User/UserPagesMobile/FeaturedPage.vue')
   },
   {
     path: '/place-ad',
@@ -156,13 +173,19 @@ const router = createRouter({
   },
 });
 
-// **Telefonlarda children route'larni yangi sahifa sifatida ochish**
+
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresDesktop && window.innerWidth < 768) {
-    // Telefonlarda ikki baravar / yo‘nalishni oldini olish
-    const userName = to.params.userName || '';
-    const path = to.path.replace(/^\/+/, ''); // Qo‘shimcha / ni olib tashlash
-    next(`/${userName}/${path}`); // To‘g‘ri yo‘nalishga yo‘naltirish
+  const isMobile = window.innerWidth <= 768;
+
+  if (
+    to.matched.some((record) => record.name === 'user account') &&
+    to.path === `/${to.params.userName}`
+  ) {
+    if (!isMobile) {
+      next({ path: `/${to.params.userName}/featured` });
+    } else {
+      next(); // Mobileda hech qayerga yo'naltirmaydi
+    }
   } else {
     next();
   }
