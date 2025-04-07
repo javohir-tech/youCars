@@ -71,28 +71,76 @@ const routes = [
         path: 'message',
         name: 'Message',
         component: Message,
+        beforeEnter: (to, from, next) => {
+          if (window.innerWidth <= 768) {
+            next({ name: 'MesssagePageMobile', params: { userName: to.params.userName } });
+          } else {
+            next();
+          }
+        }
       },
       {
         path: 'my-ads',
         name: 'My Ads',
         component: MyAds,
+        beforeEnter: (to, from, next) => {
+          if (window.innerWidth <= 768) {
+            next({ name: 'MyAddsPageMobile', params: { userName: to.params.userName } });
+          } else {
+            next();
+          }
+        }
       },
       {
         path: 'rate',
         name: 'Rate',
         component: Rate,
+        beforeEnter: (to, from, next) => {
+          if (window.innerWidth <= 768) {
+            next({ name: 'RatePageMobile', params: { userName: to.params.userName } });
+          } else {
+            next();
+          }
+        }
       },
       {
         path: 'setting',
         name: 'Settings',
         component: Setting,
+        beforeEnter: (to, from, next) => {
+          if (window.innerWidth <= 768) {
+            next({ name: 'SettingPageMobile', params: { userName: to.params.userName } });
+          } else {
+            next();
+          }
+        }
       },
     ],
   },
   {
     path: '/:userName/featured',
     name: 'FeaturedPageMobile',
-    component: () => import('../User/UserPagesMobile/FeaturedPage.vue')
+    component: Featured
+  },
+  {
+    path:'/:userName/message',
+    name: 'MesssagePageMobile',
+    component:Message
+  },
+  {
+    path:'/:userName/my-ads',
+    name: 'MyAddsPageMobile',
+    component:MyAds
+  },
+  {
+    path:'/:userName/rate',
+    name: 'RatePageMobile',
+    component:Rate
+  },
+  {
+    path:'/:userName/setting',
+    name: 'SettingPageMobile',
+    component:Setting
   },
   {
     path: '/place-ad',
