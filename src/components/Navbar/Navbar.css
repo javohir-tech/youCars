@@ -67,7 +67,7 @@
 
 .language-selector {
   position: absolute;
-  top: 15px;
+  top: 90px;
   right: 60px;
   display: flex;
   align-items: center;
@@ -76,8 +76,8 @@
 
 .notification-icon {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 90px;
+  right: 20px;
   font-size: 20px;
 }
 
@@ -170,18 +170,43 @@
   overflow: hidden;
 }
 
+.user-mobile__link{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #F6F6F6;
+  padding: 15px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  p{
+    font-weight: 400;
+    font-size: 16px;
+    color: #293843;
+    line-height: 18px;
+  }
+  i{
+    color: #2196f3;
+    font-size: 16px;
+  }
+}
+
 /* Media query for desktop view */
 @media (min-width: 992px) {
   .header {
     display: none;
   }
 
-  .mobile-menu {
-    display: none;
+  .desktop-navbar{
+    display: block;
   }
 
-  .desktop-navbar {
-    display: block;
+  .mobile-user{
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
   }
 
   .navbar-top {
