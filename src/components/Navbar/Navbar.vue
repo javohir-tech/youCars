@@ -194,7 +194,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted, watch, onUnmounted } from 'vue';
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
 import { useUserStore } from '@/Stores/useUserStore';
@@ -207,9 +207,6 @@ const svg = ref('');
 
 // User store
 const userStore = useUserStore();
-const token = computed(
-  () => localStorage.getItem('token') || sessionStorage.getItem('token')
-);
 const userName = computed(() => userStore.userInfo?.name || 'User');
 
 // Generate avatar
@@ -223,6 +220,14 @@ onMounted(generateAvatar);
 watch(userName, () => {
   generateAvatar();
 });
+
+watch(isMenuOpen ,  (newVal)=>{
+  document.body.style.overflow = newVal ? 'hidden' : ''
+})
+
+onUnmounted(() => {
+  document.body.style.overflow = ''
+})
 </script>
 
 <style scoped>
