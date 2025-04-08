@@ -3,7 +3,7 @@
     <div class="desktop-header">
       <h1 class="main-header">Избранное</h1>
     </div>
-    <div class="mobile-header">
+    <div class="mobile-header mt-3">
       <button @click="goBack">
         <h1 class="main-header"><i class="bi bi-chevron-left"></i>Избранное</h1>
       </button>

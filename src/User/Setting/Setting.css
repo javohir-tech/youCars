@@ -34,4 +34,8 @@
       background-color: transparent;
     }
   }
+
+  .save-button{
+    width: 100%;
+  }
 }
