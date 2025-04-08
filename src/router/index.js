@@ -54,6 +54,14 @@ const routes = [
     path: '/:userName',
     name: 'user account',
     component: UserPage,
+    beforeEnter :(to, from , next)=>{
+      const token  = localStorage.getItem('token') || sessionStorage.getItem('token')
+      if(!token){
+        next('/')
+      }else{
+        next()
+      }
+    },
     children: [
       {
         path: 'featured',

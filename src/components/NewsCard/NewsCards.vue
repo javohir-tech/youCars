@@ -62,7 +62,7 @@
       :pagination="{
         clickable: true,
       }"
-      :navigation="true"
+      :navigation="false"
       :modules="modules"
       class="mySwiper mobile-version"
     >
@@ -150,10 +150,7 @@ watch(data, (newData) => {
     color: rgba(41, 56, 67, 1);
     font-weight: 400;
     font-size: 14px;
-
-    p {
-      text-decoration: underline;
-    }
+    text-decoration: none;
   }
 }
 

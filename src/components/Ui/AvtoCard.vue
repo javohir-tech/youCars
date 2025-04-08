@@ -15,7 +15,7 @@
       </Swiper>
     </div>
     <div class="cars-card-info shadow">
-      <p class="avto-name">{{ props.model }}</p>
+      <p class="avto-name">{{ props.model }} , {{ props.avtomabil.year }}</p>
       <p class="avto-cost">{{ props.cost }}$</p>
       <div class="card-description">
         <a-flex align="center" justify="space-between">
@@ -106,5 +106,11 @@ const props = defineProps({
 
 .bi-heart-fill {
   color: rgba(255, 0, 0, 1);
+}
+
+@media(max-width: 576px){
+  .cars-card-image img{
+    height: 200px;
+  }
 }
 </style>

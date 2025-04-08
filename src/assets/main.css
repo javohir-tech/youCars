@@ -384,6 +384,9 @@
 }
 
 @media (max-width: 576px) {
+  .btn-primary{
+    padding: 10px;
+  }
 
   .responsive-container {
     width: 100%;

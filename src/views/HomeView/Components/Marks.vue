@@ -11,7 +11,7 @@
       :lg="{ span: 4 }"
       class="mark-box"
     >
-      <img :src="mark.image" class="img-fluid" alt="" />
+      <img :src="mark.image" class="img-fluid mark-image" alt="" />
     </a-col>
   </a-row>
   <a-result
@@ -55,6 +55,9 @@ watch(data, (newData) => {
 @media (max-width: 576px) {
   .mark-box {
     height: 100px;
+  }
+  .mark-image{
+    width: 70% !important;
   }
 }
 </style>

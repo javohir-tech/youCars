@@ -108,6 +108,13 @@
 }
 
 @media (max-width: 576px) {
+  .tabs-container{
+    width: 100%;
+  }
+  .tab-button{
+    flex: 1;
+    padding: 10px;
+  }
   .filter-dropdowns,
   .filter-btns {
     flex-direction: column !important;

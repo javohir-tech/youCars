@@ -4,41 +4,27 @@
     <div class="filter-box shadow">
       <a-flex align="center" class="filter-btns" :gap="15">
         <div class="tabs-container">
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'all' }"
-            @click="activeTab = 'all'"
-          >
+          <button class="tab-button" :class="{ active: activeTab === 'all' }" @click="activeTab = 'all'">
             Все
           </button>
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'new' }"
-            @click="activeTab = 'new'"
-          >
+          <button class="tab-button" :class="{ active: activeTab === 'new' }" @click="activeTab = 'new'">
             Новые
           </button>
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'used' }"
-            @click="activeTab = 'used'"
-          >
+          <button class="tab-button" :class="{ active: activeTab === 'used' }" @click="activeTab = 'used'">
             С пробегом
           </button>
         </div>
-        <a-checkbox v-model:checked="checked">В наличии</a-checkbox>
-        <a-checkbox v-model:checked="checked2">Под заказ</a-checkbox>
+        <a-flex gap="10">
+          <a-checkbox v-model:checked="checked">В наличии</a-checkbox>
+          <a-checkbox v-model:checked="checked2">Под заказ</a-checkbox>
+        </a-flex>
       </a-flex>
 
       <a-flex justify="space-between" class="filter-dropdowns mt-3">
         <div class="dropdown-container">
           <div class="filter-item">
             <p>Выберите марку</p>
-            <a-dropdown
-              :placement="yonalish"
-              class="my-dropdown"
-              v-model="salom"
-            >
+            <a-dropdown :placement="yonalish" class="my-dropdown" v-model="salom">
               <a-button class="dropdown-button">
                 <span>Geely</span>
                 <span class="dropdown-icon">▼</span>
@@ -54,23 +40,15 @@
         <div class="dropdown-container">
           <div class="filter-item">
             <p>ВЫберите модель</p>
-            <a-dropdown
-              :placement="yonalish"
-              class="my-dropdown"
-              v-model="filters.model"
-            >
+            <a-dropdown :placement="yonalish" class="my-dropdown" v-model="filters.model">
               <a-button class="dropdown-button">
                 <span>{{ filters.model || modelOptions[0] }}</span>
                 <span class="dropdown-icon">▼</span>
               </a-button>
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
-                  <a-menu-item
-                    class="custom-menu-item"
-                    v-for="model in modelOptions"
-                    :key="model"
-                    @click="() => (filters.model = model)"
-                  >
+                  <a-menu-item class="custom-menu-item" v-for="model in modelOptions" :key="model"
+                    @click="() => (filters.model = model)">
                     {{ model }}
                   </a-menu-item>
                 </a-menu>
@@ -81,23 +59,15 @@
         <div class="dropdown-container">
           <div class="filter-item">
             <p>Страна</p>
-            <a-dropdown
-              :placement="yonalish"
-              class="my-dropdown"
-              v-model="salom"
-            >
+            <a-dropdown :placement="yonalish" class="my-dropdown" v-model="salom">
               <a-button class="dropdown-button">
                 <span>{{ filters.country || countryOptions[0] }}</span>
                 <span class="dropdown-icon">▼</span>
               </a-button>
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
-                  <a-menu-item
-                    class="custom-menu-item"
-                    v-for="country in countryOptions"
-                    :key="country"
-                    @click="() => (filters.country = country)"
-                  >
+                  <a-menu-item class="custom-menu-item" v-for="country in countryOptions" :key="country"
+                    @click="() => (filters.country = country)">
                     {{ country }}
                   </a-menu-item>
                 </a-menu>
@@ -108,23 +78,15 @@
         <div class="dropdown-container">
           <div class="filter-item">
             <p>Год</p>
-            <a-dropdown
-              :placement="yonalish"
-              class="my-dropdown"
-              v-model="salom"
-            >
+            <a-dropdown :placement="yonalish" class="my-dropdown" v-model="salom">
               <a-button class="dropdown-button">
                 <span>{{ filters.maxYear || yearOptions[0] }}</span>
                 <span class="dropdown-icon">▼</span>
               </a-button>
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
-                  <a-menu-item
-                    class="custom-menu-item"
-                    v-for="year in yearOptions"
-                    :key="year"
-                    @click="() => (filters.maxYear = year)"
-                  >
+                  <a-menu-item class="custom-menu-item" v-for="year in yearOptions" :key="year"
+                    @click="() => (filters.maxYear = year)">
                     {{ year }}
                   </a-menu-item>
                 </a-menu>
@@ -135,25 +97,17 @@
         <div class="dropdown-container">
           <div class="filter-item">
             <p>Цена</p>
-            <a-dropdown
-              :placement="yonalish"
-              class="my-dropdown"
-              v-model="salom"
-            >
+            <a-dropdown :placement="yonalish" class="my-dropdown" v-model="salom">
               <a-button class="dropdown-button">
                 <span>{{
                   filters.maxPrice - filters.minPrice || priceOptions[0]
-                }}</span>
+                  }}</span>
                 <span class="dropdown-icon">▼</span>
               </a-button>
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
-                  <a-menu-item
-                    class="custom-menu-item"
-                    v-for="price in priceOptions"
-                    :key="price"
-                    @click="() => (filters.maxPrice = price)"
-                  >
+                  <a-menu-item class="custom-menu-item" v-for="price in priceOptions" :key="price"
+                    @click="() => (filters.maxPrice = price)">
                     {{ price }}
                   </a-menu-item>
                 </a-menu>

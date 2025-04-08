@@ -46,4 +46,18 @@ export default {};
     color: rgba(90, 90, 90, 1);
   }
 }
+
+@media(max-width: 576px){
+  .banner-box{
+    padding: 20px 10px;
+  }
+  .banner-section__info{
+    h1{
+      font-size: 24px;
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+}
 </style>

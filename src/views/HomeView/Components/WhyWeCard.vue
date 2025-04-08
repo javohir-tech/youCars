@@ -38,4 +38,11 @@ defineProps({
     color: rgba(152, 152, 152, 1);
   }
 }
+
+.card:hover{
+  background-color: #f5f5f5; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  transform: translateY(-5px); 
+  transition: all 0.3s ease; 
+}
 </style>

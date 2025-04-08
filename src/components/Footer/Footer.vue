@@ -1,6 +1,6 @@
 <template>
-  <footer class="footer mt-5">
-    <div class="container">
+  <div class="container">
+      <footer class="footer mt-5">
       <a-row class="footer-links" :gutter="[10, 10]">
         <a-col :md="{ span: 24 }" :lg="{ span: 6 }">
           <div>
@@ -34,9 +34,9 @@
             </ul>
           </div>
         </a-col>
-        <a-col :md="{ span: 12 }" :lg="{ span: 3 }">
+        <a-col :md="{ span: 12 }" :lg="{ span: 3 }" class="countrys">
           <div>
-            <h3>автомобили</h3>
+            <h3>Aвтомобили</h3>
             <ul class="footer-list">
               <li><a href="#">Из Европы</a></li>
               <li><a href="#">Из США</a></li>
@@ -62,8 +62,8 @@
           </div>
         </a-col>
       </a-row>
+    </footer>
     </div>
-  </footer>
 </template>
 <script setup>
 //vue
