@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <footer class="footer mt-5">
+    <footer class="footer mt-5">
       <a-row class="footer-links" :gutter="[10, 10]">
         <a-col :md="{ span: 24 }" :lg="{ span: 6 }">
           <div>
@@ -63,7 +63,7 @@
         </a-col>
       </a-row>
     </footer>
-    </div>
+  </div>
 </template>
 <script setup>
 //vue

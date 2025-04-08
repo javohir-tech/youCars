@@ -56,7 +56,7 @@ watch(data, (newData) => {
   .mark-box {
     height: 100px;
   }
-  .mark-image{
+  .mark-image {
     width: 70% !important;
   }
 }

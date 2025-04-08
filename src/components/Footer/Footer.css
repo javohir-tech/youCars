@@ -1,7 +1,7 @@
 .footer-links {
   padding-top: 30px;
-  border-top: 1.5px  solid #DADADA;
-  padding-bottom:10px ;
+  border-top: 1.5px solid #dadada;
+  padding-bottom: 10px;
   h3 {
     font-weight: 700;
     font-size: 17px;
@@ -45,11 +45,11 @@
   cursor: pointer;
 }
 
-@media(max-width: 576px){
-  .footer-links{
-    padding-top:20px ;
+@media (max-width: 576px) {
+  .footer-links {
+    padding-top: 20px;
   }
-  .countrys{
+  .countrys {
     margin-left: 20px;
   }
 }

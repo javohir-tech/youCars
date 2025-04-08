@@ -5,14 +5,26 @@
     </div>
     <div class="mobile-header mt-3">
       <button @click="goBack">
-        <h1 class="main-header"><i class="bi bi-chevron-left"></i>Выбор тарифа</h1>
+        <h1 class="main-header">
+          <i class="bi bi-chevron-left"></i>Выбор тарифа
+        </h1>
       </button>
     </div>
     <div class="pricing-container">
-      <div class="pricing-option" :class="{ 'selected': selectedOption === 'year' }" @click="selectOption('year')">
+      <div
+        class="pricing-option"
+        :class="{ selected: selectedOption === 'year' }"
+        @click="selectOption('year')"
+      >
         <div class="option-header">
           <label class="radio-container">
-            <input type="radio" name="pricing" value="year" v-model="selectedOption" @click.stop>
+            <input
+              type="radio"
+              name="pricing"
+              value="year"
+              v-model="selectedOption"
+              @click.stop
+            />
             <span class="radio-custom"></span>
             <span class="option-title">Премиум доступ на год</span>
           </label>
@@ -28,10 +40,20 @@
         </ul>
       </div>
 
-      <div class="pricing-option" :class="{ 'selected': selectedOption === 'month' }" @click="selectOption('month')">
+      <div
+        class="pricing-option"
+        :class="{ selected: selectedOption === 'month' }"
+        @click="selectOption('month')"
+      >
         <div class="option-header">
           <label class="radio-container">
-            <input type="radio" name="pricing" value="month" v-model="selectedOption" @click.stop>
+            <input
+              type="radio"
+              name="pricing"
+              value="month"
+              v-model="selectedOption"
+              @click.stop
+            />
             <span class="radio-custom"></span>
             <span class="option-title">Премиум доступ на 30 дней</span>
           </label>
@@ -47,10 +69,20 @@
         </ul>
       </div>
 
-      <div class="pricing-option" :class="{ 'selected': selectedOption === 'day' }" @click="selectOption('day')">
+      <div
+        class="pricing-option"
+        :class="{ selected: selectedOption === 'day' }"
+        @click="selectOption('day')"
+      >
         <div class="option-header">
           <label class="radio-container">
-            <input type="radio" name="pricing" value="day" v-model="selectedOption" @click.stop>
+            <input
+              type="radio"
+              name="pricing"
+              value="day"
+              v-model="selectedOption"
+              @click.stop
+            />
             <span class="radio-custom"></span>
             <span class="option-title">Премиум доступ на 24 часа</span>
           </label>
@@ -59,26 +91,30 @@
           </div>
         </div>
       </div>
-      <a-button type="primary" class="mb-3" style="width: 100%;" :disabled="true">Оформить</a-button>
-      <a-button type="primary" style="width: 100%;" :disabled="true">Возможности на Премиуме</a-button>
+      <a-button type="primary" class="mb-3" style="width: 100%" :disabled="true"
+        >Оформить</a-button
+      >
+      <a-button type="primary" style="width: 100%" :disabled="true"
+        >Возможности на Премиуме</a-button
+      >
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-const selectedOption = ref('year')
+const selectedOption = ref('year');
 
 const selectOption = (option) => {
-  selectedOption.value = option
-}
+  selectedOption.value = option;
+};
 
-const router = useRouter()
+const router = useRouter();
 
-function goBack(){
-  router.go(-1)
+function goBack() {
+  router.go(-1);
 }
 </script>
 

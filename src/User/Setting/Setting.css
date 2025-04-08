@@ -4,16 +4,15 @@
   border-bottom: 2px solid rgba(240, 240, 240, 1);
 }
 
-.desktop-header{
+.desktop-header {
   display: block;
 }
 
-.mobile-header{
+.mobile-header {
   display: none;
 }
 
 @media (max-width: 576px) {
-
   .responsive-container {
     width: 100%;
     padding-right: var(--bs-gutter-x, 0.75rem);
@@ -23,19 +22,19 @@
     max-width: 540px;
   }
 
-  .desktop-header{
+  .desktop-header {
     display: none;
   }
 
-  .mobile-header{
+  .mobile-header {
     display: block;
-    button{
+    button {
       border: none;
       background-color: transparent;
     }
   }
 
-  .save-button{
+  .save-button {
     width: 100%;
   }
 }

@@ -8,7 +8,10 @@
         </RouterLink>
       </div>
       <div class="search-box">
-        <a-input-search placeholder="Поиск по названию" v-model:value="searchValue" />
+        <a-input-search
+          placeholder="Поиск по названию"
+          v-model:value="searchValue"
+        />
       </div>
       <div class="menu-toggle" @click="isMenuOpen = !isMenuOpen">
         <img src="../../assets/Images/toggleButton.png" alt="" />
@@ -18,7 +21,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" :class="{ open: isMenuOpen }">
       <div v-if="userStore.userInfo.token" class="mobile-user">
-        <RouterLink @click="isMenuOpen = !isMenuOpen"  class="user-mobile__link" :to="userName ? `/${userName}` : '/guest'">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          class="user-mobile__link"
+          :to="userName ? `/${userName}` : '/guest'"
+        >
           <div v-if="svg" v-html="svg" class="avatar"></div>
           <a-avatar v-else>
             <template #icon>
@@ -26,18 +33,46 @@
             </template>
           </a-avatar>
           <p class="mb-0">{{ userStore.userInfo.name }}</p>
-          <i class="fa-solid fa-chevron-right" style="margin-left: auto;"></i>
+          <i class="fa-solid fa-chevron-right" style="margin-left: auto"></i>
         </RouterLink>
       </div>
       <div class="nav-links">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link">Главная</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/katalok" class="nav-link">Каталог</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/about" class="nav-link">О нас</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/news" class="nav-link">Новости</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/contact" class="nav-link">Контакты</router-link>
+        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link"
+          >Главная</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/katalok"
+          class="nav-link"
+          >Каталог</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/about"
+          class="nav-link"
+          >О нас</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/news"
+          class="nav-link"
+          >Новости</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/contact"
+          class="nav-link"
+          >Контакты</router-link
+        >
       </div>
 
-      <div :class="[userStore.userInfo.token ? 'language-selector' : 'language-selector user-language']">
+      <div
+        :class="[
+          userStore.userInfo.token
+            ? 'language-selector'
+            : 'language-selector user-language',
+        ]"
+      >
         <a-select v-model:value="language" style="width: 80px">
           <a-select-option value="rus">RU</a-select-option>
           <a-select-option value="eng">EN</a-select-option>
@@ -45,24 +80,42 @@
         </a-select>
       </div>
 
-      <div :class="[userStore.userInfo.token ? 'notification-icon' : 'notification-icon user-notifacation']">
+      <div
+        :class="[
+          userStore.userInfo.token
+            ? 'notification-icon'
+            : 'notification-icon user-notifacation',
+        ]"
+      >
         <i class="fa-regular fa-bell"></i>
       </div>
 
       <div class="categories">
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/katalok" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/katalok"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>Автомобили</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/commerce-cars" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/commerce-cars"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>Коммерческий транспорт</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/motorcycle" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/motorcycle"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>Мотоциклы</span>
             <i class="fa-solid fa-chevron-right"></i>
@@ -86,14 +139,30 @@
       </div>
 
       <div class="social-icons">
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-vk"></i></a>
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-vk"></i
+        ></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
       </div>
 
       <div v-if="!userStore.userInfo.name" class="auth-buttons">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/register" class="register-btn">Регистрация</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/login" class="login-btn">Войти</router-link>
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/register"
+          class="register-btn"
+          >Регистрация</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/login"
+          class="login-btn"
+          >Войти</router-link
+        >
       </div>
     </div>
     <!--desktop-->
@@ -110,8 +179,12 @@
             </ul>
             <div class="navbar-right">
               <div class="social-icons">
-                <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a target="_blank" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-whatsapp"></i
+                ></a>
                 <a target="_blank" href="#"><i class="fa-brands fa-vk"></i></a>
               </div>
               <a href="#" target="_blank">
@@ -164,7 +237,11 @@
               </ul>
             </div>
             <div class="navbar-actions">
-              <a-input-search class="search-input" placeholder="Поиск по названию" v-model:value="searchValue" />
+              <a-input-search
+                class="search-input"
+                placeholder="Поиск по названию"
+                v-model:value="searchValue"
+              />
               <div>
                 <img src="../../assets/Images/messages.png" alt="" />
               </div>
@@ -183,7 +260,9 @@
               </div>
               <a-flex v-else gap="10">
                 <router-link to="/login" class="login-btn">Войти</router-link>
-                <router-link to="/register" class="register-btn">Регистрация</router-link>
+                <router-link to="/register" class="register-btn"
+                  >Регистрация</router-link
+                >
               </a-flex>
             </div>
           </a-flex>
@@ -221,13 +300,13 @@ watch(userName, () => {
   generateAvatar();
 });
 
-watch(isMenuOpen ,  (newVal)=>{
-  document.body.style.overflow = newVal ? 'hidden' : ''
-})
+watch(isMenuOpen, (newVal) => {
+  document.body.style.overflow = newVal ? 'hidden' : '';
+});
 
 onUnmounted(() => {
-  document.body.style.overflow = ''
-})
+  document.body.style.overflow = '';
+});
 </script>
 
 <style scoped>

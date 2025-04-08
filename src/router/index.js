@@ -54,12 +54,13 @@ const routes = [
     path: '/:userName',
     name: 'user account',
     component: UserPage,
-    beforeEnter :(to, from , next)=>{
-      const token  = localStorage.getItem('token') || sessionStorage.getItem('token')
-      if(!token){
-        next('/')
-      }else{
-        next()
+    beforeEnter: (to, from, next) => {
+      const token =
+        localStorage.getItem('token') || sessionStorage.getItem('token');
+      if (!token) {
+        next('/');
+      } else {
+        next();
       }
     },
     children: [
@@ -69,11 +70,14 @@ const routes = [
         component: Featured,
         beforeEnter: (to, from, next) => {
           if (window.innerWidth <= 768) {
-            next({ name: 'FeaturedPageMobile', params: { userName: to.params.userName } });
+            next({
+              name: 'FeaturedPageMobile',
+              params: { userName: to.params.userName },
+            });
           } else {
             next();
           }
-        }
+        },
       },
       {
         path: 'message',
@@ -81,11 +85,14 @@ const routes = [
         component: Message,
         beforeEnter: (to, from, next) => {
           if (window.innerWidth <= 768) {
-            next({ name: 'MesssagePageMobile', params: { userName: to.params.userName } });
+            next({
+              name: 'MesssagePageMobile',
+              params: { userName: to.params.userName },
+            });
           } else {
             next();
           }
-        }
+        },
       },
       {
         path: 'my-ads',
@@ -93,11 +100,14 @@ const routes = [
         component: MyAds,
         beforeEnter: (to, from, next) => {
           if (window.innerWidth <= 768) {
-            next({ name: 'MyAddsPageMobile', params: { userName: to.params.userName } });
+            next({
+              name: 'MyAddsPageMobile',
+              params: { userName: to.params.userName },
+            });
           } else {
             next();
           }
-        }
+        },
       },
       {
         path: 'rate',
@@ -105,11 +115,14 @@ const routes = [
         component: Rate,
         beforeEnter: (to, from, next) => {
           if (window.innerWidth <= 768) {
-            next({ name: 'RatePageMobile', params: { userName: to.params.userName } });
+            next({
+              name: 'RatePageMobile',
+              params: { userName: to.params.userName },
+            });
           } else {
             next();
           }
-        }
+        },
       },
       {
         path: 'setting',
@@ -117,38 +130,41 @@ const routes = [
         component: Setting,
         beforeEnter: (to, from, next) => {
           if (window.innerWidth <= 768) {
-            next({ name: 'SettingPageMobile', params: { userName: to.params.userName } });
+            next({
+              name: 'SettingPageMobile',
+              params: { userName: to.params.userName },
+            });
           } else {
             next();
           }
-        }
+        },
       },
     ],
   },
   {
     path: '/:userName/featured',
     name: 'FeaturedPageMobile',
-    component: Featured
+    component: Featured,
   },
   {
-    path:'/:userName/message',
+    path: '/:userName/message',
     name: 'MesssagePageMobile',
-    component:Message
+    component: Message,
   },
   {
-    path:'/:userName/my-ads',
+    path: '/:userName/my-ads',
     name: 'MyAddsPageMobile',
-    component:MyAds
+    component: MyAds,
   },
   {
-    path:'/:userName/rate',
+    path: '/:userName/rate',
     name: 'RatePageMobile',
-    component:Rate
+    component: Rate,
   },
   {
-    path:'/:userName/setting',
+    path: '/:userName/setting',
     name: 'SettingPageMobile',
-    component:Setting
+    component: Setting,
   },
   {
     path: '/place-ad',
@@ -219,7 +235,6 @@ const router = createRouter({
   },
 });
 
-
 router.beforeEach((to, from, next) => {
   const isMobile = window.innerWidth <= 768;
 
@@ -230,7 +245,7 @@ router.beforeEach((to, from, next) => {
     if (!isMobile) {
       next({ path: `/${to.params.userName}/featured` });
     } else {
-      next(); 
+      next();
     }
   } else {
     next();

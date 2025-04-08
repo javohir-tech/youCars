@@ -74,10 +74,9 @@
   gap: 5px;
 }
 
-.user-language{
+.user-language {
   top: 12px;
 }
-
 
 .notification-icon {
   position: absolute;
@@ -86,7 +85,7 @@
   font-size: 20px;
 }
 
-.user-notifacation{
+.user-notifacation {
   top: 15px;
 }
 
@@ -179,23 +178,23 @@
   overflow: hidden;
 }
 
-.user-mobile__link{
+.user-mobile__link {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 15px 20px;
   margin: 10px;
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease-in;
-  p{
+  p {
     font-weight: 400;
     font-size: 16px;
     color: #293843;
     line-height: 18px;
   }
-  i{
+  i {
     color: #2196f3;
     font-size: 16px;
   }
@@ -218,18 +217,17 @@
   color: #1565c0;
 }
 
-
 /* Media query for desktop view */
 @media (min-width: 992px) {
   .header {
     display: none;
   }
 
-  .desktop-navbar{
+  .desktop-navbar {
     display: block;
   }
 
-  .mobile-user{
+  .mobile-user {
     display: flex;
   }
 

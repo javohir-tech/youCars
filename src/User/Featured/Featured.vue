@@ -9,15 +9,30 @@
       </button>
     </div>
     <a-row v-if="carStore.selectedCars.length > 0" :gutter="[10, 10]">
-      <a-col v-for="selectedCar in carStore.selectedCars" :xs="{ span: 24 }" :md="{ span: 8 }" :key="selectedCar.id">
+      <a-col
+        v-for="selectedCar in carStore.selectedCars"
+        :xs="{ span: 24 }"
+        :md="{ span: 8 }"
+        :key="selectedCar.id"
+      >
         <RouterLink :to="`${selectedCar.route}/${selectedCar.id}`">
-          <AvtoCard :avtomabil="selectedCar" :images="selectedCar.image" :cost="selectedCar.cost"
-            :country="selectedCar.country" :milage="selectedCar.milage" :model="selectedCar.model" />
+          <AvtoCard
+            :avtomabil="selectedCar"
+            :images="selectedCar.image"
+            :cost="selectedCar.cost"
+            :country="selectedCar.country"
+            :milage="selectedCar.milage"
+            :model="selectedCar.model"
+          />
         </RouterLink>
       </a-col>
     </a-row>
     <div v-else class="empty-box">
-      <img src="../../assets/Images/selectedCars.png" class="img-fluid mb-3" alt="selected cars" />
+      <img
+        src="../../assets/Images/selectedCars.png"
+        class="img-fluid mb-3"
+        alt="selected cars"
+      />
       <h3>Нет сохраненных объявлений</h3>
       <p class="mb-4">
         Чтобы добавить авто в избранное, нажмите на сердечко на карточке машины!
@@ -38,10 +53,10 @@ import { useRouter } from 'vue-router';
 import { RouterLink } from 'vue-router';
 
 const carStore = useCarStore();
-const router = useRouter()
+const router = useRouter();
 
-function goBack(){
-  router.go(-1)
+function goBack() {
+  router.go(-1);
 }
 </script>
 <style scoped>

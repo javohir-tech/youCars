@@ -47,15 +47,15 @@ export default {};
   }
 }
 
-@media(max-width: 576px){
-  .banner-box{
+@media (max-width: 576px) {
+  .banner-box {
     padding: 20px 10px;
   }
-  .banner-section__info{
-    h1{
+  .banner-section__info {
+    h1 {
       font-size: 24px;
     }
-    p{
+    p {
       font-size: 12px;
     }
   }

@@ -108,8 +108,8 @@ const props = defineProps({
   color: rgba(255, 0, 0, 1);
 }
 
-@media(max-width: 576px){
-  .cars-card-image img{
+@media (max-width: 576px) {
+  .cars-card-image img {
     height: 200px;
   }
 }

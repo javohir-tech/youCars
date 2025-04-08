@@ -10,19 +10,26 @@
     </div>
     <div class="empty-box">
       <div class="message-icons__effect">
-        <img src="../.././assets/Images/Icons/messageEffect3.gif" class="img-fluid" alt="img">
+        <img
+          src="../.././assets/Images/Icons/messageEffect3.gif"
+          class="img-fluid"
+          alt="img"
+        />
       </div>
       <h3>Нет активных чатов</h3>
-      <p>Привет! Вы еще не начинали ни одного чата. Сделайте первый шаг, чтобы начать новый разговор!</p>
+      <p>
+        Привет! Вы еще не начинали ни одного чата. Сделайте первый шаг, чтобы
+        начать новый разговор!
+      </p>
     </div>
   </div>
 </template>
 <script setup>
 import { useRouter } from 'vue-router';
-const router = useRouter()
+const router = useRouter();
 
-function goBack(){
-  router.go(-1)
+function goBack() {
+  router.go(-1);
 }
 </script>
 <style scoped>

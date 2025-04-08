@@ -108,10 +108,10 @@
 }
 
 @media (max-width: 576px) {
-  .tabs-container{
+  .tabs-container {
     width: 100%;
   }
-  .tab-button{
+  .tab-button {
     flex: 1;
     padding: 10px;
   }
