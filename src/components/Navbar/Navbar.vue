@@ -37,7 +37,7 @@
         <router-link @click="isMenuOpen = !isMenuOpen" to="/contact" class="nav-link">Контакты</router-link>
       </div>
 
-      <div class="language-selector">
+      <div :class="[userStore.userInfo.token ? 'language-selector' : 'language-selector user-language']">
         <a-select v-model:value="language" style="width: 80px">
           <a-select-option value="rus">RU</a-select-option>
           <a-select-option value="eng">EN</a-select-option>
@@ -45,7 +45,7 @@
         </a-select>
       </div>
 
-      <div class="notification-icon">
+      <div :class="[userStore.userInfo.token ? 'notification-icon' : 'notification-icon user-notifacation']">
         <i class="fa-regular fa-bell"></i>
       </div>
 

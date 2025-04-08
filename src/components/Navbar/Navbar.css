@@ -74,11 +74,20 @@
   gap: 5px;
 }
 
+.user-language{
+  top: 15px;
+}
+
+
 .notification-icon {
   position: absolute;
   top: 90px;
   right: 20px;
   font-size: 20px;
+}
+
+.user-notifacation{
+  top: 15px;
 }
 
 .categories {
