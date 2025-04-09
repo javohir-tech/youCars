@@ -217,6 +217,15 @@
   color: #1565c0;
 }
 
+.brand{
+  font-size: 30px;
+  font-weight: 700;
+  color: #2684E5;
+  span{
+    color: #293843;
+  }
+}
+
 /* Media query for desktop view */
 @media (min-width: 992px) {
   .header {

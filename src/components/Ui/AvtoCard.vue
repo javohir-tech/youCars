@@ -1,16 +1,25 @@
 <template>
   <div class="cars-card">
     <div class="cars-card-image">
-      <Swiper
-        :scrollbar="{
-          hide: false,
-          draggable: true,
-        }"
-        :modules="modules"
-        class="mySwiper"
-      >
+      <Swiper :scrollbar="{
+        hide: false,
+        draggable: true,
+      }" :modules="modules" class="mySwiper">
         <swiper-slide v-for="(image, index) in props.images" :key="index">
-          <img :src="image" class="img-fluid" alt="" />
+          <a-skeleton
+              v-if="loading[index]"
+              active
+              :paragraph="false"
+              style="width: 100%; height: 400px; border-radius: 8px"
+            />
+            <!-- Rasmni yuklaganidan keyin ko‘rsatamiz -->
+            <img
+              v-show="!loading[index]"
+              :src="image"
+              class="img-fluid"
+              alt="Slide image"
+              @load="onImageLoad(index)"
+            />
         </swiper-slide>
       </Swiper>
     </div>
@@ -31,16 +40,9 @@
         <a-flex align="center" justify="space-between">
           <p>{{ props.country }}</p>
           <div>
-            <i
-              v-if="!carsStore.isSelected(props.avtomabil.id)"
-              @click.prevent="carsStore.addCar(props.avtomabil)"
-              class="bi bi-heart"
-            ></i>
-            <i
-              v-else
-              @click.prevent="carsStore.removeCar(props.avtomabil.id)"
-              class="bi bi-heart-fill"
-            ></i>
+            <i v-if="!carsStore.isSelected(props.avtomabil.id)" @click.prevent="carsStore.addCar(props.avtomabil)"
+              class="bi bi-heart"></i>
+            <i v-else @click.prevent="carsStore.removeCar(props.avtomabil.id)" class="bi bi-heart-fill"></i>
           </div>
         </a-flex>
       </div>
@@ -48,6 +50,8 @@
   </div>
 </template>
 <script setup>
+//Vue
+import { ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 // import required modules
 import { Scrollbar } from 'swiper/modules';
@@ -71,12 +75,27 @@ const props = defineProps({
   milage: Number,
   model: String,
 });
+
+// loading holatini yaratish
+const loading = ref([]);
+
+// Rasm yuklanganda loading holatini false qilish
+function onImageLoad(index) {
+  loading.value[index] = false;
+}
+
+// Dastlab loading true bo‘ladi
+props.images.forEach(() => loading.value.push(true));
 </script>
 <style scoped>
 .cars-card-image img {
   height: 220px;
   border-radius: 10px;
   width: 100%;
+}
+
+.ant-skeleton-title{
+  height: 200px;
 }
 
 .cars-card-info {

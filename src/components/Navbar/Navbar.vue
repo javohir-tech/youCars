@@ -3,8 +3,8 @@
     <!-- mobile  -->
     <div class="header">
       <div class="logo">
-        <RouterLink to="/">
-          <img src="../../assets/Images/YouCar.png" alt="YouCar" />
+        <RouterLink to="/"  style="text-decoration: none;">
+           <span class="brand">You<span>Car</span></span>
         </RouterLink>
       </div>
       <div class="search-box">
@@ -213,7 +213,7 @@
           <a-flex justify="space-between" align="center">
             <div class="logo-categories">
               <RouterLink to="/">
-                <img src="../../assets/Images/YouCar.png" alt="YouCar" />
+                <span class="brand">You<span>Car</span></span>
               </RouterLink>
               <ul class="categories-list">
                 <li>
