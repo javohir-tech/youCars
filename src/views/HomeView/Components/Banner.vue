@@ -2,27 +2,19 @@
   <section class="banner-section">
     <a-row class="banner-box">
       <a-col class="banner-section__info" :xs="{ span: 24 }" :md="{ span: 12 }">
-        <h1>Новый Geely Monjaro!</h1>
-        <p>
-          Кроссовер Monjaro - премиальная модель Geely по уровню дизайна,
-          материалов и технологий.
-        </p>
+        <h1>{{ $t('banner.header') }}</h1>
+        <p>{{ $t('banner.title') }}</p>
         <button class="btn-primary banner-button">Подробнее</button>
       </a-col>
       <a-col :xs="{ span: 24 }" :md="{ span: 12 }" class="banner-image">
-        <img
-          src="../../../assets/Images/bannerImage.png"
-          class="img-fluid"
-          alt=""
-          data-aos="slide-left"
-          data-aos-duration="2000"
-          data-aos-once="true"
-        />
+        <img src="../../../assets/Images/bannerImage.png" class="img-fluid" alt="" data-aos="slide-left"
+          data-aos-duration="2000" data-aos-once="true" />
       </a-col>
     </a-row>
   </section>
 </template>
 <script setup>
+//Aos animation
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

@@ -74,9 +74,9 @@
         ]"
       >
         <a-select v-model:value="language" style="width: 80px">
-          <a-select-option value="rus">RU</a-select-option>
-          <a-select-option value="eng">EN</a-select-option>
-          <a-select-option value="uzb">UZ</a-select-option>
+          <a-select-option value="ru">RU</a-select-option>
+          <a-select-option value="en">EN</a-select-option>
+          <a-select-option value="uz">UZ</a-select-option>
         </a-select>
       </div>
 
@@ -165,7 +165,7 @@
         >
       </div>
     </div>
-    <!--desktop-->
+    <!-- ====== Desctop Navbar ====== -->
     <div class="desktop-navbar">
       <div class="navbar-top">
         <div class="container">
@@ -200,9 +200,9 @@
                 </div>
               </a>
               <a-select v-model:value="language" style="width: 80px">
-                <a-select-option value="rus">RU</a-select-option>
-                <a-select-option value="eng">EN</a-select-option>
-                <a-select-option value="uzb">UZ</a-select-option>
+                <a-select-option value="ru">RU</a-select-option>
+                <a-select-option value="en">EN</a-select-option>
+                <a-select-option value="uz">UZ</a-select-option>
               </a-select>
             </div>
           </a-flex>
@@ -273,15 +273,24 @@
 </template>
 
 <script setup>
+//Vue
 import { ref, computed, onMounted, watch, onUnmounted } from 'vue';
+// DeceBear
 import { createAvatar } from '@dicebear/core';
 import { initials } from '@dicebear/collection';
+//Pinia
 import { useUserStore } from '@/Stores/useUserStore';
+//i18n
+import { useI18n } from 'vue-i18n';
+
+//language adit
+const {locale} = useI18n()
+
+const language = ref(localStorage.getItem('lang') || locale.value);
 
 // State
 const isMenuOpen = ref(false);
 const searchValue = ref('');
-const language = ref('rus');
 const svg = ref('');
 
 // User store
@@ -296,12 +305,20 @@ const generateAvatar = () => {
 
 onMounted(generateAvatar);
 
+//userName
 watch(userName, () => {
   generateAvatar();
 });
 
+//menu  open or close
 watch(isMenuOpen, (newVal) => {
   document.body.style.overflow = newVal ? 'hidden' : '';
+});
+
+//language edit  watch
+watch(language, (newLang) => {
+  locale.value = newLang;
+  localStorage.setItem('lang', newLang);
 });
 
 onUnmounted(() => {
