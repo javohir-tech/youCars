@@ -3,6 +3,10 @@
   height: 400px;
 }
 
+.bi-heart-fill {
+  color: rgba(255, 0, 0, 1);
+}
+
 .mySwiper2 img {
   width: 100%;
   height: 100%;

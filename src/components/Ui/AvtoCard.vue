@@ -10,9 +10,8 @@
               v-if="loading[index]"
               active
               :paragraph="false"
-              style="width: 100%; height: 400px; border-radius: 8px"
+              style="width: 100%; height: 220px; border-radius: 8px"
             />
-            <!-- Rasmni yuklaganidan keyin ko‘rsatamiz -->
             <img
               v-show="!loading[index]"
               :src="image"
@@ -76,15 +75,12 @@ const props = defineProps({
   model: String,
 });
 
-// loading holatini yaratish
 const loading = ref([]);
 
-// Rasm yuklanganda loading holatini false qilish
 function onImageLoad(index) {
   loading.value[index] = false;
 }
 
-// Dastlab loading true bo‘ladi
 props.images.forEach(() => loading.value.push(true));
 </script>
 <style scoped>
