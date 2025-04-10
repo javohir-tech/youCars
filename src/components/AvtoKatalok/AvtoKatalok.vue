@@ -7,7 +7,7 @@
         v-for="(car, index) in paginatedCars"
         :key="index"
       >
-      <!-- ===== Tovars ===== -->
+        <!-- ===== Tovars ===== -->
         <RouterLink :to="`${props.router}/${car.id}`">
           <AvtoCard
             :avtomabil="{ ...car, route: props.router }"

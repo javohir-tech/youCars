@@ -12,7 +12,7 @@
         v-for="(car, index) in cars"
         :key="index"
       >
-      <!-- ===== AvtoCards ===== -->
+        <!-- ===== AvtoCards ===== -->
         <RouterLink :to="`/katalok/cars-tovar/${car.id}`">
           <AvtoCard
             :avtomabil="{ ...car, route: '/katalok/cars-tovar' }"
@@ -33,8 +33,10 @@
       sub-title="Sorry, An error occurred while loading the data!"
     />
   </div>
-  <div class="mt-3 me-2 under-link" >
-    <RouterLink to="/katalok">Перейти в каталог <i class="bi bi-arrow-right"></i></RouterLink>
+  <div class="mt-3 me-2 under-link">
+    <RouterLink to="/katalok"
+      >Перейти в каталог <i class="bi bi-arrow-right"></i
+    ></RouterLink>
   </div>
 </template>
 <script setup>
@@ -64,15 +66,15 @@ watch(data, (newData) => {
 </script>
 
 <style scoped>
-.under-link{
+.under-link {
   display: flex;
   justify-content: end;
-  a{
+  a {
     text-decoration: none;
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
     color: #293843;
   }
-} 
+}
 </style>

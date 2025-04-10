@@ -23,12 +23,12 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 //Aos
-import 'aos/dist/aos.css'
-import AOS from 'aos'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const app = createApp(App);
 
-AOS.init()
+AOS.init();
 
 app.use(pinia);
 app.use(router);

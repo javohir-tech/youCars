@@ -10,21 +10,27 @@
         <button class="btn-primary banner-button">Подробнее</button>
       </a-col>
       <a-col :xs="{ span: 24 }" :md="{ span: 12 }" class="banner-image">
-        <img src="../../../assets/Images/bannerImage.png" class="img-fluid" alt="" data-aos="slide-left"
-          data-aos-duration="2000" data-aos-once="true" />
+        <img
+          src="../../../assets/Images/bannerImage.png"
+          class="img-fluid"
+          alt=""
+          data-aos="slide-left"
+          data-aos-duration="2000"
+          data-aos-once="true"
+        />
       </a-col>
     </a-row>
   </section>
 </template>
 <script setup>
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 AOS.init({
-  duration: 1000, 
-  once: true,   
+  duration: 1000,
+  once: true,
   easing: 'ease-in-out',
-})
+});
 </script>
 <style scoped>
 .banner-section {

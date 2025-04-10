@@ -2,36 +2,44 @@
   <div class="cars-card">
     <div class="cars-card-image">
       <!-- ===== Images ===== -->
-      <Swiper :scrollbar="{
-        hide: false,
-        draggable: true,
-      }" :modules="modules" class="mySwiper">
+      <Swiper
+        :scrollbar="{
+          hide: false,
+          draggable: true,
+        }"
+        :modules="modules"
+        class="mySwiper"
+      >
         <swiper-slide v-for="(image, index) in props.images" :key="index">
           <a-skeleton
-              v-if="loading[index]"
-              active
-              :paragraph="false"
-              style="width: 100%; height: 220px; border-radius: 8px"
-            />
-            <img
-              v-show="!loading[index]"
-              :src="image"
-              class="img-fluid"
-              alt="Slide image"
-              @load="onImageLoad(index)"
-            />
+            v-if="loading[index]"
+            active
+            :paragraph="false"
+            style="width: 100%; height: 220px; border-radius: 8px"
+          />
+          <img
+            v-show="!loading[index]"
+            :src="image"
+            class="img-fluid"
+            alt="Slide image"
+            @load="onImageLoad(index)"
+          />
         </swiper-slide>
       </Swiper>
     </div>
     <!-- ===== Card Info ===== -->
     <div class="cars-card-info shadow">
-      <p class="avto-name mb-3">{{ props.model }} , {{ props.avtomabil.year }}</p>
+      <p class="avto-name mb-3">
+        {{ props.model }} , {{ props.avtomabil.year }}
+      </p>
       <p class="avto-cost mb-2">{{ props.cost }}$</p>
       <div class="card-description">
         <a-flex align="center" justify="space-between">
           <div>
             <p class="mb-2">{{ props.milage }}km</p>
-            <p class="mb-2">{{ props.avtomabil.volume }}/{{ props.avtomabil.horsepower }} л.с</p>
+            <p class="mb-2">
+              {{ props.avtomabil.volume }}/{{ props.avtomabil.horsepower }} л.с
+            </p>
           </div>
           <div>
             <p class="mb-2">Робот</p>
@@ -41,9 +49,16 @@
         <a-flex align="center" justify="space-between">
           <p>{{ props.country }}</p>
           <div>
-            <i v-if="!carsStore.isSelected(props.avtomabil.id)" @click.prevent="carsStore.addCar(props.avtomabil)"
-              class="bi bi-heart"></i>
-            <i v-else @click.prevent="carsStore.removeCar(props.avtomabil.id)" class="bi bi-heart-fill"></i>
+            <i
+              v-if="!carsStore.isSelected(props.avtomabil.id)"
+              @click.prevent="carsStore.addCar(props.avtomabil)"
+              class="bi bi-heart"
+            ></i>
+            <i
+              v-else
+              @click.prevent="carsStore.removeCar(props.avtomabil.id)"
+              class="bi bi-heart-fill"
+            ></i>
           </div>
         </a-flex>
       </div>
@@ -79,8 +94,7 @@ const props = defineProps({
 
 const loading = ref([]);
 
-
-//skeleton rasm kelguncha 
+//skeleton rasm kelguncha
 function onImageLoad(index) {
   loading.value[index] = false;
 }
@@ -94,7 +108,7 @@ props.images.forEach(() => loading.value.push(true));
   width: 100%;
 }
 
-.ant-skeleton-title{
+.ant-skeleton-title {
   height: 200px;
 }
 

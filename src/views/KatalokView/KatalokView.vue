@@ -43,10 +43,10 @@ import { useFetch } from '@/Hooks/UseFatch';
 
 //Page
 const current = ref(1);
-//Moshinalar malumoti 
+//Moshinalar malumoti
 const cars = ref([]);
 
-//Fecth  Sorov Moshinalar 
+//Fecth  Sorov Moshinalar
 const { data, loading, error } = useFetch(
   `${import.meta.env.VITE_APP_API}/cars`
 );
@@ -55,8 +55,6 @@ const { data, loading, error } = useFetch(
 watch(data, (newData) => {
   cars.value = newData;
 });
-
-
 </script>
 <style scoped>
 .pagination {

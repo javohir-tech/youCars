@@ -20,7 +20,7 @@ defineProps({
 <style scoped>
 .card-box {
   height: 180px;
-  img{
+  img {
     width: 64px;
     height: 48px;
   }

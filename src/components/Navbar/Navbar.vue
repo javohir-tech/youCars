@@ -3,8 +3,8 @@
     <!-- mobile  -->
     <div class="header">
       <div class="logo">
-        <RouterLink to="/"  style="text-decoration: none;">
-           <span class="brand">You<span>Car</span></span>
+        <RouterLink to="/" style="text-decoration: none">
+          <span class="brand">You<span>Car</span></span>
         </RouterLink>
       </div>
       <div class="search-box">
