@@ -4,6 +4,7 @@
       <!-- images-->
       <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
         <div class="tovar-images">
+          <!-- ===== Tovar Images ===== -->
           <swiper :style="{
             '--swiper-navigation-color': '#fff',
             '--swiper-pagination-color': '#fff',
@@ -26,12 +27,13 @@
         <div class="shadow tovar-info">
           <h1 class="tovar-name">{{ props.carData.model }}</h1>
           <a-flex gap="1" justify="space-between" align="center" class="tovar-viewers">
+            <!-- ===== Tovar info ===== -->
             <a-flex gap="3">
               <span>{{ formatDate(props.carData?.createdAt) }}</span>
               <span><i class="fa-solid fa-eye me-1"></i>{{ props.carData.seen }}</span>
               <span>
                 <i class="bi bi-heart ms-2" v-if="!carsStore.isSelected(props.carData.id)"
-                  @click="carsStore.addCar(props.carData)"></i>
+                  @click="carsStore.addCar({...props.carData , route: props.tovarRoute})"></i>
                 <i class="bi bi-heart-fill ms-2" v-else @click="carsStore.removeCar(props.carData.id)"></i>
               </span>
             </a-flex>
@@ -40,6 +42,7 @@
               <p class="mb-0">В наличии</p>
             </a-flex>
           </a-flex>
+          <!-- ===== Tovar Texnik herakteristika ===== -->
           <a-row class="mt-3">
             <a-col :xs="{ span: 24 }" :md="{ span: 12 }" class="tovar-data">
               <a-flex v-for="(item, index) in specs" :key="index" align="center" justify="space-between"
@@ -47,14 +50,15 @@
                 <p class="mb-0">{{ item.label }}</p>
                 <h3 class="mb-0">{{ item.value }}</h3>
               </a-flex>
-
             </a-col>
           </a-row>
         </div>
+        <!-- ===== Tovar Narxi  ===== -->
         <a-flex class="tovar-price">
           <p class="me-5 mb-0">Цена:</p>
           <p class="ms-5 mb-0">{{ props.carData.cost }} $</p>
         </a-flex>
+        <!-- ===== Author Data ===== -->
         <div class="user-data shadow">
           <div class="user-card">
             <a-flex align="center" gap="15" class="user-info">
@@ -83,12 +87,14 @@
       </a-col>
     </a-row>
 
+    <!-- ===== Tovar description ===== -->
     <div class="tovar-description shadow mt-3">
       <h2 class="item-header">Описание</h2>
       <p class="mb-0">{{ props.carData.description }}</p>
     </div>
 
     <a-row :gutter="[10, 10]" class="mt-4" justify="space-between" align="stretch">
+      <!-- ===== Tovar texnik harekteristika ===== -->
       <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
         <div class="shadow technical-info">
           <h1 class="main-header">Технические характеристики</h1>
@@ -111,6 +117,7 @@
           </a-row>
         </div>
       </a-col>
+      <!-- ===== Message with tovar Author ===== -->
       <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
         <div class="shadow client-config">
           <h1 class="main-header">Задайте вопрос продавцу</h1>
@@ -124,13 +131,13 @@
         </div>
       </a-col>
     </a-row>
-
+    <!-- ===== oxshash  Tovarlar ===== -->
     <div class="mt-5">
       <h1 class="main-header mb-3">ПОХОЖИЕ</h1>
       <a-row :gutter="[10, 10]">
         <a-col v-for="similarCar in similar" :key="similarCar.id" :xs="{ span: 24 }" :md="{ span: 8 }">
-          <RouterLink :to="`${props.similarRoute}/${similarCar.id}`">
-            <AvtoCard :avtomabil="{ ...similarCar, route: props.similarRoute }" :images="similarCar.image"
+          <RouterLink :to="`${props.tovarRoute}/${similarCar.id}`">
+            <AvtoCard :avtomabil="{ ...similarCar, route: props.tovarRoute }" :images="similarCar.image"
               :cost="similarCar.cost" :country="similarCar.country" :milage="similarCar.milage"
               :model="similarCar.model" />
           </RouterLink>
@@ -167,7 +174,7 @@ const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper;
 };
 
-
+//Props
 const props = defineProps({
   carData: {
     type: Object,
@@ -181,12 +188,13 @@ const props = defineProps({
     type: Array,
     required: true,
   },
-  similarRoute: {
+  tovarRoute: {
     type: String,
     required: true,
   },
 });
 
+//tecnical specs
 const specs = [
   { label: "Модель", value: props.carData.model },
   { label: "Год выпуска", value: props.carData.year },
@@ -203,6 +211,7 @@ const specsTwo = [
 
 const modules = [FreeMode, Navigation, Thumbs];
 
+//update date
 const formatDate = (dateString) => {
   if (!dateString) return 'Дата не указана';
   const date = new Date(dateString);

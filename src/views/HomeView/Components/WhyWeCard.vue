@@ -10,6 +10,7 @@
   </a-col>
 </template>
 <script setup>
+//Props
 defineProps({
   icon: String,
   title: String,
@@ -19,6 +20,10 @@ defineProps({
 <style scoped>
 .card-box {
   height: 180px;
+  img{
+    width: 64px;
+    height: 48px;
+  }
 }
 
 .card {

@@ -1,6 +1,7 @@
 <template>
   <div class="cars-card">
     <div class="cars-card-image">
+      <!-- ===== Images ===== -->
       <Swiper :scrollbar="{
         hide: false,
         draggable: true,
@@ -22,18 +23,19 @@
         </swiper-slide>
       </Swiper>
     </div>
+    <!-- ===== Card Info ===== -->
     <div class="cars-card-info shadow">
-      <p class="avto-name">{{ props.model }} , {{ props.avtomabil.year }}</p>
-      <p class="avto-cost">{{ props.cost }}$</p>
+      <p class="avto-name mb-3">{{ props.model }} , {{ props.avtomabil.year }}</p>
+      <p class="avto-cost mb-2">{{ props.cost }}$</p>
       <div class="card-description">
         <a-flex align="center" justify="space-between">
           <div>
-            <p>{{ props.milage }}km</p>
-            <p>1.4/100 л.с./Бензин</p>
+            <p class="mb-2">{{ props.milage }}km</p>
+            <p class="mb-2">{{ props.avtomabil.volume }}/{{ props.avtomabil.horsepower }} л.с</p>
           </div>
           <div>
-            <p>Робот</p>
-            <p>передний привод</p>
+            <p class="mb-2">Робот</p>
+            <p class="mb-2">передний привод</p>
           </div>
         </a-flex>
         <a-flex align="center" justify="space-between">
@@ -77,6 +79,8 @@ const props = defineProps({
 
 const loading = ref([]);
 
+
+//skeleton rasm kelguncha 
 function onImageLoad(index) {
   loading.value[index] = false;
 }

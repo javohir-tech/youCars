@@ -21,8 +21,8 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 AOS.init({
-  duration: 1000, // umumiy davomiylik
-  once: true,     // faqat bir marta ishlasin
+  duration: 1000, 
+  once: true,   
   easing: 'ease-in-out',
 })
 </script>

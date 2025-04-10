@@ -4,10 +4,10 @@
       <a-col
         :xs="{ span: 24 }"
         :md="{ span: 8 }"
-        :lg="{ span: 6 }"
         v-for="(car, index) in paginatedCars"
         :key="index"
       >
+      <!-- ===== Tovars ===== -->
         <RouterLink :to="`${props.router}/${car.id}`">
           <AvtoCard
             :avtomabil="{ ...car, route: props.router }"
@@ -20,6 +20,7 @@
         </RouterLink>
       </a-col>
     </a-row>
+    <!-- ==== Pagination ===== -->
     <a-pagination
       class="pagination mt-3"
       v-model:current="current"
@@ -42,8 +43,10 @@ const props = defineProps({
   router: String,
 });
 
+//Pagination
 const current = ref(props.newCurrent);
-const pageSize = ref(8);
+//Tovars in one page
+const pageSize = ref(6);
 
 const paginatedCars = computed(() => {
   const start = (current.value - 1) * pageSize.value;

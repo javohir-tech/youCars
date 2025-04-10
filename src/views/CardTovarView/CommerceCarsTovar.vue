@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a-breadcrumb class="mt-5">
+    <a-breadcrumb class="mt-3">
       <a-breadcrumb-item>
         <RouterLink to="/">Главная</RouterLink>
       </a-breadcrumb-item>
@@ -19,7 +19,7 @@
     </div>
     <AvtoTovar
       v-else-if="tovarData && similar.length"
-      similar-route="/commerce-cars/commerce-cars-tovar"
+      tovar-route="/commerce-cars/commerce-cars-tovar"
       :similar="similar"
       :car-data="carData"
       :user-data="userData"

@@ -148,8 +148,8 @@ watch(data, (newData) => {
 
   .card-link {
     color: rgba(41, 56, 67, 1);
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 15px;
     text-decoration: none;
   }
 }
