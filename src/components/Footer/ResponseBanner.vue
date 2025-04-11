@@ -3,11 +3,9 @@
     <div class="response-banner mt-5">
       <a-row justify="space-between" align="center">
         <a-col :xs="{ span: 24 }" :lg="{ span: 11 }">
-          <h2>Не можете определится с выбором?</h2>
-          <p class="my-3">
-            Оставьте заявку, и наши менеджеры проконсультируют вас!
-          </p>
-          <button>Оставить заявку</button>
+          <h2>{{ $t('components.underfooter.title') }}</h2>
+          <p class="my-3">{{ $t('components.underfooter.subtitle') }}</p>
+          <button>{{ $t('components.underfooter.request') }}</button>
         </a-col>
         <a-col :xs="{ span: 24 }" :lg="{ span: 11 }">
           <img

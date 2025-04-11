@@ -1,6 +1,115 @@
 {
-    "banner": {
-        "header": "salom",
-        "title": "salom dunyo"
+  "navbar": {
+    "pages": {
+      "home": "Bosh sahifa",
+      "katalok": "Katalog",
+      "about": "Biz haqimizda",
+      "news": "Yangiliklar",
+      "contact": "Aloqa"
+    },
+    "Avto": {
+      "avtomabil": "Avtomobillar",
+      "commercial": "Tijorat transporti",
+      "motorcycles": "Mototsikllar"
+    },
+    "input": {
+      "search": "Nom bo‘yicha qidirish"
+    },
+    "auth": {
+      "login": "Kirish",
+      "register": "Ro‘yxatdan o‘tish"
     }
+  },
+  "pages": {
+    "home": {
+      "banner": {
+        "header": "Yangi Geely Monjaro!",
+        "title": "Monjaro krossoveri — dizayn, materiallar va texnologiyalar bo‘yicha Geely’ning premium modeli.",
+        "request": "Batafsil"
+      },
+      "filter": {
+        "header": "Avtomobil tanlash"
+      },
+      "avtomabilKatalok": {
+        "header": "Avtomobil Katalogi",
+        "link": "Katalogga o‘tish"
+      },
+      "whyWe": {
+        "header": "Nega biz?",
+        "card1": {
+          "title": "To‘liq xizmat",
+          "subtitle": "Avtomobilni rasmiy dilerlardan, vositachilarsiz va tarjimonsiz xarid qilishingiz mumkin."
+        },
+        "card2": {
+          "title": "24/7 onlayn chat",
+          "subtitle": "Biz har doim aloqadamiz – sizning savollaringizga javob beramiz va tanlovda yordam beramiz."
+        },
+        "card3": {
+          "title": "Soddalashtirilgan avtomobil tanlovi",
+          "subtitle": "Saytimiz sizning mezonlaringiz bo‘yicha avtomobil qidirishni engil va qulay qilish uchun yaratilgan."
+        },
+        "card4": {
+          "title": "Yetkazib berish",
+          "subtitle": "Rossiyaning istalgan hududiga to‘g‘ridan-to‘g‘ri yetkazib berish, vositachilarsiz."
+        }
+      },
+      "aboutOurCompany": {
+        "header": "Kompaniyamiz haqida",
+        "subtitle": "Bizda Koreya avtomobil bozori bilan katta tajriba bor va mijozlar ehtiyoji hamda byudjetini hisobga olgan holda avtomobillarni ehtiyotkorlik bilan tanlaymiz. Biz faqat ishonchli yetkazib beruvchilar va tashuvchilar bilan ishlaymiz.",
+        "request": "Bog‘lanish"
+      }
+    },
+    "news": {
+      "header": "Yangiliklar",
+      "link": "Batafsil"
+    }
+  },
+  "components": {
+    "underfooter": {
+      "title": "Tanlovda ikkilanayapsizmi?",
+      "subtitle": "Ariza qoldiring, menejerlarimiz sizga maslahat berishadi!",
+      "request": "Ariza qoldirish"
+    },
+    "filter": {
+      "buttons": {
+        "all": "Barchasi",
+        "new": "Yangi",
+        "probeg": "Yurgan"
+      },
+      "radios": {
+        "stock": "Omborda bor",
+        "order": "Buyurtma asosida"
+      },
+      "filterItems": {
+        "marka": "Markani tanlang",
+        "model": "Modelni tanlang",
+        "country": "Davlat",
+        "year": "Yil",
+        "cost": "Narx"
+      }
+    }
+  },
+  "footer": {
+    "title": "© 1-avtobroker",
+    "subtitle": "Hayotingizga sifatli o‘zgarishlar kiritamiz!",
+    "headers": {
+      "compony": "Kompaniya",
+      "avtomabil": "Avtomobillar",
+      "marka": "Brendlar"
+    },
+    "pages": {
+      "home": "Bosh sahifa",
+      "katalok": "Katalog",
+      "about": "Biz haqimizda",
+      "news": "Yangiliklar",
+      "contact": "Aloqa"
+    },
+    "country": {
+      "yevrop": "Yevropadan",
+      "usa": "AQSHdan",
+      "oea": "BAAdan",
+      "china": "Xitoydan",
+      "korea": "Koreyadan"
+    }
+  }
 }

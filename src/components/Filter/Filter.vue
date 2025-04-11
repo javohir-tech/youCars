@@ -9,33 +9,37 @@
             :class="{ active: activeTab === 'all' }"
             @click="activeTab = 'all'"
           >
-            Все
+            {{ $t('components.filter.buttons.all') }}
           </button>
           <button
             class="tab-button"
             :class="{ active: activeTab === 'new' }"
             @click="activeTab = 'new'"
           >
-            Новые
+            {{ $t('components.filter.buttons.new') }}
           </button>
           <button
             class="tab-button"
             :class="{ active: activeTab === 'used' }"
             @click="activeTab = 'used'"
           >
-            С пробегом
+            {{ $t('components.filter.buttons.probeg') }}
           </button>
         </div>
         <a-flex gap="10">
-          <a-checkbox v-model:checked="checked">В наличии</a-checkbox>
-          <a-checkbox v-model:checked="checked2">Под заказ</a-checkbox>
+          <a-checkbox v-model:checked="checked">{{
+            $t('components.filter.radios.stock')
+          }}</a-checkbox>
+          <a-checkbox v-model:checked="checked2">{{
+            $t('components.filter.radios.order')
+          }}</a-checkbox>
         </a-flex>
       </a-flex>
 
       <a-flex justify="space-between" class="filter-dropdowns mt-3">
         <div class="dropdown-container">
           <div class="filter-item">
-            <p>Выберите марку</p>
+            <p>{{ $t('components.filter.filterItems.marka') }}</p>
             <a-dropdown
               :placement="yonalish"
               class="my-dropdown"
@@ -55,7 +59,7 @@
         </div>
         <div class="dropdown-container">
           <div class="filter-item">
-            <p>ВЫберите модель</p>
+            <p>{{ $t('components.filter.filterItems.model') }}</p>
             <a-dropdown
               :placement="yonalish"
               class="my-dropdown"
@@ -82,7 +86,7 @@
         </div>
         <div class="dropdown-container">
           <div class="filter-item">
-            <p>Страна</p>
+            <p>{{ $t('components.filter.filterItems.country') }}</p>
             <a-dropdown
               :placement="yonalish"
               class="my-dropdown"
@@ -109,7 +113,7 @@
         </div>
         <div class="dropdown-container">
           <div class="filter-item">
-            <p>Год</p>
+            <p>{{ $t('components.filter.filterItems.year') }}</p>
             <a-dropdown
               :placement="yonalish"
               class="my-dropdown"
@@ -136,7 +140,7 @@
         </div>
         <div class="dropdown-container">
           <div class="filter-item">
-            <p>Цена</p>
+            <p>{{ $t('components.filter.filterItems.cost') }}</p>
             <a-dropdown
               :placement="yonalish"
               class="my-dropdown"

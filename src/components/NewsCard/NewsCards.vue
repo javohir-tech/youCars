@@ -1,6 +1,6 @@
 <template>
   <div class="news mt-5">
-    <h1 class="main-header">Новости</h1>
+    <h1 class="main-header">{{ $t('pages.news.header') }}</h1>
     <div class="news-cards desktop-version">
       <div v-if="loading" class="loader shadow">
         <a-spin />
@@ -26,7 +26,7 @@
               </div>
               <RouterLink :to="`/news/${ourNew.id}`" class="card-link">
                 <a-flex align="center" :gap="10">
-                  <p class="mb-0">Подробнее</p>
+                  <p class="mb-0">{{ $t('pages.news.link') }}</p>
                   <i class="fa-solid fa-right-to-bracket"></i>
                 </a-flex>
               </RouterLink>

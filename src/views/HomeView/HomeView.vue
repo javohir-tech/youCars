@@ -2,6 +2,7 @@
   <div class="container">
     <Banner />
     <!--  filter -->
+    <h1 class="main-header mt-3">{{ $t('pages.home.filter.header') }}</h1>
     <Filter FilterName="АВТОМОБИЛЬНЫЙ КАТАЛОГ" />
     <!--Cars Katalok -->
     <CarsKatalok />
@@ -11,6 +12,8 @@
     <AboutCompony />
     <!--Marks-->
     <Marks />
+    <!-- footer under -->
+    <ResponseBanner />
     <!--NewsCards-->
     <NewsCards />
   </div>
@@ -20,6 +23,6 @@
 import Filter from '@/components/Filter/Filter.vue';
 //components
 import { AboutCompony, Banner, CarsKatalok, Marks, WhyWe } from './Components';
-import { NewsCards } from '@/components';
+import { NewsCards, ResponseBanner } from '@/components';
 </script>
 <style></style>

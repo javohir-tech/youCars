@@ -1,6 +1,6 @@
 <template>
   <div class="cars-katalok mt-5">
-    <h1 class="main-header">АВТОМОБИЛЬНЫЙ КАТАЛОГ</h1>
+    <h1 class="main-header">{{ $t('pages.home.avtomabilKatalok.header') }}</h1>
     <!-- ===== Loader ===== -->
     <div v-if="loading" class="loader shadow">
       <a-spin />
@@ -35,7 +35,8 @@
   </div>
   <div class="mt-3 me-2 under-link">
     <RouterLink to="/katalok"
-      >Перейти в каталог <i class="bi bi-arrow-right"></i
+      >{{ $t('pages.home.avtomabilKatalok.link') }}
+      <i class="bi bi-arrow-right"></i
     ></RouterLink>
   </div>
 </template>

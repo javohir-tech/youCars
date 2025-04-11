@@ -2,13 +2,21 @@
   <section class="banner-section">
     <a-row class="banner-box">
       <a-col class="banner-section__info" :xs="{ span: 24 }" :md="{ span: 12 }">
-        <h1>{{ $t('banner.header') }}</h1>
-        <p>{{ $t('banner.title') }}</p>
-        <button class="btn-primary banner-button">Подробнее</button>
+        <h1>{{ $t('pages.home.banner.header') }}</h1>
+        <p>{{ $t('pages.home.banner.title') }}</p>
+        <button class="btn-primary banner-button">
+          {{ $t('pages.home.banner.request') }}
+        </button>
       </a-col>
       <a-col :xs="{ span: 24 }" :md="{ span: 12 }" class="banner-image">
-        <img src="../../../assets/Images/bannerImage.png" class="img-fluid" alt="" data-aos="slide-left"
-          data-aos-duration="2000" data-aos-once="true" />
+        <img
+          src="../../../assets/Images/bannerImage.png"
+          class="img-fluid"
+          alt=""
+          data-aos="slide-left"
+          data-aos-duration="2000"
+          data-aos-once="true"
+        />
       </a-col>
     </a-row>
   </section>

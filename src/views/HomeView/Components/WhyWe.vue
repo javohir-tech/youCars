@@ -14,6 +14,9 @@
 </template>
 
 <script setup>
+//Vue
+import { computed } from 'vue';
+//components
 import WhyWeCard from './WhyWeCard.vue';
 
 // icons
@@ -22,30 +25,32 @@ import message from '../../../assets/Images/Icons/messageIcon.gif';
 import search from '../../../assets/Images/Icons/search.gif';
 import dastafka from '../../../assets/Images/Icons/import1.gif';
 
+//lannguage edit
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 // cards data
-const cards = [
+const cards = computed(() => [
   {
     icon: key,
-    title: 'Работаем под ключ',
-    subtitle:
-      'У нас вы можете приобрести автомобиль напрямую у официального автодилера, без посредников и переводчиков.',
+    title: t('pages.home.whyWe.card1.title'),
+    subtitle: t('pages.home.whyWe.card1.subtitle'),
   },
   {
     icon: message,
-    title: 'онлайн-чат 24/7',
-    subtitle:
-      'Мы всегда на связи, чтобы ответить на ваши вопросы и помочь вам с выбором.',
+    title: t('pages.home.whyWe.card2.title'),
+    subtitle: t('pages.home.whyWe.card2.subtitle'),
   },
   {
     icon: search,
-    title: 'Упрощенный выбор авто',
-    subtitle:
-      'мы создали этот сайт, чтобы сделать поиск автомобиля по вашим критериям максимально простым и удобным.',
+    title: t('pages.home.whyWe.card3.title'),
+    subtitle: t('pages.home.whyWe.card3.subtitle'),
   },
   {
     icon: dastafka,
-    title: 'Доставка',
-    subtitle: 'поставка в любой регион РФ, прямая связь без посредников',
+    title: t('pages.home.whyWe.card4.title'),
+    subtitle: t('pages.home.whyWe.card4.subtitle'),
   },
-];
+]);
 </script>

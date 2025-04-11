@@ -17,14 +17,13 @@
       </a-col>
       <a-col :xs="{ span: 24 }" :md="{ span: 13 }">
         <div class="about-banner__info">
-          <h2 class="main-header">О нашей компании</h2>
-          <p>
-            Мы имеем огромный опыт работы с автомобильным рынком Кореи и
-            тщательно отбираем автомобили для наших клиентов, учитывая их
-            потребности и бюджет. Мы работаем только с надежными поставщиками и
-            перевозчиками, чтобы обеспечить безопасность и надежность доставки.
-          </p>
-          <button class="btn-primary">Связаться с нами</button>
+          <h2 class="main-header">
+            {{ $t('pages.home.aboutOurCompany.header') }}
+          </h2>
+          <p>{{ $t('pages.home.aboutOurCompany.subtitle') }}</p>
+          <button class="btn-primary">
+            {{ $t('pages.home.aboutOurCompany.request') }}
+          </button>
         </div>
       </a-col>
     </a-row>
@@ -118,9 +117,11 @@
   .baloons {
     width: 100px;
   }
+
   .marka {
     height: 60px;
     width: 50px;
+
     p {
       font-size: 20px;
       line-height: 15px;

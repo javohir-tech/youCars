@@ -36,9 +36,11 @@
       <div class="card-description">
         <a-flex align="center" justify="space-between">
           <div>
-            <p class="mb-2">{{ props.milage }}km</p>
+            <p class="mb-2">{{ props.milage }} km</p>
             <p class="mb-2">
-              {{ props.avtomabil.volume }}/{{ props.avtomabil.horsepower }} л.с
+              {{ props.avtomabil.volume }} /
+              {{ props.avtomabil.horsepower }} л.с /
+              {{ props.avtomabil.engine }}
             </p>
           </div>
           <div>

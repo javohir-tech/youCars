@@ -1,6 +1,115 @@
 {
-    "banner": {
-        "header": "salom",
-        "title": "salom dunyo"
+  "navbar": {
+    "pages": {
+      "home": "Home",
+      "katalok": "Catalog",
+      "about": "About us",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "Avto": {
+      "avtomabil": "Cars",
+      "commercial": "Commercial transport",
+      "motorcycles": "Motorcycles"
+    },
+    "input": {
+      "search": "Search by name"
+    },
+    "auth": {
+      "login": "Login",
+      "register": "Register"
     }
+  },
+  "pages": {
+    "home": {
+      "banner": {
+        "header": "New Geely Monjaro!",
+        "title": "The Monjaro crossover is Geely’s premium model in terms of design, materials, and technology.",
+        "request": "Learn more"
+      },
+      "filter": {
+        "header": "Car selection"
+      },
+      "avtomabilKatalok": {
+        "header": "Car Catalog",
+        "link": "Go to catalog"
+      },
+      "whyWe": {
+        "header": "Why us?",
+        "card1": {
+          "title": "Turnkey service",
+          "subtitle": "Buy cars directly from official dealers — no intermediaries or translators needed."
+        },
+        "card2": {
+          "title": "Online chat 24/7",
+          "subtitle": "We are always in touch to answer your questions and help you choose the right car."
+        },
+        "card3": {
+          "title": "Simplified car selection",
+          "subtitle": "We created this site to make finding a car that fits your criteria easy and convenient."
+        },
+        "card4": {
+          "title": "Delivery",
+          "subtitle": "Delivery to any region of Russia, direct communication without middlemen."
+        }
+      },
+      "aboutOurCompany": {
+        "header": "About our company",
+        "subtitle": "We have vast experience with the Korean car market and carefully select cars for our clients based on their needs and budget. We work only with reliable suppliers and carriers to ensure safe and dependable delivery.",
+        "request": "Contact us"
+      }
+    },
+    "news": {
+      "header": "News",
+      "link": "Read more"
+    }
+  },
+  "components": {
+    "underfooter": {
+      "title": "Can't decide what to choose?",
+      "subtitle": "Leave a request and our managers will assist you!",
+      "request": "Leave a request"
+    },
+    "filter": {
+      "buttons": {
+        "all": "All",
+        "new": "New",
+        "probeg": "Used"
+      },
+      "radios": {
+        "stock": "In stock",
+        "order": "On order"
+      },
+      "filterItems": {
+        "marka": "Select brand",
+        "model": "Select model",
+        "country": "Country",
+        "year": "Year",
+        "cost": "Price"
+      }
+    }
+  },
+  "footer": {
+    "title": "© 1st Auto Broker",
+    "subtitle": "Bringing quality changes to your life!",
+    "headers": {
+      "compony": "Company",
+      "avtomabil": "Cars",
+      "marka": "Brands"
+    },
+    "pages": {
+      "home": "Home",
+      "katalok": "Catalog",
+      "about": "About us",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "country": {
+      "yevrop": "From Europe",
+      "usa": "From USA",
+      "oea": "From UAE",
+      "china": "From China",
+      "korea": "From Korea"
+    }
+  }
 }

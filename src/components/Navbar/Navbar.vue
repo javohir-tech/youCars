@@ -37,32 +37,35 @@
         </RouterLink>
       </div>
       <div class="nav-links">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link"
-          >Главная</router-link
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/"
+          class="nav-link"
+          >{{ $t('navbar.pages.home') }}</router-link
         >
         <router-link
           @click="isMenuOpen = !isMenuOpen"
           to="/katalok"
           class="nav-link"
-          >Каталог</router-link
+          >{{ $t('navbar.pages.katalok') }}</router-link
         >
         <router-link
           @click="isMenuOpen = !isMenuOpen"
           to="/about"
           class="nav-link"
-          >О нас</router-link
+          >{{ $t('navbar.pages.about') }}</router-link
         >
         <router-link
           @click="isMenuOpen = !isMenuOpen"
           to="/news"
           class="nav-link"
-          >Новости</router-link
+          >{{ $t('navbar.pages.news') }}</router-link
         >
         <router-link
           @click="isMenuOpen = !isMenuOpen"
           to="/contact"
           class="nav-link"
-          >Контакты</router-link
+          >{{ $t('navbar.pages.contact') }}</router-link
         >
       </div>
 
@@ -97,7 +100,7 @@
           class="mobile-category__name"
         >
           <div class="category-item">
-            <span>Автомобили</span>
+            <span>{{ $t('navbar.Avto.avtomabil') }}</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
@@ -107,7 +110,7 @@
           class="mobile-category__name"
         >
           <div class="category-item">
-            <span>Коммерческий транспорт</span>
+            <span>{{ $t('navbar.Avto.commercial') }}</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
@@ -117,7 +120,7 @@
           class="mobile-category__name"
         >
           <div class="category-item">
-            <span>Мотоциклы</span>
+            <span>{{ $t('navbar.Avto.motorcycles') }}</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
@@ -155,13 +158,13 @@
           @click="isMenuOpen = !isMenuOpen"
           to="/register"
           class="register-btn"
-          >Регистрация</router-link
+          >{{ $t('navbar.auth.register') }}</router-link
         >
         <router-link
           @click="isMenuOpen = !isMenuOpen"
           to="/login"
           class="login-btn"
-          >Войти</router-link
+          >{{ $t('navbar.auth.login') }}</router-link
         >
       </div>
     </div>
@@ -171,11 +174,29 @@
         <div class="container">
           <a-flex align="center" justify="space-between">
             <ul class="navbar-list">
-              <li><router-link to="/">Главная</router-link></li>
-              <li><router-link to="/katalok">Каталог</router-link></li>
-              <li><router-link to="/about">О нас</router-link></li>
-              <li><router-link to="/news">Новости</router-link></li>
-              <li><router-link to="/contact">Контакты</router-link></li>
+              <li>
+                <router-link to="/">{{ $t('navbar.pages.home') }}</router-link>
+              </li>
+              <li>
+                <router-link to="/katalok">{{
+                  $t('navbar.pages.katalok')
+                }}</router-link>
+              </li>
+              <li>
+                <router-link to="/about">{{
+                  $t('navbar.pages.about')
+                }}</router-link>
+              </li>
+              <li>
+                <router-link to="/news">{{
+                  $t('navbar.pages.news')
+                }}</router-link>
+              </li>
+              <li>
+                <router-link to="/contact">{{
+                  $t('navbar.pages.contact')
+                }}</router-link>
+              </li>
             </ul>
             <div class="navbar-right">
               <div class="social-icons">
@@ -218,19 +239,19 @@
               <ul class="categories-list">
                 <li>
                   <RouterLink to="/katalok" class="categories-name">
-                    <a href="#">Автомобили</a>
+                    <p class="mb-0">{{ $t('navbar.Avto.avtomabil') }}</p>
                     <img src="../../assets/Images/Vector.png" alt="" />
                   </RouterLink>
                 </li>
                 <li>
                   <RouterLink to="/commerce-cars" class="categories-name">
-                    <a href="#">Коммерческий транспорт</a>
+                    <p class="mb-0">{{ $t('navbar.Avto.commercial') }}</p>
                     <img src="../../assets/Images/Vector.png" alt="" />
                   </RouterLink>
                 </li>
                 <li>
                   <RouterLink to="/motorcycle" class="categories-name">
-                    <a href="#">Мотоциклы</a>
+                    <p class="mb-0">{{ $t('navbar.Avto.motorcycles') }}</p>
                     <img src="../../assets/Images/Vector.png" alt="" />
                   </RouterLink>
                 </li>
@@ -259,10 +280,12 @@
                 </div>
               </div>
               <a-flex v-else gap="10">
-                <router-link to="/login" class="login-btn">Войти</router-link>
-                <router-link to="/register" class="register-btn"
-                  >Регистрация</router-link
-                >
+                <router-link to="/login" class="login-btn">{{
+                  $t('navbar.auth.login')
+                }}</router-link>
+                <router-link to="/register" class="register-btn">{{
+                  $t('navbar.auth.register')
+                }}</router-link>
               </a-flex>
             </div>
           </a-flex>
@@ -284,7 +307,7 @@ import { useUserStore } from '@/Stores/useUserStore';
 import { useI18n } from 'vue-i18n';
 
 //language adit
-const {locale} = useI18n()
+const { locale } = useI18n();
 
 const language = ref(localStorage.getItem('lang') || locale.value);
 

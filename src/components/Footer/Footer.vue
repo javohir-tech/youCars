@@ -16,39 +16,65 @@
               ></a>
               <a target="_blank" href="#"><i class="fa-brands fa-vk"></i></a>
             </div>
-            <p class="avto-broker">
-              © 1-й автоброкер <br />Внесём качественные изменения в Вашу
-              жизнь!
-            </p>
+            <p class="avto-broker mb-1">{{ $t('footer.title') }}</p>
+            <p class="avto-broker">{{ $t('footer.subtitle') }}</p>
           </div>
         </a-col>
         <a-col :md="{ span: 12 }" :lg="{ span: 3 }">
           <div>
-            <h3>Компания</h3>
+            <h3>{{ $t('footer.headers.compony') }}</h3>
             <ul class="footer-list">
-              <li><router-link to="/">Главная</router-link></li>
-              <li><router-link to="/katalok">Каталог</router-link></li>
-              <li><router-link to="/about">О нас</router-link></li>
-              <li><router-link to="/news">Новости</router-link></li>
-              <li><router-link to="/contact">Контакты</router-link></li>
+              <li>
+                <router-link to="/">{{ $t('footer.pages.home') }}</router-link>
+              </li>
+              <li>
+                <router-link to="/katalok">{{
+                  $t('footer.pages.katalok')
+                }}</router-link>
+              </li>
+              <li>
+                <router-link to="/about">{{
+                  $t('footer.pages.about')
+                }}</router-link>
+              </li>
+              <li>
+                <router-link to="/news">{{
+                  $t('footer.pages.news')
+                }}</router-link>
+              </li>
+              <li>
+                <router-link to="/contact">{{
+                  $t('footer.pages.contact')
+                }}</router-link>
+              </li>
             </ul>
           </div>
         </a-col>
         <a-col :md="{ span: 12 }" :lg="{ span: 3 }" class="countrys">
           <div>
-            <h3>Aвтомобили</h3>
+            <h3>{{ $t('footer.headers.avtomabil') }}</h3>
             <ul class="footer-list">
-              <li><a href="#">Из Европы</a></li>
-              <li><a href="#">Из США</a></li>
-              <li><a href="#">Из ОАЭ</a></li>
-              <li><a href="#">Из Китая</a></li>
-              <li><a href="#">Из Кореи</a></li>
+              <li>
+                <a href="#">{{ $t('footer.country.yevrop') }}</a>
+              </li>
+              <li>
+                <a href="#">{{ $t('footer.country.usa') }}</a>
+              </li>
+              <li>
+                <a href="#">{{ $t('footer.country.oea') }}</a>
+              </li>
+              <li>
+                <a href="#">{{ $t('footer.country.china') }}</a>
+              </li>
+              <li>
+                <a href="#">{{ $t('footer.country.korea') }}</a>
+              </li>
             </ul>
           </div>
         </a-col>
         <a-col :md="{ span: 24 }" :lg="{ span: 12 }">
           <div>
-            <h3>Марки</h3>
+            <h3>{{ $t('footer.headers.marka') }}</h3>
             <a-row :gutter="[10, 10]">
               <a-col
                 class="footer-col__links"
