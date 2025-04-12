@@ -81,6 +81,27 @@
     "contact":{
       "header":"Контакты",
       "location":"Ташкент"
+    },
+    "avtoTovar":{
+      "technical":{
+        "model":"Модель",
+        "year":"Год выпуска",
+        "milage":"Пробег",
+        "color":"Цвет",
+        "dvigatel":"Двигатель",
+        "country":"Страна",
+        "fuel":"Топливо",
+        "box":"Коробка"
+      },
+      "headers":{
+        "description":"Описание",
+        "TechSpecifications":"Технические характеристики",
+        "message":"Задайте вопрос продавцу",
+        "similar":"Похожий"
+      },
+      "cost":"Цена",
+      "scotk":"В наличии",
+      "message":"Написать"
     }
   },
   "components": {

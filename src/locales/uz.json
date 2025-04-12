@@ -80,7 +80,28 @@
     },
     "contact": {
       "header": "Kontaktlar",
-      "location":"Toshkent"
+      "location": "Toshkent"
+    },
+    "avtoTovar": {
+      "technical": {
+        "model": "Model",
+        "year": "Ishlab chiqarilgan yili",
+        "milage": "Yurgan masofasi",
+        "color": "Rangi",
+        "dvigatel": "Dvigatel",
+        "country": "Mamlakat",
+        "fuel": "Yoqilg‘i turi",
+        "box": "Uzatmalar qutisi"
+      },
+      "headers": {
+        "description": "Tavsif",
+        "TechSpecifications": "Texnik xususiyatlari",
+        "message": "Sotuvchiga savol bering",
+        "similar": "O‘xshash"
+      },
+      "cost": "Narxi",
+      "scotk": "Omborda mavjud",
+      "message": "Xabar yozish"
     }
   },
   "components": {

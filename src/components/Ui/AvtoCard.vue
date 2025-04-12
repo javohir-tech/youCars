@@ -21,7 +21,6 @@
             v-show="!loading[index]"
             :src="image"
             class="img-fluid"
-            loading="lazy"
             alt="Slide image"
             @load="onImageLoad(index)"
           />

@@ -2,10 +2,10 @@
   <div class="container">
     <a-breadcrumb class="mt-3">
       <a-breadcrumb-item>
-        <RouterLink to="/">Главная</RouterLink>
+        <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
-        <RouterLink to="/commerce-cars">Коммерческий транспорт</RouterLink>
+        <RouterLink to="/commerce-cars">{{ $t('navbar.Avto.commercial') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
         <RouterLink

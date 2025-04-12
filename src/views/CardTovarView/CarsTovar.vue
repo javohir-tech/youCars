@@ -2,10 +2,10 @@
   <div class="container">
     <a-breadcrumb class="mt-3">
       <a-breadcrumb-item>
-        <RouterLink to="/">Главная</RouterLink>
+        <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
-        <RouterLink to="/katalok">Каталог</RouterLink>
+        <RouterLink to="/katalok">{{ $t('navbar.pages.katalok') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
         <RouterLink :to="`/katalok/cars-tovar/${route.params.id}`">{{

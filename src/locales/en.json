@@ -80,7 +80,28 @@
     },
     "contact": {
       "header": "Contacts",
-      "location":"Tashkent"
+      "location": "Tashkent"
+    },
+    "avtoTovar": {
+      "technical": {
+        "model": "Model",
+        "year": "Year of manufacture",
+        "milage": "Mileage",
+        "color": "Color",
+        "dvigatel": "Engine",
+        "country": "Country",
+        "fuel": "Fuel",
+        "box": "Transmission"
+      },
+      "headers": {
+        "description": "Description",
+        "TechSpecifications": "Technical specifications",
+        "message": "Ask the seller a question",
+        "similar": "Similar"
+      },
+      "cost": "Price",
+      "scotk": "In stock",
+      "message": "Send a message"
     }
   },
   "components": {

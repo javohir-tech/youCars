@@ -3,13 +3,12 @@
   <main>
     <RouterView />
   </main>
-  <!-- <ResponseBanner/> -->
   <Footer />
   <a-back-top />
 </template>
 <script setup>
 //components
-import { Navbar, ResponseBanner, Footer } from '@/components';
+import { Navbar, Footer } from '@/components';
 
 import { RouterView } from 'vue-router';
 </script>
