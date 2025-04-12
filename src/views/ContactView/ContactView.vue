@@ -2,16 +2,16 @@
   <div class="container">
     <a-breadcrumb class="mt-3">
       <a-breadcrumb-item>
-        <RouterLink to="/">Главная</RouterLink>
+        <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
-        <RouterLink to="/contact">Контакты</RouterLink>
+        <RouterLink to="/contact">{{ $t('navbar.pages.contact') }}</RouterLink>
       </a-breadcrumb-item>
     </a-breadcrumb>
     <a-row :gutter="[10, 10]" class="mt-3" align="stretch">
       <a-col :xs="{ span: 24, order: 2 }" :md="{ span: 10, order: 1 }">
         <div class="contacts-box">
-          <h1 class="main-header mb-3">Контакты</h1>
+          <h1 class="main-header mb-3">{{ $t('pages.contact.header') }}</h1>
           <div class="contacts">
             <a href="tel:+998771232904" target="_blank">
               <div class="contact-item">
@@ -32,7 +32,7 @@
             <a href="https://maps.app.goo.gl/WCHb5oYscuVwDPH2A" target="_blank">
               <div class="contact-item">
                 <i class="bi bi-geo-alt"></i>
-                <p class="mb-0">Toshkent</p>
+                <p class="mb-0">{{ $t('pages.contact.location') }}</p>
               </div>
             </a>
           </div>

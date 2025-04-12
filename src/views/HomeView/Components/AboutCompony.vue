@@ -11,7 +11,8 @@
           <img
             src="@/assets/Images/backImage.png"
             class="img-fluid back-image"
-            alt=""
+            loading="lazy"
+            alt="bratim"
           />
         </div>
       </a-col>

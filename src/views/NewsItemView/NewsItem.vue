@@ -13,10 +13,10 @@
       <div class="mt-4">
         <a-breadcrumb class="mt-4">
           <a-breadcrumb-item>
-            <RouterLink to="/">Главная</RouterLink>
+            <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
           </a-breadcrumb-item>
           <a-breadcrumb-item>
-            <RouterLink to="/news">Новости</RouterLink>
+            <RouterLink to="/news">{{ $t('navbar.pages.news') }}</RouterLink>
           </a-breadcrumb-item>
           <a-breadcrumb-item>
             <RouterLink :to="`/news/${route.params.id}`">{{
@@ -30,7 +30,7 @@
         <a-row :gutter="[10, 10]">
           <a-col :xs="{ span: 24 }" :md="{ span: 17 }" class="news-main__info">
             <div class="news-image__box">
-              <img :src="news.image" class="img-fluid" alt="news image" />
+              <img :src="news.image" loading="lazy" class="img-fluid" alt="news image" />
             </div>
             <p class="mt-3">{{ news.content }}</p>
           </a-col>
@@ -68,15 +68,20 @@
         </a-row>
       </div>
     </div>
+    <ResponseBanner/>
   </div>
 </template>
 
 <script setup>
-//VUE ROUTE
+//Axios
 import axios from 'axios';
+//VUE ROUTE
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+//componnents
+import { ResponseBanner } from '@/components';
 
+//values
 const route = useRoute();
 const news = ref({});
 const activeKey = ref([]);

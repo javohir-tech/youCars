@@ -62,6 +62,25 @@
     "news": {
       "header": "Новости",
       "link": "Подробнее"
+    },
+    "katalok":{
+        "filter":{
+          "header":"Каталог"
+        }
+    },
+    "CommercialTransport":{
+      "filter":{
+        "header":"Коммерческий транспорт"
+      }
+    },
+    "motorcycles":{
+      "filter":{
+        "header":"Мотоциклы"
+      }
+    },
+    "contact":{
+      "header":"Контакты",
+      "location":"Ташкент"
     }
   },
   "components": {

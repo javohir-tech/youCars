@@ -21,7 +21,7 @@
               v-for="(image, index) in props.carData.image"
               :key="index"
             >
-              <img :src="image" />
+              <img :src="image" alt="tovar images" loading="lazy"/>
             </swiper-slide>
           </swiper>
           <swiper
@@ -128,6 +128,7 @@
               <img
                 src="../../assets/Images/Icons/messege2.png"
                 class="img-fluid"
+                loading="lazy"
                 alt="messege"
               />
               <p class="mb-0">Написать</p>

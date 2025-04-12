@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- ===== Bread Crumps -->
     <a-breadcrumb class="mt-4">
       <a-breadcrumb-item>
         <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
@@ -8,10 +9,14 @@
         <RouterLink to="/news">{{ $t('navbar.pages.news') }}</RouterLink>
       </a-breadcrumb-item>
     </a-breadcrumb>
+    <!-- news cards -->
     <NewsCards />
+    <!-- =====  Response ===== -->
+     <ResponseBanner/>
   </div>
 </template>
 <script setup>
-import { NewsCards } from '@/components';
+//components
+import { NewsCards, ResponseBanner } from '@/components';
 </script>
 <style></style>

@@ -29,6 +29,9 @@ import AOS from 'aos';
 //i18n
 import i18n from './i18n';
 
+//LazyLoading
+import VueLazyload from 'vue-lazyload';
+
 const app = createApp(App);
 
 AOS.init();
@@ -37,4 +40,8 @@ app.use(pinia);
 app.use(router);
 app.use(Antd);
 app.use(i18n);
+app.use(VueLazyload, {
+    loading: 'loading.gif',
+    error: 'error.png' 
+});
 app.mount('#app');

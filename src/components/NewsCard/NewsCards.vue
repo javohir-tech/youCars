@@ -2,10 +2,13 @@
   <div class="news mt-5">
     <h1 class="main-header">{{ $t('pages.news.header') }}</h1>
     <div class="news-cards desktop-version">
+      <!-- ===== loading ===== -->
       <div v-if="loading" class="loader shadow">
         <a-spin />
       </div>
+      <!-- ===== Desktop version ===== -->
       <a-row v-else-if="ourNews.length" :gutter="[10, 10]">
+        <!-- ===== Data ===== -->
         <a-col
           :xs="{ span: 24 }"
           :md="{ span: 12 }"
@@ -34,6 +37,7 @@
           </div>
         </a-col>
       </a-row>
+      <!-- error -->
       <a-result
         v-else-if="error"
         status="404"
@@ -41,6 +45,7 @@
         sub-title="Sorry, An error occurred while loading the data!"
       />
     </div>
+    <!-- ===== Mobile Version ==== -->
     <div v-if="loading" class="loader shadow mobile-version">
       <a-spin />
     </div>
@@ -69,7 +74,7 @@
       <swiper-slide v-for="ourNew in ourNews" :key="ourNew.key">
         <div class="news-card">
           <div class="card-image">
-            <img :src="ourNew.image" class="img-fluid" alt="news image" />
+            <img :src="ourNew.image" loading="lazy" class="img-fluid" alt="news image" />
           </div>
           <div class="card-info shadow">
             <div class="card-titles">
@@ -102,6 +107,7 @@ import { useFetch } from '@/Hooks/UseFatch';
 import { Pagination, Autoplay } from 'swiper/modules';
 //Router
 import { RouterLink } from 'vue-router';
+import { ResponseBanner } from '..';
 
 const modules = [Pagination, Autoplay];
 const ourNews = ref([]);

@@ -11,7 +11,7 @@
       :lg="{ span: 4 }"
       class="mark-box"
     >
-      <img :src="mark.image" class="img-fluid mark-image" alt="" />
+      <img :src="mark.image" class="img-fluid mark-image" alt="marka" loading="lazy" />
     </a-col>
   </a-row>
   <a-result

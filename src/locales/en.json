@@ -62,6 +62,25 @@
     "news": {
       "header": "News",
       "link": "Read more"
+    },
+    "katalok": {
+      "filter": {
+        "header": "Catalog"
+      }
+    },
+    "CommercialTransport": {
+      "filter": {
+        "header": "Commercial Transport"
+      }
+    },
+    "motorcycles": {
+      "filter": {
+        "header": "Motorcycles"
+      }
+    },
+    "contact": {
+      "header": "Contacts",
+      "location":"Tashkent"
     }
   },
   "components": {

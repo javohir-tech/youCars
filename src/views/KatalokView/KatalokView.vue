@@ -3,14 +3,15 @@
     <!-- ===== Router Yo'li ===== -->
     <a-breadcrumb class="mt-5">
       <a-breadcrumb-item>
-        <RouterLink to="/">Главная</RouterLink>
+        <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
-        <RouterLink to="/katalok">Каталог</RouterLink>
+        <RouterLink to="/katalok">{{ $t('navbar.pages.katalok') }}</RouterLink>
       </a-breadcrumb-item>
     </a-breadcrumb>
     <!-- ===== Filter Qilish ===== -->
-    <Filter filterName="Каталог" />
+     <h1 class="main-header mt-3">{{ $t('pages.katalok.filter.header') }}</h1>
+    <Filter />
     <!-- ===== Loader ===== -->
     <div v-if="loading" class="loader shadow">
       <a-spin />
@@ -29,6 +30,8 @@
       title="404"
       sub-title="Sorry, An error occurred while loading the data!"
     />
+    <!-- ===== Request ===== -->
+    <ResponseBanner/>
   </div>
 </template>
 <script setup>
@@ -38,6 +41,7 @@ import { RouterLink } from 'vue-router';
 //components
 import Filter from '../../components/Filter/Filter.vue';
 import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
+import { ResponseBanner } from '@/components';
 //Hooks
 import { useFetch } from '@/Hooks/UseFatch';
 

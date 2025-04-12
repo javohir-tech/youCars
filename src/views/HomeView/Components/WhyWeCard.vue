@@ -2,7 +2,7 @@
   <a-col :xs="{ span: 24 }" :md="{ span: 12 }" :lg="{ span: 6 }">
     <div class="card shadow">
       <div class="card-box">
-        <img :src="icon" class="img-fluid" alt="key" />
+        <img :src="icon" class="img-fluid" loading="lazy" alt="key" />
         <h3 class="my-3">{{ title }}</h3>
         <p>{{ subtitle }}</p>
       </div>

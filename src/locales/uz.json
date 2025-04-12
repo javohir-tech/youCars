@@ -62,6 +62,25 @@
     "news": {
       "header": "Yangiliklar",
       "link": "Batafsil"
+    },
+    "katalok": {
+      "filter": {
+        "header": "Katalog"
+      }
+    },
+    "CommercialTransport": {
+      "filter": {
+        "header": "Tijorat transporti"
+      }
+    },
+    "motorcycles": {
+      "filter": {
+        "header": "Mototsikllar"
+      }
+    },
+    "contact": {
+      "header": "Kontaktlar",
+      "location":"Toshkent"
     }
   },
   "components": {

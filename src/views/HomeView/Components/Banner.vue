@@ -12,7 +12,8 @@
         <img
           src="../../../assets/Images/bannerImage.png"
           class="img-fluid"
-          alt=""
+          alt="banner image"
+          loading="lazy"
           data-aos="slide-left"
           data-aos-duration="2000"
           data-aos-once="true"

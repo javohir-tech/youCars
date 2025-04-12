@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5">
-    <h1 class="main-header">Почему мы?</h1>
+    <h1 class="main-header">{{ $t('pages.home.whyWe.header') }}</h1>
     <a-row :gutter="[10, 10]">
       <WhyWeCard
         v-for="(card, index) in cards"

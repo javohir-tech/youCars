@@ -11,6 +11,7 @@
           <img
             src="../../assets/Images/responseBanner.png"
             class="img-fluid"
+            loading="lazy"
             alt="banner-image"
           />
         </a-col>
