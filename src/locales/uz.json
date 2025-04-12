@@ -104,6 +104,19 @@
       "message": "Xabar yozish"
     }
   },
+  "userPage": {
+    "sideBar": {
+      "reyting": "Reyting",
+      "rate": "Tarif",
+      "userRate": "Bazaviy tarif",
+      "featured": "Tanlanganlar",
+      "message": "Xabarlar",
+      "ad": "E'lon joylashtirish",
+      "myads": "Mening e'lonlarim",
+      "setting": "Hisob sozlamalari",
+      "logOut": "Chiqish"
+    }
+  },
   "components": {
     "underfooter": {
       "title": "Tanlovda ikkilanayapsizmi?",

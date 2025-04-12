@@ -104,6 +104,19 @@
       "message": "Send a message"
     }
   },
+  "userPage": {
+    "sideBar": {
+      "reyting": "Rating",
+      "rate": "Plan",
+      "userRate": "Basic plan",
+      "featured": "Favorites",
+      "message": "Messages",
+      "ad": "Post an ad",
+      "myads": "My ads",
+      "setting": "Account settings",
+      "logOut": "Log out"
+    }
+  },
   "components": {
     "underfooter": {
       "title": "Can't decide what to choose?",
