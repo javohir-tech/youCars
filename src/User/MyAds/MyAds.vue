@@ -1,12 +1,12 @@
 <template>
   <div class="responsive-container">
     <div class="desktop-header">
-      <h1 class="main-header">Мои объявления</h1>
+      <h1 class="main-header">{{ $t('userPage.sideBar.myads') }}</h1>
     </div>
     <div class="mobile-header mt-3">
       <button @click="goBack">
         <h1 class="main-header">
-          <i class="bi bi-chevron-left"></i>Мои объявления
+          <i class="bi bi-chevron-left"></i>{{ $t('userPage.sideBar.myads') }}
         </h1>
       </button>
     </div>
@@ -18,11 +18,9 @@
           alt="img"
         />
       </div>
-      <h3>У вас нет размещённых автомобилей</h3>
-      <p>
-        Вы ещё не добавили ни одного автомобиля. Нажмите «Добавить», чтобы
-        разместить свой первый автомобиль.
-      </p>
+      <h3>{{ $t('userPage.myads.title') }}</h3>
+      <p>{{ $t('userPage.myads.subtitle') }}</p>
+      <RouterLink to="/place-ad" class="btn-primary">{{ $t('userPage.myads.button') }}</RouterLink>
     </div>
   </div>
 </template>

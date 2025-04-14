@@ -114,7 +114,53 @@
       "ad": "E'lon joylashtirish",
       "myads": "Mening e'lonlarim",
       "setting": "Hisob sozlamalari",
-      "logOut": "Chiqish"
+      "logOut": "Chiqish",
+      "logOutMessage": "Chiqmoqchi ekanligingizga ishonchingiz komilmi?"
+    },
+    "featured": {
+      "title": "Saqlangan e’lonlar yo‘q",
+      "subtitle": "Avtomobilni sevimlilarga qo‘shish uchun, mashina kartasidagi yurak belgisini bosing!",
+      "button": "Katalogga o‘tish"
+    },
+    "message": {
+      "title": "Faol suhbatlar yo‘q",
+      "subtitle": "Salom! Siz hali hech qanday suhbatni boshlamagansiz. Yangi suhbat boshlash uchun birinchi qadamni tashlang!"
+    },
+    "myads": {
+      "title": "Sizda joylashtirilgan avtomobillar yo‘q",
+      "subtitle": "Siz hali hech qanday avtomobil qo‘shmagansiz. Birinchi avtomobilingizni joylashtirish uchun «Qo‘shish» tugmasini bosing",
+      "button": "Qo'shish"
+    },
+    "rate": {
+      "header": "Tarif tanlovi",
+      "rub": "rub",
+      "day": "kun",
+      "card1": {
+        "title": "1 yilga Premium kirish",
+        "subtitle1": "10 ta kadastr raqami bo‘yicha hisobot kiritilgan",
+        "subtitle2": "3 ta avtomobil VIN kodi bo‘yicha hisobot kiritilgan",
+        "subtitle3": "Yuridik shaxslar yagona reestridan bepul ma’lumotnomalar"
+      },
+      "card2": {
+        "title": "30 kunga Premium kirish",
+        "subtitle1": "3 ta kadastr raqami bo‘yicha hisobot kiritilgan",
+        "subtitle2": "1 ta avtomobil VIN kodi bo‘yicha hisobot kiritilgan",
+        "subtitle3": "Yuridik shaxslar yagona reestridan bepul ma’lumotnomalar"
+      },
+      "card3": {
+        "title": "24 soatga Premium kirish"
+      }
+    },
+    "setting": {
+      "header": "Sozlamalar",
+      "accaunt": "Hisob",
+      "name": "Ism",
+      "button": "Saqlash",
+      "editPassword": "Parolni o‘zgartirish",
+      "oldPassword": "Joriy parol",
+      "newPassword": "Yangi parol",
+      "rebitNewPassword": "Parolni tasdiqlang",
+      "forgetPassword": "Parolni unutdingizmi"
     }
   },
   "components": {

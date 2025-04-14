@@ -1,11 +1,11 @@
 <template>
   <div class="responsive-container">
     <div class="desktop-header">
-      <h1 class="main-header">Сообщения</h1>
+      <h1 class="main-header">{{ $t('userPage.sideBar.message') }}</h1>
     </div>
     <div class="mobile-header mt-3">
       <button @click="goBack">
-        <h1 class="main-header"><i class="bi bi-chevron-left"></i>Сообщения</h1>
+        <h1 class="main-header"><i class="bi bi-chevron-left"></i>{{ $t('userPage.sideBar.message') }}</h1>
       </button>
     </div>
     <div class="empty-box">
@@ -16,11 +16,8 @@
           alt="img"
         />
       </div>
-      <h3>Нет активных чатов</h3>
-      <p>
-        Привет! Вы еще не начинали ни одного чата. Сделайте первый шаг, чтобы
-        начать новый разговор!
-      </p>
+      <h3>{{ $t('userPage.message.title') }}</h3>
+      <p>{{ $t('userPage.message.subtitle') }}</p>
     </div>
   </div>
 </template>

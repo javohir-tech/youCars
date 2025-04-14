@@ -58,7 +58,7 @@
               </a-flex>
             </RouterLink>
           </div>
-          <a-popconfirm title="Are you sure you want to log out?" @confirm="logOut" @cancel="cancel">
+          <a-popconfirm :title="t('userPage.sideBar.logOutMessage')" @confirm="logOut" @cancel="cancel">
             <button class="acc-button mt-3" type="button">{{ $t('userPage.sideBar.logOut') }}</button>
           </a-popconfirm>
         </div>

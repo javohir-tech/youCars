@@ -1,12 +1,12 @@
 <template>
   <div class="responsive-container">
     <div class="desktop-header">
-      <h1 class="main-header">Выбор тарифа</h1>
+      <h1 class="main-header">{{ $t('userPage.rate.header') }}</h1>
     </div>
     <div class="mobile-header mt-3">
       <button @click="goBack">
         <h1 class="main-header">
-          <i class="bi bi-chevron-left"></i>Выбор тарифа
+          <i class="bi bi-chevron-left"></i>{{ $t('userPage.rate.header') }}
         </h1>
       </button>
     </div>
@@ -26,17 +26,17 @@
               @click.stop
             />
             <span class="radio-custom"></span>
-            <span class="option-title">Премиум доступ на год</span>
+            <span class="option-title">{{ $t('userPage.rate.card1.title') }}</span>
           </label>
           <div class="price-container">
-            <div class="price">3590.00 руб</div>
-            <div class="price-per-day">9.8 руб. / день</div>
+            <div class="price">3590.00 {{ $t('userPage.rate.rub') }}</div>
+            <div class="price-per-day">9.8 {{ $t('userPage.rate.rub') }}. / {{ $t('userPage.rate.day') }}</div>
           </div>
         </div>
         <ul class="features-list">
-          <li>10 отчётов по кад.номеру включено</li>
-          <li>3 отчётов по VIN авто включено</li>
-          <li>Бесплатные выписки из ЕГРЮЛ</li>
+          <li>{{ $t('userPage.rate.card1.subtitle1') }}</li>
+          <li>{{ $t('userPage.rate.card1.subtitle2') }}</li>
+          <li>{{ $t('userPage.rate.card1.subtitle3') }}</li>
         </ul>
       </div>
 
@@ -55,17 +55,17 @@
               @click.stop
             />
             <span class="radio-custom"></span>
-            <span class="option-title">Премиум доступ на 30 дней</span>
+            <span class="option-title">{{ $t('userPage.rate.card2.title') }}</span>
           </label>
           <div class="price-container">
-            <div class="price">690.00 руб</div>
-            <div class="price-per-day">16.3 руб. / день</div>
+            <div class="price">690.00 {{ $t('userPage.rate.rub') }}</div>
+            <div class="price-per-day">16.3 {{ $t('userPage.rate.rub') }}. / {{ $t('userPage.rate.day') }}</div>
           </div>
         </div>
         <ul class="features-list">
-          <li>3 отчёта по кад.номеру включено</li>
-          <li>1 отчёт по VIN авто включен</li>
-          <li>Бесплатные выписки из ЕГРЮЛ</li>
+          <li>{{ $t('userPage.rate.card2.subtitle1') }}</li>
+          <li>{{ $t('userPage.rate.card2.subtitle2') }}</li>
+          <li>{{ $t('userPage.rate.card2.subtitle3') }}</li>
         </ul>
       </div>
 
@@ -84,10 +84,10 @@
               @click.stop
             />
             <span class="radio-custom"></span>
-            <span class="option-title">Премиум доступ на 24 часа</span>
+            <span class="option-title">{{ $t('userPage.rate.card3.title') }}</span>
           </label>
           <div class="price-container">
-            <div class="price">90.00 руб</div>
+            <div class="price">90.00 {{ $t('userPage.rate.rub') }}</div>
           </div>
         </div>
       </div>

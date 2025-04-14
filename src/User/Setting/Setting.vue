@@ -1,137 +1,104 @@
 <template>
   <div class="responsive-container">
     <div class="desktop-header">
-      <h1 class="main-header">Настройки</h1>
+      <h1 class="main-header">{{ $t('userPage.setting.header') }}</h1>
     </div>
     <div class="mobile-header mt-3">
       <button @click="goBack">
-        <h1 class="main-header"><i class="bi bi-chevron-left"></i>Настройки</h1>
+        <h1 class="main-header"><i class="bi bi-chevron-left"></i>{{ $t('userPage.setting.header') }}</h1>
       </button>
     </div>
     <div class="user-edit__box">
-      <p>аккаунт</p>
-      <a-form
-        :model="formState"
-        name="basic"
-        layout="vertical"
-        autocomplete="off"
-        @finish="updateEmailName"
-        @finishFailed="onFinishFailed"
-      >
+      <p>{{ $t('userPage.setting.accaunt') }}</p>
+      <a-form :model="formState" name="basic" layout="vertical" autocomplete="off" @finish="updateEmailName"
+        @finishFailed="onFinishFailed">
         <a-row :gutter="[10, 10]">
           <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
-            <a-form-item
-              label="Имя"
-              name="username"
-              :rules="[
-                { required: true, message: 'Please input your username!' },
-              ]"
-            >
+            <a-form-item :label="t('userPage.setting.name')" name="username" :rules="[
+              { required: true, message: 'Please input your username!' },
+            ]">
               <a-input v-model:value="formState.username" />
             </a-form-item>
           </a-col>
 
           <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
-            <a-form-item
-              label="E-mail"
-              name="email"
-              :rules="[
-                {
-                  type: 'email',
-                  required: true,
-                  message: 'Please input your password!',
-                },
-              ]"
-            >
+            <a-form-item label="E-mail" name="email" :rules="[
+              {
+                type: 'email',
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]">
               <a-input v-model:value="formState.email" />
             </a-form-item>
           </a-col>
         </a-row>
-        <a-button
-          class="save-button"
-          type="primary"
-          html-type="submit"
-          :disabled="loadingEmail"
-        >
+        <a-button class="save-button" type="primary" html-type="submit" :disabled="loadingEmail">
           <template v-if="loadingEmail"> <a-spin /> Loading... </template>
-          <template v-else> Сохранить </template>
+          <template v-else> {{ $t('userPage.setting.button') }} </template>
         </a-button>
       </a-form>
     </div>
 
     <div class="user-password__box mt-4">
-      <p>Смена пароля</p>
-      <a-form
-        :model="formState"
-        autocomplete="off"
-        layout="vertical"
-        name="passwordUpdate"
-        @finish="updatePassword"
-        @finishFailed="onFinishFailed"
-      >
+      <p>{{ $t('userPage.setting.editPassword') }}</p>
+      <a-form :model="formState" autocomplete="off" layout="vertical" name="passwordUpdate" @finish="updatePassword"
+        @finishFailed="onFinishFailed">
         <a-row :gutter="[10, 10]">
           <a-col :xs="{ span: 24 }" :md="{ span: 8 }">
-            <a-form-item
-              label="Текущий пароль"
-              name="password"
-              :rules="[
-                { required: true, message: 'Please input your password!' },
-              ]"
-            >
+            <a-form-item :label="t('userPage.setting.oldPassword')" name="password" :rules="[
+              { required: true, message: 'Please input your password!' },
+            ]">
               <a-input-password v-model:value="formState.password" />
             </a-form-item>
           </a-col>
           <a-col :xs="{ span: 24 }" :md="{ span: 8 }">
-            <a-form-item
-              label="Новый пароль"
-              name="newPass"
-              :rules="[
-                { required: true, message: 'Please input your password!' },
-                {
-                  min: 6,
-                  message: 'The password must be at least 6 characters long!',
-                },
-              ]"
-            >
+            <a-form-item :label="t('userPage.setting.newPassword')" name="newPass" :rules="[
+              { required: true, message: 'Please input your password!' },
+              {
+                min: 6,
+                message: 'The password must be at least 6 characters long!',
+              },
+            ]">
               <a-input-password v-model:value="formState.newPass" />
             </a-form-item>
           </a-col>
           <a-col :xs="{ span: 24 }" :md="{ span: 8 }">
-            <a-form-item
-              label="Подтвердите пароль"
-              name="confirmPass"
-              :rules="[
-                { required: true, message: 'Please confirm your password!' },
-                { validator: validateConfirmPassword },
-              ]"
-            >
+            <a-form-item :label="t('userPage.setting.rebitNewPassword')" name="confirmPass" :rules="[
+              { required: true, message: 'Please confirm your password!' },
+              { validator: validateConfirmPassword },
+            ]">
               <a-input-password v-model:value="formState.confirmPass" />
             </a-form-item>
           </a-col>
         </a-row>
         <div class="mb-3">
-          <RouterLink to="/forgetPassword">Забыли пароль?</RouterLink>
+          <RouterLink to="/forgetPassword">{{ $t('userPage.setting.forgetPassword') }}?</RouterLink>
         </div>
-        <a-button
-          class="save-button"
-          type="primary"
-          html-type="submit"
-          :disabled="loadingPassword"
-        >
+        <a-button class="save-button" type="primary" html-type="submit" :disabled="loadingPassword">
           <template v-if="loadingPassword"> <a-spin /> Loading... </template>
-          <template v-else> Сохранить </template>
+          <template v-else> {{ $t('userPage.setting.button') }} </template>
         </a-button>
       </a-form>
     </div>
   </div>
 </template>
 <script setup>
-import { message } from 'ant-design-vue';
+//Axios
 import axios from 'axios';
-import { reactive, ref, watch } from 'vue';
-import { useUserStore } from '@/Stores/useUserStore';
-import { RouterLink } from 'vue-router';
+//vue router
 import { useRouter } from 'vue-router';
+import { RouterLink } from 'vue-router';
+//vue
+import { reactive, ref, watch } from 'vue';
+//Antd
+import { message } from 'ant-design-vue';
+//Store
+import { useUserStore } from '@/Stores/useUserStore';
+//i18n
+import { useI18n } from 'vue-i18n';
+
+const {t} = useI18n()
 
 const userStore = useUserStore();
 const loadingEmail = ref(false);

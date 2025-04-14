@@ -114,7 +114,53 @@
       "ad": "Post an ad",
       "myads": "My ads",
       "setting": "Account settings",
-      "logOut": "Log out"
+      "logOut": "Log out",
+      "logOutMessage": "Are you sure you want to log out?"
+    },
+    "featured": {
+      "title": "No saved listings",
+      "subtitle": "To add a car to favorites, click the heart icon on the car card!",
+      "button": "Go to catalog"
+    },
+    "message": {
+      "title": "No active chats",
+      "subtitle": "Hi there! You haven’t started any chats yet. Take the first step to start a new conversation!"
+    },
+    "myads": {
+      "title": "You have no listed cars",
+      "subtitle": "You haven’t added any cars yet. Click 'Add' to list your first car",
+      "button": "Add"
+    },
+    "rate": {
+      "header": "Choose a plan",
+      "rub": "rub",
+      "day": "day",
+      "card1": {
+        "title": "Premium access for a year",
+        "subtitle1": "10 cadastral number reports included",
+        "subtitle2": "3 vehicle VIN reports included",
+        "subtitle3": "Free extracts from the Unified State Register of Legal Entities"
+      },
+      "card2": {
+        "title": "Premium access for 30 days",
+        "subtitle1": "3 cadastral number reports included",
+        "subtitle2": "1 vehicle VIN report included",
+        "subtitle3": "Free extracts from the Unified State Register of Legal Entities"
+      },
+      "card3": {
+        "title": "Premium access for 24 hours"
+      }
+    },
+    "setting": {
+      "header": "Settings",
+      "accaunt": "Account",
+      "name": "Name",
+      "button": "Save",
+      "editPassword": "Change password",
+      "oldPassword": "Current password",
+      "newPassword": "New password",
+      "rebitNewPassword": "Confirm password",
+      "forgetPassword": "Forgot password"
     }
   },
   "components": {
