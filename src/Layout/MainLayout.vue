@@ -4,7 +4,7 @@
     <RouterView />
   </main>
   <Footer />
-  <a-back-top />
+  <a-back-top class="a-back-top"/>
 </template>
 <script setup>
 //components
@@ -15,5 +15,11 @@ import { RouterView } from 'vue-router';
 <style>
 .navbar-laptop {
   display: none;
+}
+
+@media(max-width: 768px){
+  .a-back-top{
+    display: none;
+  }
 }
 </style>

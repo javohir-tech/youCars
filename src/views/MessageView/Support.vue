@@ -24,7 +24,6 @@ const userStore = useUserStore()
     flex-direction: column;
     justify-content: center;
     height: 300px;
-
 }
 
 @media(max-width:768px) {
