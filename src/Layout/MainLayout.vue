@@ -9,7 +9,7 @@
 <script setup>
 //components
 import { Navbar, Footer } from '@/components';
-
+//vue router
 import { RouterView } from 'vue-router';
 </script>
 <style>
