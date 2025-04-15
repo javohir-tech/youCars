@@ -5,21 +5,25 @@
         <a-col :xs="{ span: 24 }" :lg="{ span: 11 }">
           <h2>{{ $t('components.underfooter.title') }}</h2>
           <p class="my-3">{{ $t('components.underfooter.subtitle') }}</p>
-          <button>{{ $t('components.underfooter.request') }}</button>
+          <button type="button" @click="navigateContact">{{ $t('components.underfooter.request') }}</button>
         </a-col>
         <a-col :xs="{ span: 24 }" :lg="{ span: 11 }">
-          <img
-            src="../../assets/Images/responseBanner.png"
-            class="img-fluid"
-            loading="lazy"
-            alt="banner-image"
-          />
+          <img src="../../assets/Images/responseBanner.png" class="img-fluid" loading="lazy" alt="banner-image" />
         </a-col>
       </a-row>
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+//vueRouter
+import { useRouter } from 'vue-router';
+
+const route = useRouter()
+
+const navigateContact=()=>{
+  route.push('/contactus')
+}
+</script>
 <style scoped>
 .response-banner {
   background-color: red;

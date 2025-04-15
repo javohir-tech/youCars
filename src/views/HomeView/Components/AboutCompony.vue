@@ -21,10 +21,10 @@
           <h2 class="main-header">
             {{ $t('pages.home.aboutOurCompany.header') }}
           </h2>
-          <p>{{ $t('pages.home.aboutOurCompany.subtitle') }}</p>
-          <button class="btn-primary">
+          <p style="padding-bottom: 20px;">{{ $t('pages.home.aboutOurCompany.subtitle') }}</p>
+          <RouterLink to="/contactus" class="btn-primary">
             {{ $t('pages.home.aboutOurCompany.request') }}
-          </button>
+          </RouterLink>
         </div>
       </a-col>
     </a-row>
@@ -40,7 +40,10 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router';
+
+</script>
 <style scoped>
 .about-banner {
   position: relative;

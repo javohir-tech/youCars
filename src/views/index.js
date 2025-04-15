@@ -11,6 +11,7 @@ import NewsView from './News/NewsView.vue';
 import NewsItem from './NewsItemView/NewsItem.vue';
 import MessageView from './MessageView/MessageView.vue';
 import Support from './MessageView/Support.vue';
+import Telegram from './Telegram/Telegram.vue';
 
 export {
   HomeView,
@@ -25,5 +26,6 @@ export {
   NewsView,
   NewsItem,
   MessageView,
-  Support
+  Support,
+  Telegram
 };

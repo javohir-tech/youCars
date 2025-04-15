@@ -15,6 +15,7 @@ import {
   NewsItem,
   NewsView,
   Support,
+  Telegram,
 } from '@/views';
 
 // Auth
@@ -240,6 +241,11 @@ const routes = [
         component:Support
       }
     ]
+  },
+  {
+    path:"/contactus",
+    name:"contactus",
+    component: Telegram
   }
 ];
 
