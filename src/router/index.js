@@ -9,10 +9,12 @@ import {
   ContactView,
   HomeView,
   KatalokView,
+  MessageView,
   Motorcycle,
   MotoTovar,
   NewsItem,
   NewsView,
+  Support,
 } from '@/views';
 
 // Auth
@@ -221,6 +223,24 @@ const routes = [
     name: 'motoTovar',
     component: MotoTovar,
   },
+  {
+    path:"/messageView",
+    name: "messages",
+    component:MessageView,
+    redirect:"/messageView/message",
+    children:[
+      {
+        path:"message",
+        name:"userMessage",
+        component:Message
+      },
+      {
+        path:"support",
+        name:"Support",
+        component:Support
+      }
+    ]
+  }
 ];
 
 const router = createRouter({

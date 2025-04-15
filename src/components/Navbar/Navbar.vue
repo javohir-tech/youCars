@@ -269,7 +269,9 @@
                 v-model:value="searchValue"
               />
               <div>
+               <RouterLink to="/messageView">
                 <img src="../../assets/Images/messages.png" alt="" />
+               </RouterLink>
               </div>
               <div v-if="userStore.userInfo.token">
                 <div class="user-data">
