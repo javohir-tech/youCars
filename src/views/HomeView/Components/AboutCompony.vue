@@ -22,7 +22,7 @@
             {{ $t('pages.home.aboutOurCompany.header') }}
           </h2>
           <p style="padding-bottom: 20px;">{{ $t('pages.home.aboutOurCompany.subtitle') }}</p>
-          <RouterLink to="/contactus" class="btn-primary">
+          <RouterLink to="/contact" class="btn-primary">
             {{ $t('pages.home.aboutOurCompany.request') }}
           </RouterLink>
         </div>
