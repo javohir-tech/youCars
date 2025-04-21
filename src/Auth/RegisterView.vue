@@ -51,9 +51,6 @@
             <a-spin size="small" v-if="loading" />
             {{ loading ? 'Laoding...' : 'Зарегистрироваться' }}
           </a-button>
-          <a-button @click="registerWithGoogle" type="primary" style="width: 100%; margin-top: 16px">
-            <i class="bi bi-google me-1"></i>Google
-          </a-button>
         </a-form>
         <div class="under-link">
           <p>Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink>
@@ -72,10 +69,6 @@ import { RouterLink, useRouter } from 'vue-router';
 import { reactive, ref, watch } from 'vue';
 //pinia
 import { useUserStore } from '@/Stores/useUserStore';
-//FireBase imports
-import { useRegisterWithFirebase } from '@/Hooks/useRegisterWithFirebase';
-
-const { registerWithGoogle } = useRegisterWithFirebase()
 
 const route = useRouter();
 const userStore = useUserStore();

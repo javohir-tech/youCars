@@ -29,9 +29,6 @@
             <a-spin size="small" v-if="loading" />
             {{ loading ? 'Laoding...' : 'Войти' }}
           </a-button>
-          <a-button type="primary" style="width: 100%; margin-top: 16px">
-            <i class="bi bi-google me-1"></i>Google
-          </a-button>
         </a-form>
         <div class="under-link">
           <p>
