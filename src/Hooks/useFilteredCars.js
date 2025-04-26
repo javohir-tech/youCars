@@ -2,28 +2,28 @@ import { ref } from "vue";
 import axios from "axios";
 
 export function useFilteredCars(endpointUrl) {
-    const cars = ref([]);
-    const loading = ref(false);
-    const error = ref(null);
+    const carsFilter = ref([]);
+    const loadingFilter = ref(false);
+    const errorFilter = ref(null);
 
     const fetchFilteredCars = async (filters) => {
-        loading.value = true;
-        error.value = null;
+        loadingFilter.value = true;
+        errorFilter.value = null;
 
         try {
             const response = await axios.post(endpointUrl,  filters);
-            cars.value = response.data.cars;
+            carsFilter.value = response.data.cars;
         } catch (err) {
-            error.value = err;
+            errorFilter.value = err;
         }finally{
-            loading.value = false;
+            loadingFilter.value = false;
         }
     };
 
     return {
-        cars,
-        loading, 
-        error,
+        carsFilter,
+        loadingFilter, 
+        errorFilter,
         fetchFilteredCars,
     }
 }

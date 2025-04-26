@@ -89,7 +89,7 @@
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
                   <a-menu-item class="custom-menu-item" v-for="year in yearOptions" :key="year"
-                    @click="() => (filters.setFilter('maxYear', year))">
+                    >
                     {{ year }}
                   </a-menu-item>
                 </a-menu>
@@ -103,15 +103,15 @@
             <a-dropdown :placement="yonalish" class="my-dropdown" v-model="filters.stock.maxPrice">
               <a-button class="dropdown-button">
                 <span>{{
-                  filters.stock.maxPrice - filters.stock.minPrice || priceOptions[0]
+                  `${filters.stock.maxPrice} - ${filters.stock.minPrice}` || priceOptions[0]
                   }}</span>
                 <span class="dropdown-icon">▼</span>
               </a-button>
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
                   <a-menu-item class="custom-menu-item" v-for="price in priceOptions" :key="price"
-                    @click="() => (filters.setFilter('maxPrice' , price))">
-                    {{ price }}
+                    @click="() => (filters.setFilter('maxPrice' , price)) && filters.setFilter('minPirce', price)">
+                    {{ `${price}-${price}` }}
                   </a-menu-item>
                 </a-menu>
               </template>
@@ -136,7 +136,7 @@ const filters = useFilterStore()
 
 //filters options
 const modelOptions = ref(['lacetti', 'tahoe 2', 'crider', 'BMW', 'Tahoe']);
-const countryOptions = ref(['USA', 'Russia', 'North Korea']);
+const countryOptions = ref(['USA', 'Russia']);
 const yearOptions = ref([2023, 2024]);
 const priceOptions = ref([16500, 70000]);
 

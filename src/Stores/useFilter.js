@@ -4,12 +4,12 @@ import { ref } from "vue";
 export const useFilterStore = defineStore('filter', () => {
     const stock = ref({
         maxYear: 0,
-        // minPrice: 0,
-        // maxPrice: 0,
+        minPrice: 16500,
+        maxPrice: 70000,
         // page: 0,
         // rate: "cash",
-        model: ""
-        // country: ""
+        model: "",
+        country: ""
     })
 
     const setFilter = (key, value) => {

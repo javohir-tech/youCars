@@ -3,7 +3,7 @@
     <h1 class="main-header">{{ $t('pages.home.avtomabilKatalok.header') }}</h1>
 
     <!-- Loader -->
-    <div v-if="loading || filteredCarsRef.loading" class="loader shadow">
+    <div v-if="loading || loadingFilter" class="loader shadow">
       <a-spin />
     </div>
 
@@ -18,7 +18,7 @@
     </a-row>
 
     <!-- Xatolik -->
-    <a-result v-else-if="error" status="404" title="404"
+    <a-result v-else-if="error || errorFilter" status="404" title="404"
       sub-title="Sorry, an error occurred while loading the data!" />
 
     <!-- Batafsil link -->
@@ -64,26 +64,26 @@ watch(data, (newData) => {
 });
 
 
-const filteredCarsRef = useFilteredCars(`${API_BASE_URL}/cars-filter`);
+const { carsFilter, loadingFilter, errorFilter, fetchFilteredCars } = useFilteredCars(`${API_BASE_URL}/cars-filter`);
 
 watch(
   () => filters.stock,
- async (newFilters) => {
+  async (newFilters) => {
     const hasFilter = Object.values(newFilters).some(
       (val) => val !== null && val !== '' && !(Array.isArray(val) && val.length === 0)
     );
     if (hasFilter) {
-     await filteredCarsRef.fetchFilteredCars(newFilters);
+      await fetchFilteredCars(newFilters);
     }
   },
   { deep: true }
 );
 
 watchEffect(() => {
-  if (filteredCarsRef.cars.value.length > 0) {
-    cars.value = filteredCarsRef.cars.value;
+  if (carsFilter.value.length > 0) {
+    cars.value = carsFilter.value;
   } else if (filters.stock) {
-    cars.value = []; // yoki loading = true qo‘yib loaderni ko‘rsatish
+    cars.value = [];
   }
 });
 </script>
