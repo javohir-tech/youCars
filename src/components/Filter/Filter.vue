@@ -89,7 +89,7 @@
               <template #overlay>
                 <a-menu class="custom-dropdown-menu">
                   <a-menu-item class="custom-menu-item" v-for="year in yearOptions" :key="year"
-                    >
+                    @click="filters.setFilter('maxYear' , year)">
                     {{ year }}
                   </a-menu-item>
                 </a-menu>

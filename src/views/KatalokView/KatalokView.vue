@@ -34,7 +34,6 @@ import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
 import { ResponseBanner } from '@/components';
 //Hooks
 import { useFetch } from '@/Hooks/UseFatch';
-//filred Hook
 import { useFilteredCars } from '@/Hooks/useFilteredCars';
 //filter store
 import { useFilterStore } from '@/Stores/useFilter';

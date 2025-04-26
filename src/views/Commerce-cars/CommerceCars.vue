@@ -33,7 +33,6 @@ import AvtoKatalok from '@/components/AvtoKatalok/AvtoKatalok.vue';
 import { ResponseBanner } from '@/components';
 //Hooks
 import { useFetch } from '@/Hooks/UseFatch';
-//filter Hook
 import { useFilteredCars } from '@/Hooks/useFilteredCars';
 //filter Store
 import { useFilterStore } from '@/Stores/useFilter';
@@ -47,13 +46,13 @@ const { data, loading, error } = useFetch(
   `${import.meta.env.VITE_APP_API}/commerce-cars`
 );
 
-const { carsFilter, loadingFilter, errorFilter, fetchFilteredCars } = useFilteredCars(`${import.meta.env.VITE_APP_API}/commerce-filter`)
-
 watch(data, (newData) => {
   if (newData) {
     commerceCars.value = newData;
   }
 });
+const { carsFilter, loadingFilter, errorFilter, fetchFilteredCars } = useFilteredCars(`${import.meta.env.VITE_APP_API}/commerce-filter`)
+
 
 watch(
   () => filters.stock,
@@ -69,7 +68,7 @@ watch(
 );
 
 watchEffect(() => {
-  if (carsFilter.value.length > 0) {
+  if (carsFilter.length > 0) {
     commerceCars.value = carsFilter.value;
   } else if (filters.stock) {
     commerceCars.value = [];
