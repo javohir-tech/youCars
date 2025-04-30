@@ -20,7 +20,9 @@
       </div>
       <h3>{{ $t('userPage.myads.title') }}</h3>
       <p>{{ $t('userPage.myads.subtitle') }}</p>
-      <RouterLink to="/place-ad" class="btn-primary">{{ $t('userPage.myads.button') }}</RouterLink>
+      <RouterLink to="/place-ad" class="btn-primary">{{
+        $t('userPage.myads.button')
+      }}</RouterLink>
     </div>
   </div>
 </template>

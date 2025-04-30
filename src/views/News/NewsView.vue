@@ -12,7 +12,7 @@
     <!-- news cards -->
     <NewsCards />
     <!-- =====  Response ===== -->
-     <ResponseBanner/>
+    <ResponseBanner />
   </div>
 </template>
 <script setup>

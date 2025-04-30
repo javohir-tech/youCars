@@ -148,20 +148,20 @@
         "subtitle2": "1 отчёт по VIN авто включен",
         "subtitle3": "Бесплатные выписки из ЕГРЮЛ"
       },
-      "card3":{
-        "title":"Премиум доступ на 24 часа"
+      "card3": {
+        "title": "Премиум доступ на 24 часа"
       }
     },
-    "setting":{
-      "header":"Настройки",
-      "accaunt":"Aккаунт",
-      "name":"Имя",
-      "button":"Сохранить",
-      "editPassword":"Смена пароля",
-      "oldPassword":"Текущий пароль",
-      "newPassword":"Новый пароль",
-      "rebitNewPassword":"Подтвердите пароль",
-      "forgetPassword":"Забыли пароль"
+    "setting": {
+      "header": "Настройки",
+      "accaunt": "Aккаунт",
+      "name": "Имя",
+      "button": "Сохранить",
+      "editPassword": "Смена пароля",
+      "oldPassword": "Текущий пароль",
+      "newPassword": "Новый пароль",
+      "rebitNewPassword": "Подтвердите пароль",
+      "forgetPassword": "Забыли пароль"
     }
   },
   "components": {

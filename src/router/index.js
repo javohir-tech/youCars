@@ -225,28 +225,28 @@ const routes = [
     component: MotoTovar,
   },
   {
-    path:"/messageView",
-    name: "messages",
-    component:MessageView,
-    redirect:"/messageView/message",
-    children:[
+    path: '/messageView',
+    name: 'messages',
+    component: MessageView,
+    redirect: '/messageView/message',
+    children: [
       {
-        path:"message",
-        name:"userMessage",
-        component:Message
+        path: 'message',
+        name: 'userMessage',
+        component: Message,
       },
       {
-        path:"support",
-        name:"Support",
-        component:Support
-      }
-    ]
+        path: 'support',
+        name: 'Support',
+        component: Support,
+      },
+    ],
   },
   {
-    path:"/contactus",
-    name:"contactus",
-    component: Telegram
-  }
+    path: '/contactus',
+    name: 'contactus',
+    component: Telegram,
+  },
 ];
 
 const router = createRouter({

@@ -5,7 +5,9 @@
         <RouterLink to="/">{{ $t('navbar.pages.home') }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
-        <RouterLink to="/commerce-cars">{{ $t('navbar.Avto.commercial') }}</RouterLink>
+        <RouterLink to="/commerce-cars">{{
+          $t('navbar.Avto.commercial')
+        }}</RouterLink>
       </a-breadcrumb-item>
       <a-breadcrumb-item>
         <RouterLink

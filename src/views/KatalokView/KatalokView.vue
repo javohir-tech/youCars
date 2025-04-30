@@ -17,9 +17,19 @@
       <a-spin />
     </div>
     <!-- ===== Cars ===== -->
-    <AvtoKatalok v-else-if="cars.length" :avtomobiles="cars" :newCurrent="current" router="/katalok/cars-tovar" />
+    <AvtoKatalok
+      v-else-if="cars.length"
+      :avtomobiles="cars"
+      :newCurrent="current"
+      router="/katalok/cars-tovar"
+    />
     <!-- ===== Malumot Kelmasa ===== -->
-    <a-result v-else-if="error || errorFilter" status="404" title="404" sub-title="Sorry, An error occurred while loading the data!" />
+    <a-result
+      v-else-if="error || errorFilter"
+      status="404"
+      title="404"
+      sub-title="Sorry, An error occurred while loading the data!"
+    />
     <!-- ===== Request ===== -->
     <ResponseBanner />
   </div>
@@ -39,7 +49,7 @@ import { useFilteredCars } from '@/Hooks/useFilteredCars';
 import { useFilterStore } from '@/Stores/useFilter';
 
 //filters
-const filters = useFilterStore()
+const filters = useFilterStore();
 //Page
 const current = ref(1);
 //Moshinalar malumoti
@@ -50,7 +60,8 @@ const { data, loading, error } = useFetch(
   `${import.meta.env.VITE_APP_API}/cars`
 );
 
-const { carsFilter, loadingFilter, errorFilter, fetchFilteredCars } = useFilteredCars(`${import.meta.env.VITE_APP_API}/cars-filter`);
+const { carsFilter, loadingFilter, errorFilter, fetchFilteredCars } =
+  useFilteredCars(`${import.meta.env.VITE_APP_API}/cars-filter`);
 
 // Kuzatish
 watch(data, (newData) => {
@@ -63,7 +74,8 @@ watch(
   () => filters.stock,
   async (newFilters) => {
     const hasFilter = Object.values(newFilters).some(
-      (val) => val !== null && val !== '' && !(Array.isArray(val) && val.length === 0)
+      (val) =>
+        val !== null && val !== '' && !(Array.isArray(val) && val.length === 0)
     );
     if (hasFilter) {
       await fetchFilteredCars(newFilters);

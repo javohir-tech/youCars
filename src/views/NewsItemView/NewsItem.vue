@@ -30,7 +30,12 @@
         <a-row :gutter="[10, 10]">
           <a-col :xs="{ span: 24 }" :md="{ span: 17 }" class="news-main__info">
             <div class="news-image__box">
-              <img :src="news.image" loading="lazy" class="img-fluid" alt="news image" />
+              <img
+                :src="news.image"
+                loading="lazy"
+                class="img-fluid"
+                alt="news image"
+              />
             </div>
             <p class="mt-3">{{ news.content }}</p>
           </a-col>
@@ -68,7 +73,7 @@
         </a-row>
       </div>
     </div>
-    <ResponseBanner/>
+    <ResponseBanner />
   </div>
 </template>
 

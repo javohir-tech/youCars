@@ -18,13 +18,19 @@
             </a-flex>
             <a-flex justify="space-between" class="user-email">
               <p>{{ $t('userPage.sideBar.rate') }}</p>
-              <a href="#" aria-disabled="true"><i class="bi bi-exclamation-square me-1"></i>{{
-                $t('userPage.sideBar.userRate') }}</a>
+              <a href="#" aria-disabled="true"
+                ><i class="bi bi-exclamation-square me-1"></i
+                >{{ $t('userPage.sideBar.userRate') }}</a
+              >
             </a-flex>
           </div>
           <!--router links-->
           <div class="router-links">
-            <RouterLink v-for="item in menuItems" :key="item.path" :to="`/${userName}/${item.path}`">
+            <RouterLink
+              v-for="item in menuItems"
+              :key="item.path"
+              :to="`/${userName}/${item.path}`"
+            >
               <a-flex class="acc-item" gap="10">
                 <i :class="`bi ${item.icon}`"></i>
                 <p class="mb-0">{{ item.label }}</p>
@@ -41,25 +47,39 @@
                 <template #overlay>
                   <a-menu>
                     <a-menu-item>
-                      <RouterLink :to="`/${userName}/my-ads`">{{ $t('userPage.sideBar.myads') }}</RouterLink>
+                      <RouterLink :to="`/${userName}/my-ads`">{{
+                        $t('userPage.sideBar.myads')
+                      }}</RouterLink>
                     </a-menu-item>
                     <a-menu-item>
-                      <RouterLink to="/place-ad">{{ $t('userPage.sideBar.ad') }}</RouterLink>
+                      <RouterLink to="/place-ad">{{
+                        $t('userPage.sideBar.ad')
+                      }}</RouterLink>
                     </a-menu-item>
                   </a-menu>
                 </template>
               </a-dropdown>
             </a-flex>
             <!--router links-->
-            <RouterLink v-for="item in menuItems2" :key="item.path" :to="`/${userName}/${item.path}`">
+            <RouterLink
+              v-for="item in menuItems2"
+              :key="item.path"
+              :to="`/${userName}/${item.path}`"
+            >
               <a-flex class="acc-item" align="center" gap="10">
                 <i :class="`bi ${item.icon}`"></i>
                 <p class="mb-0">{{ item.label }}</p>
               </a-flex>
             </RouterLink>
           </div>
-          <a-popconfirm :title="t('userPage.sideBar.logOutMessage')" @confirm="logOut" @cancel="cancel">
-            <button class="acc-button mt-3" type="button">{{ $t('userPage.sideBar.logOut') }}</button>
+          <a-popconfirm
+            :title="t('userPage.sideBar.logOutMessage')"
+            @confirm="logOut"
+            @cancel="cancel"
+          >
+            <button class="acc-button mt-3" type="button">
+              {{ $t('userPage.sideBar.logOut') }}
+            </button>
           </a-popconfirm>
         </div>
       </a-col>
@@ -86,7 +106,7 @@ import { message } from 'ant-design-vue';
 //i18n
 import { useI18n } from 'vue-i18n';
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 //Pinia
 const userStore = useUserStore();
@@ -96,7 +116,11 @@ const route = useRouter();
 //menu items
 const menuItems = computed(() => [
   { path: 'featured', icon: 'bi-star', label: t('userPage.sideBar.featured') },
-  { path: 'message', icon: 'bi-chat-dots', label: t('userPage.sideBar.message') },
+  {
+    path: 'message',
+    icon: 'bi-chat-dots',
+    label: t('userPage.sideBar.message'),
+  },
 ]);
 
 const menuItems2 = computed(() => [

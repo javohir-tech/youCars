@@ -27,5 +27,5 @@ export {
   NewsItem,
   MessageView,
   Support,
-  Telegram
+  Telegram,
 };

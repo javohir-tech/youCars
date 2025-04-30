@@ -5,7 +5,10 @@
     </div>
     <div class="mobile-header mt-3">
       <button @click="goBack">
-        <h1 class="main-header"><i class="bi bi-chevron-left"></i>{{ $t('userPage.sideBar.featured') }}</h1>
+        <h1 class="main-header">
+          <i class="bi bi-chevron-left"></i
+          >{{ $t('userPage.sideBar.featured') }}
+        </h1>
       </button>
     </div>
     <a-row v-if="carStore.selectedCars.length > 0" :gutter="[10, 10]">

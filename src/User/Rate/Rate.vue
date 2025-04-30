@@ -26,11 +26,15 @@
               @click.stop
             />
             <span class="radio-custom"></span>
-            <span class="option-title">{{ $t('userPage.rate.card1.title') }}</span>
+            <span class="option-title">{{
+              $t('userPage.rate.card1.title')
+            }}</span>
           </label>
           <div class="price-container">
             <div class="price">3590.00 {{ $t('userPage.rate.rub') }}</div>
-            <div class="price-per-day">9.8 {{ $t('userPage.rate.rub') }}. / {{ $t('userPage.rate.day') }}</div>
+            <div class="price-per-day">
+              9.8 {{ $t('userPage.rate.rub') }}. / {{ $t('userPage.rate.day') }}
+            </div>
           </div>
         </div>
         <ul class="features-list">
@@ -55,11 +59,16 @@
               @click.stop
             />
             <span class="radio-custom"></span>
-            <span class="option-title">{{ $t('userPage.rate.card2.title') }}</span>
+            <span class="option-title">{{
+              $t('userPage.rate.card2.title')
+            }}</span>
           </label>
           <div class="price-container">
             <div class="price">690.00 {{ $t('userPage.rate.rub') }}</div>
-            <div class="price-per-day">16.3 {{ $t('userPage.rate.rub') }}. / {{ $t('userPage.rate.day') }}</div>
+            <div class="price-per-day">
+              16.3 {{ $t('userPage.rate.rub') }}. /
+              {{ $t('userPage.rate.day') }}
+            </div>
           </div>
         </div>
         <ul class="features-list">
@@ -84,7 +93,9 @@
               @click.stop
             />
             <span class="radio-custom"></span>
-            <span class="option-title">{{ $t('userPage.rate.card3.title') }}</span>
+            <span class="option-title">{{
+              $t('userPage.rate.card3.title')
+            }}</span>
           </label>
           <div class="price-container">
             <div class="price">90.00 {{ $t('userPage.rate.rub') }}</div>

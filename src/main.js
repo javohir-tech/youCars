@@ -41,7 +41,7 @@ app.use(router);
 app.use(Antd);
 app.use(i18n);
 app.use(VueLazyload, {
-    loading: 'loading.gif',
-    error: 'error.png' 
+  loading: 'loading.gif',
+  error: 'error.png',
 });
 app.mount('#app');

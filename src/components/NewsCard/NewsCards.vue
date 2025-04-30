@@ -74,7 +74,12 @@
       <swiper-slide v-for="ourNew in ourNews" :key="ourNew.key">
         <div class="news-card">
           <div class="card-image">
-            <img :src="ourNew.image" loading="lazy" class="img-fluid" alt="news image" />
+            <img
+              :src="ourNew.image"
+              loading="lazy"
+              class="img-fluid"
+              alt="news image"
+            />
           </div>
           <div class="card-info shadow">
             <div class="card-titles">

@@ -8,7 +8,10 @@
         </RouterLink>
       </div>
       <div class="search-box">
-        <a-input-search placeholder="Поиск по названию" v-model:value="searchValue" />
+        <a-input-search
+          placeholder="Поиск по названию"
+          v-model:value="searchValue"
+        />
       </div>
       <div class="menu-toggle" @click="isMenuOpen = !isMenuOpen">
         <img src="../../assets/Images/toggleButton.png" alt="" />
@@ -18,8 +21,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" :class="{ open: isMenuOpen }">
       <div v-if="userStore.userInfo.token" class="mobile-user">
-        <RouterLink @click="isMenuOpen = !isMenuOpen" class="user-mobile__link"
-          :to="userName ? `/${userName}` : '/guest'">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          class="user-mobile__link"
+          :to="userName ? `/${userName}` : '/guest'"
+        >
           <div v-if="svg" v-html="svg" class="avatar"></div>
           <a-avatar v-else>
             <template #icon>
@@ -31,23 +37,45 @@
         </RouterLink>
       </div>
       <div class="nav-links">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/" class="nav-link">{{ $t('navbar.pages.home')
-          }}</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/katalok" class="nav-link">{{ $t('navbar.pages.katalok')
-          }}</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/about" class="nav-link">{{ $t('navbar.pages.about')
-          }}</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/news" class="nav-link">{{ $t('navbar.pages.news')
-          }}</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/contact" class="nav-link">{{ $t('navbar.pages.contact')
-          }}</router-link>
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/"
+          class="nav-link"
+          >{{ $t('navbar.pages.home') }}</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/katalok"
+          class="nav-link"
+          >{{ $t('navbar.pages.katalok') }}</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/about"
+          class="nav-link"
+          >{{ $t('navbar.pages.about') }}</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/news"
+          class="nav-link"
+          >{{ $t('navbar.pages.news') }}</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/contact"
+          class="nav-link"
+          >{{ $t('navbar.pages.contact') }}</router-link
+        >
       </div>
 
-      <div :class="[
-        userStore.userInfo.token
-          ? 'language-selector'
-          : 'language-selector user-language',
-      ]">
+      <div
+        :class="[
+          userStore.userInfo.token
+            ? 'language-selector'
+            : 'language-selector user-language',
+        ]"
+      >
         <a-select v-model:value="language" style="width: 80px">
           <a-select-option value="ru">RU</a-select-option>
           <a-select-option value="en">EN</a-select-option>
@@ -55,30 +83,44 @@
         </a-select>
       </div>
 
-      <div :class="[
-        userStore.userInfo.token
-          ? 'notification-icon'
-          : 'notification-icon user-notifacation',
-      ]">
-        <RouterLink  @click="isMenuOpen = !isMenuOpen" to="/messageView">
+      <div
+        :class="[
+          userStore.userInfo.token
+            ? 'notification-icon'
+            : 'notification-icon user-notifacation',
+        ]"
+      >
+        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/messageView">
           <img src="../../assets/Images/messages.png" alt="" />
         </RouterLink>
       </div>
 
       <div class="categories">
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/katalok" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/katalok"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>{{ $t('navbar.Avto.avtomabil') }}</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/commerce-cars" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/commerce-cars"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>{{ $t('navbar.Avto.commercial') }}</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </RouterLink>
-        <RouterLink @click="isMenuOpen = !isMenuOpen" to="/motorcycle" class="mobile-category__name">
+        <RouterLink
+          @click="isMenuOpen = !isMenuOpen"
+          to="/motorcycle"
+          class="mobile-category__name"
+        >
           <div class="category-item">
             <span>{{ $t('navbar.Avto.motorcycles') }}</span>
             <i class="fa-solid fa-chevron-right"></i>
@@ -87,13 +129,21 @@
       </div>
 
       <div class="contact-info">
-        <a href="tel: +998771232904" style="text-decoration: none" target="_blank">
+        <a
+          href="tel: +998771232904"
+          style="text-decoration: none"
+          target="_blank"
+        >
           <div class="contact-item">
             <i class="fa-solid fa-phone"></i>
             <span>+998 77 123 29 04</span>
           </div>
         </a>
-        <a href="mailto:suvonovjavohir625@gmail.com" style="text-decoration: none" target="_blank">
+        <a
+          href="mailto:suvonovjavohir625@gmail.com"
+          style="text-decoration: none"
+          target="_blank"
+        >
           <div class="contact-item">
             <i class="fa-solid fa-envelope"></i>
             <span>info@mail.ru</span>
@@ -102,16 +152,36 @@
       </div>
 
       <div class="social-icons">
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-vk"></i></a>
-        <a href="https://t.me/Suvonov_Javoh1r" target="_blank" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://www.instagram.com/suvonov_javohir1/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank" class="social-icon"
+          ><i class="fa-brands fa-vk"></i
+        ></a>
+        <a
+          href="https://t.me/Suvonov_Javoh1r"
+          target="_blank"
+          class="social-icon"
+          ><i class="fa-brands fa-telegram"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/suvonov_javohir1/"
+          target="_blank"
+          class="social-icon"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
       </div>
 
       <div v-if="!userStore.userInfo.name" class="auth-buttons">
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/register" class="register-btn">{{ $t('navbar.auth.register')
-          }}</router-link>
-        <router-link @click="isMenuOpen = !isMenuOpen" to="/login" class="login-btn">{{ $t('navbar.auth.login')
-          }}</router-link>
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/register"
+          class="register-btn"
+          >{{ $t('navbar.auth.register') }}</router-link
+        >
+        <router-link
+          @click="isMenuOpen = !isMenuOpen"
+          to="/login"
+          class="login-btn"
+          >{{ $t('navbar.auth.login') }}</router-link
+        >
       </div>
     </div>
     <!--
@@ -131,28 +201,34 @@
               <li>
                 <router-link to="/katalok">{{
                   $t('navbar.pages.katalok')
-                  }}</router-link>
+                }}</router-link>
               </li>
               <li>
                 <router-link to="/about">{{
                   $t('navbar.pages.about')
-                  }}</router-link>
+                }}</router-link>
               </li>
               <li>
                 <router-link to="/news">{{
                   $t('navbar.pages.news')
-                  }}</router-link>
+                }}</router-link>
               </li>
               <li>
                 <router-link to="/contact">{{
                   $t('navbar.pages.contact')
-                  }}</router-link>
+                }}</router-link>
               </li>
             </ul>
             <div class="navbar-right">
               <div class="social-icons">
-                <a target="_blank" href="https://www.instagram.com/suvonov_javohir1/#"><i class="fa-brands fa-instagram"></i></a>
-                <a target="_blank" href="https://t.me/Suvonov_Javoh1r"><i class="fa-brands fa-telegram"></i></a>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/suvonov_javohir1/#"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a target="_blank" href="https://t.me/Suvonov_Javoh1r"
+                  ><i class="fa-brands fa-telegram"></i
+                ></a>
                 <a target="_blank" href="#"><i class="fa-brands fa-vk"></i></a>
               </div>
               <a href="#" target="_blank">
@@ -205,7 +281,11 @@
               </ul>
             </div>
             <div class="navbar-actions">
-              <a-input-search class="search-input" placeholder="Поиск по названию" v-model:value="searchValue" />
+              <a-input-search
+                class="search-input"
+                placeholder="Поиск по названию"
+                v-model:value="searchValue"
+              />
               <div>
                 <RouterLink to="/messageView">
                   <img src="../../assets/Images/messages.png" alt="" />
@@ -227,10 +307,10 @@
               <a-flex v-else gap="10">
                 <router-link to="/login" class="login-btn">{{
                   $t('navbar.auth.login')
-                  }}</router-link>
+                }}</router-link>
                 <router-link to="/register" class="register-btn">{{
                   $t('navbar.auth.register')
-                  }}</router-link>
+                }}</router-link>
               </a-flex>
             </div>
           </a-flex>
