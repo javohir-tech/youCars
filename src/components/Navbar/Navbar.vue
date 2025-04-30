@@ -87,13 +87,13 @@
       </div>
 
       <div class="contact-info">
-        <a href="#" style="text-decoration: none" target="_blank">
+        <a href="tel: +998771232904" style="text-decoration: none" target="_blank">
           <div class="contact-item">
             <i class="fa-solid fa-phone"></i>
-            <span>+7 (777) 777-77-77</span>
+            <span>+998 77 123 29 04</span>
           </div>
         </a>
-        <a href="#" style="text-decoration: none" target="_blank">
+        <a href="mailto:suvonovjavohir625@gmail.com" style="text-decoration: none" target="_blank">
           <div class="contact-item">
             <i class="fa-solid fa-envelope"></i>
             <span>info@mail.ru</span>
@@ -103,8 +103,8 @@
 
       <div class="social-icons">
         <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-vk"></i></a>
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://t.me/Suvonov_Javoh1r" target="_blank" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://www.instagram.com/suvonov_javohir1/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
       </div>
 
       <div v-if="!userStore.userInfo.name" class="auth-buttons">
@@ -151,8 +151,8 @@
             </ul>
             <div class="navbar-right">
               <div class="social-icons">
-                <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a target="_blank" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a target="_blank" href="https://www.instagram.com/suvonov_javohir1/#"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://t.me/Suvonov_Javoh1r"><i class="fa-brands fa-telegram"></i></a>
                 <a target="_blank" href="#"><i class="fa-brands fa-vk"></i></a>
               </div>
               <a href="#" target="_blank">
