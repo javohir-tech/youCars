@@ -74,7 +74,7 @@ const fetchTelegram = async () => {
 
   loader.value = true;
   const token = import.meta.env.VITE_BOT_TOKEN;
-  const chatId = import.meta.env.VITE_CHAT_ID;
+  const chatId = 1896479864;
   const TelegamUrl = `https://api.telegram.org/bot${token}/sendMessage`;
 
   const data = {
