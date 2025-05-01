@@ -134,6 +134,10 @@ const fetchTelegram = async () => {
     message.error(error.message);
   } finally {
     loader.value = false;
+    formState.username = '';
+    formState.message = '';
+    formState.number = '';
+    formState.email = ''
   }
 };
 </script>
