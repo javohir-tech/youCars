@@ -80,8 +80,8 @@ const fetchTelegram = async () => {
   const data = {
     chat_id: chatId,
     text: `
-      🧑‍💻 Ismi: ${formState.username}
-      📞 Tel: ${formState.number}
+      🧑‍💻 Ismi:  ${formState.username}
+      📞 Tel:   ${formState.number}
       📧 Email: ${formState.email}
       💬 Xabar: ${formState.message}
     `,
