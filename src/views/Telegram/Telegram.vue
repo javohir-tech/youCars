@@ -1,65 +1,32 @@
 <template>
   <div class="container">
     <div class="mt-4">
-      <a-form
-        ref="formRef"
-        layout="vertical"
-        :model="formState"
-        :rules="rules"
-        @submit.prevent="fetchTelegram"
-      >
+      <a-form ref="formRef" layout="vertical" :model="formState" :rules="rules" @submit.prevent="fetchTelegram">
         <a-row :layout="vertical" :gutter="[10, 20]">
           <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
-            <a-form-item
-              label="User Name"
-              name="username"
-              :rules="rules.username"
-            >
-              <a-input
-                v-model:value="formState.username"
-                placeholder="user name"
-              />
+            <a-form-item label="User Name" name="username" :rules="rules.username">
+              <a-input v-model:value="formState.username" placeholder="user name" />
             </a-form-item>
           </a-col>
           <a-col :xs="{ span: 24 }" :md="{ span: 12 }">
-            <a-form-item
-              label="Phone Number"
-              name="number"
-              :rules="rules.number"
-            >
-              <a-input
-                v-model:value="formState.number"
-                placeholder="Enter your phone number"
-              />
+            <a-form-item label="Phone Number" name="number" :rules="rules.number">
+              <a-input v-model:value="formState.number" placeholder="Enter your phone number" />
             </a-form-item>
           </a-col>
           <a-col :xs="{ span: 24 }">
             <a-form-item label="Email" name="email" :rules="rules.email">
-              <a-input
-                v-model:value="formState.email"
-                placeholder="Enter your email"
-              />
+              <a-input v-model:value="formState.email" placeholder="Enter your email" />
             </a-form-item>
           </a-col>
           <a-col :xs="{ span: 24 }">
             <label for="message">Message</label>
-            <a-textarea
-              v-model:value="formState.message"
-              id="message"
-              class="mt-3"
+            <a-textarea v-model:value="formState.message" id="message" class="mt-3"
               placeholder="If you have any questions, you can reach out to us."
-              :auto-size="{ minRows: 2, maxRows: 5 }"
-            />
+              :auto-size="{ minRows: 2, maxRows: 5 }" />
           </a-col>
         </a-row>
 
-        <a-button
-          @click="fetchTelegram"
-          :disabled="loader"
-          class="mt-3 submit-btn"
-          style="width: 100%"
-          type="primary"
-        >
+        <a-button @click="fetchTelegram" :disabled="loader" class="mt-3 submit-btn" style="width: 100%" type="primary">
           <a-spin v-if="loader" />
           <p v-else>Send</p>
         </a-button>
@@ -128,16 +95,16 @@ const fetchTelegram = async () => {
     });
     if (response.data.ok) {
       message.success('Message sent successfully!');
+      formState.username = '';
+      formState.message = '';
+      formState.number = '';
+      formState.email = ''
     }
   } catch (error) {
     console.log(error);
     message.error(error.message);
   } finally {
     loader.value = false;
-    formState.username = '';
-    formState.message = '';
-    formState.number = '';
-    formState.email = ''
   }
 };
 </script>
