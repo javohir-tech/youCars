@@ -4,19 +4,28 @@
   </div>
   <a-row v-else-if="marks.length">
     <a-col
-      v-for="mark in marks"
-      :key="mark.id"
+      v-for="(mark, index) in marks"
+      :key="index"
       :xs="{ span: 8 }"
       :md="{ span: 6 }"
       :lg="{ span: 4 }"
-      class="mark-box"
     >
-      <img
+    <a-skeleton-input 
+            v-if="loadingSkeleton[index]"
+            :active="true"
+            :key="mark.id"
+            :block="true"
+            style="width: 100%; height: 200px !important; border-radius: 8px"
+            />
+  <div class="mark-box"  v-show="!loadingSkeleton[index]">
+            <img
+            :key="mark.id"
         :src="mark.image"
         class="img-fluid mark-image"
         alt="marka"
-        loading="lazy"
+        @load="onImageLoad(index)"
       />
+  </div>
     </a-col>
   </a-row>
   <a-result
@@ -39,9 +48,20 @@ const { data, loading, error } = useFetch(
   `${import.meta.env.VITE_APP_API}/marks`
 );
 
+const loadingSkeleton = ref([]);
+
+/// Skeletonni to‘g‘ri sozlash uchun:
 watch(data, (newData) => {
-  marks.value = newData;
+  if (Array.isArray(newData)) {
+    marks.value = newData;
+    loadingSkeleton.value = newData.map(() => true);
+  }
 });
+
+// Rasm yuklanganda skeletonni yashirish
+function onImageLoad(index) {
+  loadingSkeleton.value[index] = false;
+}
 </script>
 <style scoped>
 .mark-box {

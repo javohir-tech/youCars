@@ -112,7 +112,6 @@ import { useFetch } from '@/Hooks/UseFatch';
 import { Pagination, Autoplay } from 'swiper/modules';
 //Router
 import { RouterLink } from 'vue-router';
-import { ResponseBanner } from '..';
 
 const modules = [Pagination, Autoplay];
 const ourNews = ref([]);

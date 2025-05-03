@@ -42,7 +42,6 @@
             <a-dropdown
               :placement="yonalish"
               class="my-dropdown"
-              v-model="salom"
             >
               <a-button class="dropdown-button">
                 <span>Geely</span>
