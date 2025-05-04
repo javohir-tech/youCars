@@ -109,7 +109,7 @@
         <div class="user-data shadow">
           <div class="user-card">
             <a-flex align="center" gap="15" class="user-info">
-              <a-avatar :size="40" class="avatar" :gap="gap">
+              <a-avatar :size="40" class="avatar" :gap="10">
                 {{
                   props.userData?.name
                     ? props.userData.name.charAt(0).toUpperCase()

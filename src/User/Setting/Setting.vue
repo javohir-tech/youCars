@@ -107,7 +107,7 @@
                 { validator: validateConfirmPassword },
               ]"
             >
-              <a-input-password v-model:value="formState.confirmPass" />
+              <a-input-password v-model:value="formState.confirmPass"/>
             </a-form-item>
           </a-col>
         </a-row>
