@@ -9,6 +9,14 @@
       "radio": "I agree with the data processing policy.",
       "button": "Register",
       "subtitle": "Already have an account?"
+    },
+    "login": {
+      "header": "Login",
+      "password": "Enter password",
+      "radio": "Remember me",
+      "forgetPassword": "Forgot password?",
+      "button": "Login",
+      "subtitle": "Don't have an account yet?"
     }
   },
   "navbar": {

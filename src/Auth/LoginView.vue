@@ -1,7 +1,7 @@
 <template>
   <div class="registration-container">
     <div class="registration-card">
-      <h1 class="title">Вход</h1>
+      <h1 class="title">{{ $t('auth.login.header') }}</h1>
       <div>
         <a-form
           :model="formState"
@@ -31,16 +31,16 @@
           >
             <a-input-password
               v-model:value="formState.password"
-              placeholder="Введите пароль"
+              :placeholder="$t('auth.login.password')"
             />
           </a-form-item>
 
           <a-flex justify="space-between" aling="center">
             <a-checkbox v-model:checked="formState.remember"
-              >Запомнить меня</a-checkbox
+              >{{ $t('auth.login.radio') }}</a-checkbox
             >
             <RouterLink to="/forgetPassword" class="forget-password"
-              >Забыли пароль?</RouterLink
+              >{{ $t('auth.login.forgetPassword') }}</RouterLink
             >
           </a-flex>
 
@@ -51,13 +51,13 @@
             :disabled="loading"
           >
             <a-spin size="small" v-if="loading" />
-            {{ loading ? 'Laoding...' : 'Войти' }}
+            {{ loading ? 'Laoding...' : $t('auth.login.button') }}
           </a-button>
         </a-form>
         <div class="under-link">
           <p>
-            Еще нет аккаунта?<RouterLink to="/register"
-              > Зарегистрироваться </RouterLink
+            {{ $t('auth.login.subtitle') }}<RouterLink to="/register"
+              >{{ $t('navbar.auth.register') }}</RouterLink
             >
           </p>
         </div>
@@ -68,11 +68,12 @@
 <script setup>
 import { message } from 'ant-design-vue';
 import axios from 'axios';
-4;
 import { RouterLink, useRouter } from 'vue-router';
 import { reactive, ref } from 'vue';
 import { useUserStore } from '@/Stores/useUserStore';
+import { useI18n } from 'vue-i18n';
 
+const  t = useI18n()
 const route = useRouter();
 const userStore = useUserStore();
 const loading = ref(false);

@@ -9,6 +9,14 @@
       "radio": "Ma’lumotlarni qayta ishlash siyosatiga roziman.",
       "button": "Ro‘yxatdan o‘tish",
       "subtitle": "Allaqachon hisobingiz bormi?"
+    },
+    "login": {
+      "header": "Kirish",
+      "password": "Parolni kiriting",
+      "radio": "Meni eslab qol",
+      "forgetPassword": "Parolni unutdingizmi?",
+      "button": "Kirish",
+      "subtitle": "Hali hisobingiz yo‘qmi?"
     }
   },
   "navbar": {
