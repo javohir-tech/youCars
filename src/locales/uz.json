@@ -1,4 +1,16 @@
 {
+  "auth": {
+    "register": {
+      "header": "Ro‘yxatdan o‘tish",
+      "name": "Ism",
+      "password": "Parolni kiriting",
+      "resPassword": "Parolni takrorlang",
+      "title": "Hisob yaratish uchun quyidagi maydonlarni to‘ldiring",
+      "radio": "Ma’lumotlarni qayta ishlash siyosatiga roziman.",
+      "button": "Ro‘yxatdan o‘tish",
+      "subtitle": "Allaqachon hisobingiz bormi?"
+    }
+  },
   "navbar": {
     "pages": {
       "home": "Bosh sahifa",

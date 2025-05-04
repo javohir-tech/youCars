@@ -1,4 +1,16 @@
 {
+  "auth": {
+    "register": {
+      "header": "Registration",
+      "name": "Name",
+      "password": "Enter password",
+      "resPassword": "Repeat password",
+      "title": "Fill in the fields below to create an account",
+      "radio": "I agree with the data processing policy.",
+      "button": "Register",
+      "subtitle": "Already have an account?"
+    }
+  },
   "navbar": {
     "pages": {
       "home": "Home",

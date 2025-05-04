@@ -1,8 +1,8 @@
 <template>
   <div class="registration-container">
     <div class="registration-card">
-      <h1 class="title">Регистрация</h1>
-      <p class="subtitle">Заполните поля ниже для создания аккаунта.</p>
+      <h1 class="title">{{ $t('auth.register.header')}}</h1>
+      <p class="subtitle">{{ $t('auth.register.title')}}</p>
       <div>
         <a-form
           :model="formState"
@@ -17,7 +17,7 @@
               { required: true, message: 'Please input your username!' },
             ]"
           >
-            <a-input v-model:value="formState.name" placeholder="Имя" />
+            <a-input v-model:value="formState.name" :placeholder="$t('auth.register.name')" />
           </a-form-item>
 
           <a-form-item
@@ -45,7 +45,7 @@
           >
             <a-input-password
               v-model:value="formState.password"
-              placeholder="Введите пароль"
+              :placeholder="$t('auth.register.password')"
             />
           </a-form-item>
 
@@ -63,13 +63,13 @@
           >
             <a-input-password
               v-model:value="formState.confirmPassword"
-              placeholder="Повторите пароль"
+             :placeholder="$t('auth.register.resPassword')"
             />
           </a-form-item>
 
           <div>
             <a-checkbox v-model:checked="formState.remember"
-              >Согласен с политикой обработки данных.</a-checkbox
+              >{{ $t('auth.register.radio') }}</a-checkbox
             >
           </div>
 
@@ -80,11 +80,11 @@
             :disabled="loading"
           >
             <a-spin size="small" v-if="loading" />
-            {{ loading ? 'Laoding...' : 'Зарегистрироваться' }}
+            {{ loading ? 'Laoding...' : $t('auth.register.button') }}
           </a-button>
         </a-form>
         <div class="under-link">
-          <p>Уже есть аккаунт? <RouterLink to="/login">Войти</RouterLink></p>
+          <p>{{ $t('auth.register.subtitle') }}<RouterLink to="/login">{{ $t('navbar.auth.login') }}</RouterLink></p>
         </div>
       </div>
     </div>
@@ -99,7 +99,9 @@ import { RouterLink, useRouter } from 'vue-router';
 import { reactive, ref, watch } from 'vue';
 //pinia
 import { useUserStore } from '@/Stores/useUserStore';
+import { useI18n } from 'vue-i18n';
 
+const t = useI18n()
 const route = useRouter();
 const userStore = useUserStore();
 const loading = ref(false);
