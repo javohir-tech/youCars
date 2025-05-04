@@ -153,12 +153,12 @@ const logOut = () => {
   localStorage.removeItem('userInfo');
   userStore.setUser({});
   CarStore.selectedCars = [];
-  message.success('hayr');
+  message.success('We will wait for you until we see you.');
   route.push('/');
 };
 
 const cancel = () => {
-  message.error("We're happy to have you with us.");
+  message.info("We're happy to have you with us.");
 };
 </script>
 <style scoped>

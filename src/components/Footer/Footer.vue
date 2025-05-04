@@ -4,7 +4,7 @@
       <a-row class="footer-links" :gutter="[10, 10]">
         <a-col :md="{ span: 24 }" :lg="{ span: 6 }">
           <div>
-            <RouterLink>
+            <RouterLink to="/">
               <span class="brand">You<span>Car</span></span>
             </RouterLink>
             <div class="social-icons my-3">

@@ -123,7 +123,6 @@
                 }}</a>
               </div>
             </a-flex>
-            <!-- <RouterLink to="/"> -->
             <a-flex align="center" class="ms-4 message" gap="15">
               <img
                 src="../../assets/Images/Icons/messege2.png"
@@ -133,7 +132,6 @@
               />
               <p class="mb-0">{{ $t('pages.avtoTovar.message') }}</p>
             </a-flex>
-            <!-- </RouterLink> -->
           </div>
         </div>
       </a-col>

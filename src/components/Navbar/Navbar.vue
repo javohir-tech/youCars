@@ -330,6 +330,7 @@ import { initials } from '@dicebear/collection';
 import { useUserStore } from '@/Stores/useUserStore';
 //i18n
 import { useI18n } from 'vue-i18n';
+import { UserOutlined } from '@ant-design/icons-vue';
 
 //language adit
 const { locale } = useI18n();
