@@ -17,6 +17,12 @@
       "forgetPassword": "Forgot password?",
       "button": "Login",
       "subtitle": "Don't have an account yet?"
+    },
+    "forgetPassword": {
+      "header": "Forgot Password?",
+      "title": "Enter your email to recover",
+      "button": "Recover",
+      "subtitle": "Remembered your password?"
     }
   },
   "navbar": {

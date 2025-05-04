@@ -17,6 +17,12 @@
       "forgetPassword": "Parolni unutdingizmi?",
       "button": "Kirish",
       "subtitle": "Hali hisobingiz yo‘qmi?"
+    },
+    "forgetPassword": {
+      "header": "Parolni unutdingizmi?",
+      "title": "Qayta tiklash uchun e-pochta manzilingizni kiriting",
+      "button": "Tiklash",
+      "subtitle": "Parolingizni esladingizmi?"
     }
   },
   "navbar": {
